@@ -17,7 +17,7 @@ function Navigation() {
               {Data.topSection.Menu.map((item: any, index: number) => {
                 return (
                   <Link key={index} href="#">
-                    <Text styles="capitalize NormalText-white-main relative after:absolute after:w-0 after:bottom-0 after:left-0 after:h-[2px] after:bg-white-main hover:after:w-full after:duration-200">
+                    <Text styles="capitalize text-white-main relative after:absolute after:w-0 after:bottom-0 after:left-0 after:h-[2px] after:bg-white-main hover:after:w-full after:duration-200">
                       {item.name}
                     </Text>
                   </Link>
@@ -26,9 +26,7 @@ function Navigation() {
             </div>
             {/* =====> contact us button */}
             <button className="flex justify-center items-center w-[150px] h-[40px] bg-white-main">
-              <Text styles="NormalText-main-brand capitalize">
-                contact us
-              </Text>
+              <Text styles=" capitalize">contact us</Text>
             </button>
           </div>
         </Wrapper>
