@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { FiChevronDown } from "react-icons/fi";
+import SmallText from "../CustomeTypography/SmallText";
 
 interface props {
   item: Array<object>;
@@ -28,16 +29,18 @@ const Dropdown: React.FC<props> = ({ item, Title, Event }: props) => {
       <div className="w-full hidden absolute left-0 right-0 p-4 bg-white-main item-shadow gap-3 justify-center items-start flex-col z-50">
         {item?.map((item: any, index: number) => {
           return (
-            <p
+            <button
               onClick={() => {
                 Event(item.Value);
                 setDropdownTitle(item.name);
               }}
               key={index}
-              className="font-inter font-normal capitalize text-black-cool text-[.875rem] leading-[1.25rem] hover:underline hover:text-main-brand cursor-pointer"
+              className=" text-black-cool"
             >
-              {item.name}
-            </p>
+              <SmallText styles="capitalize hover:underline hover:text-main-brand cursor-pointer">
+                {item.name}
+              </SmallText>
+            </button>
           );
         })}
       </div>
