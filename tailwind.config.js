@@ -25,6 +25,7 @@ module.exports = {
       colors: {
         main: {
           brand: "#23232C",
+          secondary:"#00D994"
         },
         white: {
           main: "#FFFFFF",
