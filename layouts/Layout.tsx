@@ -1,5 +1,6 @@
 import React, { ReactNode } from "react";
 import PromoBar from "./PromoBar/PromoBar";
+import SearchHeader from "./SearchBar/SearchHeader";
 import Navigation from "./Navigation/Navigation";
 
 interface props {
@@ -10,7 +11,8 @@ function Layout({ children }: props) {
   return (
     <React.Fragment>
       <PromoBar />
-      <Navigation />
+      <SearchHeader />
+      <Navigation/>
       {children}
     </React.Fragment>
   );

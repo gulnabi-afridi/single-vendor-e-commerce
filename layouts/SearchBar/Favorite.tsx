@@ -9,7 +9,7 @@ function Favorite() {
         badgeContent={4}
     
       >
-        <MdFavoriteBorder className="text-[30px] cursor-pointer" />
+        <MdFavoriteBorder className="text-[26px] sm:text-[30px] cursor-pointer" />
       </Badge>
     </div>
   );

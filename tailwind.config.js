@@ -33,7 +33,7 @@ module.exports = {
           main: "#000000",
         },
         gray: {
-          gray: "#EFEFEF",
+          main: "#EFEFEF",
           lightGray: "#f8f8f8",
         },
         input: "#8E8E8E",

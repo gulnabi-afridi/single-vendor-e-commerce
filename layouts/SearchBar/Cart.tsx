@@ -6,7 +6,7 @@ function Cart() {
   return (
     <div>
       <Badge badgeContent={4} color="primary">
-        <HiOutlineShoppingBag className="text-[30px] cursor-pointer" />
+        <HiOutlineShoppingBag className="text-[26px] sm:text-[30px] cursor-pointer" />
       </Badge>
     </div>
   );

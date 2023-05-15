@@ -17,7 +17,7 @@ const Dropdown: React.FC<props> = ({ item, Title, Event }: props) => {
   return (
     <div className="w-full h-full inline-block MyDropdown relative">
       <button
-        className={`font-inter font-normal text-[1rem] leading-[1rem] capitalize ${
+        className={`font-inter font-normal text-[12px] sm:text-[1rem] leading-[1rem] capitalize ${
           DropdownTitle === "all categories" ? "text-input" : "text-main-band"
         } w-full h-full flex justify-between items-center px-4`}
       >
@@ -31,12 +31,12 @@ const Dropdown: React.FC<props> = ({ item, Title, Event }: props) => {
             <p
               onClick={() => {
                 Event(item.Value);
-                setDropdownTitle(item.Title);
+                setDropdownTitle(item.name);
               }}
               key={index}
-              className="font-inter font-normal text-black-cool text-[.875rem] leading-[1.25rem] hover:underline hover:text-main-brand cursor-pointer"
+              className="font-inter font-normal capitalize text-black-cool text-[.875rem] leading-[1.25rem] hover:underline hover:text-main-brand cursor-pointer"
             >
-              {item.Title}
+              {item.name}
             </p>
           );
         })}

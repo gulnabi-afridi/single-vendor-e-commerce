@@ -1,12 +1,12 @@
-import React from 'react'
-import Wrapper from '../../components/shared/ComponentWrapper/Wrapper'
+import React from "react";
+import Hero from "./Hero";
 
 function Home() {
   return (
-    <Wrapper>
-        <div className="w-full h-[calc(100vh-140px)] bg-[url('/Assets/home/heroBg.jpg')] bg-bottom bg-cover bg-no-repeat "></div>
-    </Wrapper>
-  )
+    <React.Fragment>
+      <Hero />
+    </React.Fragment>
+  );
 }
 
-export default Home
+export default Home;
