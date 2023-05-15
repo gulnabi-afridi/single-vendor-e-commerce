@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { FiChevronDown } from "react-icons/fi";
-import SmallText from "../CustomeTypography/SmallText";
+import SmallText from "../CustomTypography/SmallText";
 
 interface props {
   item: Array<object>;

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Divider from "../../components/shared/Divider/Divider";
 import Dropdown from "../../components/shared/DropDown/DropDown";
 import { Data } from "../../constants/Data/JSON.js";
-import Text from "../../components/shared/CustomeTypography/text";
+import Text from "../../components/shared/CustomTypography/Text";
 
 function Search() {
   const [SearchedCategory, setSearchCategory] = useState<string | null>(

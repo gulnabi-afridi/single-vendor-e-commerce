@@ -3,7 +3,7 @@ import Wrapper from "../../components/shared/ComponentWrapper/Wrapper";
 import AllCategoriesMenu from "./AllCategoryMenu";
 import { Data } from "../../constants/Data/JSON";
 import Link from "next/link";
-import Text from "../../components/shared/CustomeTypography/text";
+import Text from "../../components/shared/CustomTypography/Text";
 
 function Navigation() {
   return (
@@ -17,7 +17,7 @@ function Navigation() {
               {Data.topSection.Menu.map((item: any, index: number) => {
                 return (
                   <Link key={index} href="#">
-                    <Text styles="capitalize text-white-main relative after:absolute after:w-0 after:bottom-0 after:left-0 after:h-[2px] after:bg-white-main hover:after:w-full after:duration-200">
+                    <Text styles="capitalize NormalText-white-main relative after:absolute after:w-0 after:bottom-0 after:left-0 after:h-[2px] after:bg-white-main hover:after:w-full after:duration-200">
                       {item.name}
                     </Text>
                   </Link>
@@ -26,7 +26,9 @@ function Navigation() {
             </div>
             {/* =====> contact us button */}
             <button className="flex justify-center items-center w-[150px] h-[40px] bg-white-main">
-              <Text styles="text-main-brand capitalize">contact us</Text>
+              <Text styles="NormalText-main-brand capitalize">
+                contact us
+              </Text>
             </button>
           </div>
         </Wrapper>

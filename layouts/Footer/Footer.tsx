@@ -1,12 +1,12 @@
 import React from "react";
 import Link from "next/link";
-import LargeText from "../../components/shared/CustomeTypography/LargeText";
-import SmallText from "../../components/shared/CustomeTypography/SmallText";
+import LargeText from "../../components/shared/CustomTypography/LargeText";
+import SmallText from "../../components/shared/CustomTypography/SmallText";
 import { Data } from "../../constants/Data/JSON";
 
 function Footer() {
   return (
-    <div className="w-full h-[260px] bg-main-brand mt-24">
+    <div className="w-full h-[260px] bg-main-brand mt-10">
       <div className="w-full max-w-[1150px] h-full justify-center items-center flex  m-auto md:px-8 px-4">
         <div className="w-full grid  grid-cols-4">
           {/* =====> About us */}
