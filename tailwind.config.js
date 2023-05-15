@@ -3,6 +3,7 @@ module.exports = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./layouts/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
     "./views/**/*.{js,ts,jsx,tsx,mdx}",
   ],
@@ -31,9 +32,11 @@ module.exports = {
         black: {
           main: "#000000",
         },
-        gray: "#EFEFEF",
+        gray: {
+          gray: "#EFEFEF",
+          lightGray: "#f8f8f8",
+        },
         input: "#8E8E8E",
-
       },
     },
   },

@@ -2,3 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+/* =====> drop down csss */
+.MyDropdown:hover div {
+  display: flex;
+}
+.item-shadow {
+  box-shadow: rgb(0 0 0 / 14%) 0px 15px 50px 0px;
+}
+/* ====> mui badge style */
+.MuiBadge-badge {
+  background-color: #23232c !important;
+  color: white !important;
+}
