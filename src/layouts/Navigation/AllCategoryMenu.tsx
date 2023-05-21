@@ -1,11 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { RiArrowDownSLine } from "react-icons/ri";
 import Link from "next/link";
-<<<<<<< HEAD:src/layouts/Navigation/AllCategoryMenu.tsx
 import { Data } from "../../../constants/Data/JSON";
-=======
-import { Data } from "../../constants/Data/JSON";
->>>>>>> f790907cb8f963d0c1e4b426693fa5490f9d4d7c:layouts/Navigation/AllCategoryMenu.tsx
 import { BiMenuAltLeft } from "react-icons/bi";
 import SmallText from "../../components/shared/CustomTypography/SmallText";
 
@@ -71,8 +67,4 @@ const AllCategoriesMenu: React.FC = () => {
   );
 };
 
-<<<<<<< HEAD:src/layouts/Navigation/AllCategoryMenu.tsx
 export default AllCategoriesMenu;
-=======
-export default AllCategoriesMenu;
->>>>>>> f790907cb8f963d0c1e4b426693fa5490f9d4d7c:layouts/Navigation/AllCategoryMenu.tsx

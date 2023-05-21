@@ -23,10 +23,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.8.0",
-<<<<<<< HEAD
     "react-image-gallery": "^1.2.11",
-=======
->>>>>>> f790907cb8f963d0c1e4b426693fa5490f9d4d7c
     "react-modern-drawer": "^1.2.0",
     "styled-components": "^6.0.0-rc.1",
     "swiper": "^9.3.2",

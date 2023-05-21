@@ -1,12 +1,10 @@
 import React, { useState } from "react";
-import Divider from "../../components/shared/Divider/Divider";
-import Dropdown from "../../components/shared/DropDown/DropDown";
-<<<<<<<< HEAD:src/layouts/Navigation/Search.tsx
-import { Data } from "../../../constants/Data/JSON";
-========
+import Divider from "@/components/shared/Divider/Divider";
+import Dropdown from "@/components/shared/DropDown/DropDown";
+
 import { Data } from "../../constants/Data/JSON.js";
 import Text from "../../components/shared/CustomTypography/Text";
->>>>>>>> f790907cb8f963d0c1e4b426693fa5490f9d4d7c:layouts/SearchBar/Search.tsx
+
 
 function Search() {
   const [SearchedCategory, setSearchCategory] = useState<string | null>(
