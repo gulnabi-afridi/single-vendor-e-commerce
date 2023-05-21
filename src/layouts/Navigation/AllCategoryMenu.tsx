@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { RiArrowDownSLine } from "react-icons/ri";
 import Link from "next/link";
-import { Data } from "../../constants/Data/JSON";
+import { Data } from "../../../constants/Data/JSON";
 import { BiMenuAltLeft } from "react-icons/bi";
 import SmallText from "../../components/shared/CustomTypography/SmallText";
 

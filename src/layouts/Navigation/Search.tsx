@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import Divider from "@/components/shared/Divider/Divider";
-import Dropdown from "@/components/shared/DropDown/DropDown";
-
-import { Data } from "../../constants/Data/JSON.js";
+import Divider from "../../components/shared/Divider/Divider";
+import Dropdown from "../../components/shared/DropDown/DropDown";
+import { Data } from "../../../constants/Data/JSON";
 import Text from "../../components/shared/CustomTypography/Text";
 
 

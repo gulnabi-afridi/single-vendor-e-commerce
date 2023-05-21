@@ -1,24 +1,49 @@
 .mySwiper {
-    width: 100%;
-    height: 100%;
-  }
-  .swiper-pagination {
-    display: flex;
-    justify-content: flex-end;
-    padding-right: 60px;
-    padding-bottom: 10px;
-  }
-  .swiper-pagination span {
-    width: 35px;
-    height: 5px;
-    border-radius: 5px;
-    background: hsla(0, 0%, 100%, 0.2) !important;
-  }
-  .swiper-pagination span {
-    background: white !important;
-    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 65%) !important;
-  }
-  .categoryProductClass:hover a::after {
-    height: 60%;
-  }
-  
+  width: 100%;
+  height: 100%;
+}
+/* change active bullet color to red */
+.swiper-pagination-bullet-active {
+  opacity: 1;
+  background: var(--swiper-pagination-color, var(--swiper-theme-color));
+  background-color: red;
+}
+
+
+/*move swiper pagination on top to image */
+.swiper-pagination {
+  position: absolute;
+  text-align: center;
+  transition: 300ms opacity;
+  transform: translate3d(0, 0, 0);
+  z-index: 10;
+  bottom: 0 !important;
+}
+.swiper-pagination span {
+  width: 30px !important;
+  height: 2px !important;
+  border-radius: 5px;
+  background: black !important;
+} 
+
+/* .swiper-pagination {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 60px;
+  padding-bottom: 0px;
+}
+ .swiper-pagination .swiper-pagination-bullet {
+  width: 35px !important;
+  height: 5px !important;
+  border-radius: 5px;
+  background: hsla(0, 0%, 100%, 0.2) !important;
+}
+
+.swiper-pagination span {
+  background: white !important;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 65%) !important;
+} */
+
+.categoryProductClass:hover a::after {
+  height: 60%;
+}

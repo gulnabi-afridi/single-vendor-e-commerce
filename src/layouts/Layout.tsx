@@ -1,6 +1,6 @@
 import React, { ReactNode } from "react";
 import PromoBar from "./PromoBar/PromoBar";
-import SearchHeader from "./SearchBar/SearchHeader";
+import SearchHeader from "./Navigation/SearchBar/SearchHeader";
 import Navigation from "./Navigation/Navigation";
 import Footer from "./Footer/Footer";
 
@@ -13,9 +13,9 @@ function Layout({ children }: props) {
     <React.Fragment>
       <PromoBar />
       <SearchHeader />
-      <Navigation/>
-      {children}
-      <Footer/>
+      <Navigation />
+      <main className="w-full h-full">{children}</main>
+      <Footer />
     </React.Fragment>
   );
 }

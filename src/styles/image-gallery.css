@@ -1,0 +1,105 @@
+@import "~react-image-gallery/styles/css/image-gallery.css";
+
+.image-gallery {
+    width: 100% !important;
+    height: 100% !important;
+    border: 0;
+}
+
+/* Styling image gallery thumbnails */
+.image-gallery-thumbnail {
+    border-width: 1px !important;
+    border-style: solid !important;
+    --tw-border-opacity: 1;
+    border-color: rgb(239 239 239/var(--tw-border-opacity)) !important;
+
+    width: 110px !important;
+    height: 130px !important;
+    z-index: 1 !important;
+    margin-bottom: 12px;
+
+}
+
+.image-gallery-thumbnail:not(.active) {
+    position: relative;
+}
+
+.image-gallery-thumbnail:not(.active)::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    opacity: 0.5;
+    z-index: 10;
+}
+
+.image-gallery-thumbnail:hover {
+    border-width: 1px !important;
+    border-style: solid !important;
+    border-color: black !important;
+    width: 110px !important;
+    height: 130px !important;
+    margin-right: 4px;
+}
+
+.image-gallery-thumbnail.active {
+    border-width: 1px !important;
+    border-style: solid !important;
+    border-color: black !important;
+
+    width: 110px !important;
+    height: 130px !important;
+    z-index: 1 !important;
+    margin-right: 4px;
+}
+
+
+
+.image-gallery-thumbnail.active:hover {
+    border-width: 1px;
+    border-style: solid;
+    --tw-border-opacity: 1;
+    border-color: rgb(239 239 239/var(--tw-border-opacity));
+
+    width: 110px !important;
+    height: 130px !important;
+    margin-right: 4px;
+}
+
+/* Stylign thumbnails wrapper  */
+.image-gallery-thumbnails-wrapper {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    z-index: 10;
+}
+
+/* Styling image gallery main slide  */
+.image-gallery-slides {
+    padding-left: 150px;
+    height: 100% !important;
+    width: 100%!important;
+}
+
+.image-gallery-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+@media (max-width: 640px) {
+    .image-gallery-thumbnail {
+        width: 80px !important;
+        height: 80px !important;
+    }
+
+    .image-gallery-thumbnail.active {
+        width: 80px !important;
+        height: 80px !important;
+    }
+}
