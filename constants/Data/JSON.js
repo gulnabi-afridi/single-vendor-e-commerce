@@ -1,3 +1,7 @@
+import { AiFillInstagram } from "react-icons/ai";
+import { BsFacebook } from "react-icons/bs";
+import { FaTwitter } from "react-icons/fa";
+
 export const Data = {
   SearchHeader: {
     SearchCategory: [

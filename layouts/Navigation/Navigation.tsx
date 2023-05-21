@@ -1,37 +1,37 @@
 import React from "react";
 import Wrapper from "../../components/shared/ComponentWrapper/Wrapper";
-import Image from "next/image";
-import Search from "./Search";
-import Favorite from "./Favorite";
-import Cart from "./Cart";
-import {MdOutlinePersonAddAlt} from "react-icons/md";
-
+import AllCategoriesMenu from "./AllCategoryMenu";
+import { Data } from "../../constants/Data/JSON";
+import Link from "next/link";
+import Text from "../../components/shared/CustomTypography/Text";
 
 function Navigation() {
   return (
-    <Wrapper style="">
-      <div className="w-full h-[100px] flex justify-between items-center">
-        {/* ===> logo */}
-        <div className="w-[50px] h-[50px] relative cursor-pointer">
-          <Image
-            fill
-            src="/Assets/logo.png"
-            alt="logo"
-            className="object-contain"
-          />
-        </div>
-        {/* =====> search product or find category */}
-        <Search />
-        <div className="flex justify-center items-center gap-6">
-        {/* =====> product added to favorite */}
-        <Favorite/>
-        {/* ======> product added to cart */}
-        <Cart/>
-        {/* ======> add account button */}
-        <MdOutlinePersonAddAlt className="text-[30px] cursor-pointer"/>
-        </div>
+    <React.Fragment>
+      <div className="lg:block hidden w-full bg-main-brand h-[60px]">
+        <Wrapper style="h-full">
+          <div className="w-full h-full relative flex justify-between items-center ">
+            <div className="h-full md:flex justify-center items-center gap-10">
+              {/* All Categories */}
+              <AllCategoriesMenu />
+              {Data.topSection.Menu.map((item: any, index: number) => {
+                return (
+                  <Link key={index} href="#">
+                    <Text styles="capitalize text-white-main relative after:absolute after:w-0 after:bottom-0 after:left-0 after:h-[2px] after:bg-white-main hover:after:w-full after:duration-200">
+                      {item.name}
+                    </Text>
+                  </Link>
+                );
+              })}
+            </div>
+            {/* =====> contact us button */}
+            <button className="flex justify-center items-center w-[150px] h-[40px] bg-white-main">
+              <Text styles=" capitalize">contact us</Text>
+            </button>
+          </div>
+        </Wrapper>
       </div>
-    </Wrapper>
+    </React.Fragment>
   );
 }
 
