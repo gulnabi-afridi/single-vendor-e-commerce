@@ -6,9 +6,9 @@ import { Data } from '../../../constants/Data/JSON'
 
 function Footer() {
   return (
-    <div className="w-full h-[260px] bg-main-brand mt-10">
+    <div className="w-full md:h-[260px] bg-main-brand mt-10 p-4 md:p-0">
       <div className="w-full max-w-[1150px] h-full justify-center items-center flex  m-auto md:px-8 px-4">
-        <div className="w-full grid  grid-cols-4">
+        <div className="w-full flex flex-col gap-4 md:grid  md:grid-cols-4">
           {/* =====> About us */}
           {Data.footer.map((item, index) => {
             return (
