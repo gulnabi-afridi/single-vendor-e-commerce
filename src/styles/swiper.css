@@ -1,0 +1,24 @@
+.mySwiper {
+    width: 100%;
+    height: 100%;
+  }
+  .swiper-pagination {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 60px;
+    padding-bottom: 10px;
+  }
+  .swiper-pagination span {
+    width: 35px;
+    height: 5px;
+    border-radius: 5px;
+    background: hsla(0, 0%, 100%, 0.2) !important;
+  }
+  .swiper-pagination span {
+    background: white !important;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 65%) !important;
+  }
+  .categoryProductClass:hover a::after {
+    height: 60%;
+  }
+  
