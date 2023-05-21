@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
-import LargeText from "../../components/shared/CustomTypography/LargeText";
-import SmallText from "../../components/shared/CustomTypography/SmallText";
+import LargeText from "@/components/shared/CustomTypography/LargeText";
+import SmallText from "@/components/shared/CustomTypography/SmallText";
 import { Data } from "../../constants/Data/JSON";
 
 function Footer() {
@@ -20,7 +20,7 @@ function Footer() {
                   {item.title === "find us" ? (
                     item.links?.map((link, index) => {
                       return (
-                        <div className="w-full flex flex-col gap-3">
+                        <div key={index} className="w-full flex flex-col gap-3">
                           <SmallText styles="text-white-main">
                             {link.name}
                           </SmallText>
@@ -30,13 +30,13 @@ function Footer() {
                   ) : item.title === "follow us" ? (
                     <div className="w-full flex gap-4">
                       {item.links?.map((link, index) => {
-                        return <Link href="#">{link.name}</Link>;
+                        return <Link key={index} href="#">{link.name}</Link>;
                       })}
                     </div>
                   ) : (
                     item.links?.map((link, index) => {
                       return (
-                        <Link href={"#"}>
+                        <Link key={index} href={"#"}>
                           {" "}
                           <SmallText styles="text-white-main capitalize max-w-max relative after:absolute after:w-0 after:bottom-0 after:left-0 after:h-[2px] after:bg-white-main hover:after:w-full after:duration-200">
                             {link.name}

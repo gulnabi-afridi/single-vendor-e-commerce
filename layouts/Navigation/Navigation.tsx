@@ -3,7 +3,7 @@ import Wrapper from "@/components/shared/ComponentWrapper/Wrapper";
 import AllCategoriesMenu from "@/layouts/Navigation/AllCategoryMenu";
 import { Data } from "../../constants/Data/JSON";
 import Link from "next/link";
-import Text from "../../components/shared/CustomTypography/Text";
+import Text from "@/components/shared/CustomTypography/Text";
 
 function Navigation() {
   return (

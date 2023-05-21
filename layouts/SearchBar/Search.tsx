@@ -3,7 +3,7 @@ import Divider from "@/components/shared/Divider/Divider";
 import Dropdown from "@/components/shared/DropDown/DropDown";
 
 import { Data } from "../../constants/Data/JSON.js";
-import Text from "../../components/shared/CustomTypography/Text";
+import Text from "@/components/shared/CustomTypography/Text.jsx";
 
 
 function Search() {
