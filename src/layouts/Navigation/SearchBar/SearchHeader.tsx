@@ -6,7 +6,7 @@ import Favorite from "./Favorite";
 import Cart from "./Cart";
 import { MdOutlinePersonAddAlt } from "react-icons/md";
 import { BiMenuAltLeft } from "react-icons/bi";
-import { Data } from "../../../constants/Data/JSON"
+import { Data } from "../../../../constants/Data/JSON";
 import Link from "next/link";
 import { RxCross2 } from "react-icons/rx";
 import Divider from '../../../components/shared/Divider/Divider'

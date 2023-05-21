@@ -1,5 +1,5 @@
 import React from "react";
-import Wrapper from "../../components/shared/ComponentWrapper/Wrapper";
+import Wrapper from "@/components/shared/ComponentWrapper/Wrapper";
 import Hero from "./Hero";
 import OurBestSellingProducts from "./OurBestSellingProducts";
 import OurRecentProducts from "./OurRecentProducts";

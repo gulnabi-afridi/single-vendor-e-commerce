@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ImageGallery from "react-image-gallery";
 import Wrapper from "@/components/shared/ComponentWrapper/Wrapper";
-import LargeText from "@/components/shared/CustomTypography/LargeText";
 import SizeButton from "@/components/ProductDetail/SizeButton";
 
 const ProductDetail = () => {
