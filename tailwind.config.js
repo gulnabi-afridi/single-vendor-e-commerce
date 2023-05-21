@@ -14,6 +14,7 @@ module.exports = {
       },
       fontFamily: {
         inter: ["Inter", "sans-serif"],
+        poppins: ["Poppins", "sans-serif"],
       },
       screens: {
         xs: "325px",
@@ -34,7 +35,7 @@ module.exports = {
           main: "#000000",
         },
         gray: {
-          gray: "#EFEFEF",
+          main: "#EFEFEF",
           lightGray: "#f8f8f8",
         },
         input: "#8E8E8E",

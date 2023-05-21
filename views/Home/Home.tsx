@@ -6,6 +6,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination, Mousewheel, Autoplay } from "swiper";
+import React from "react";
+import Hero from "./Hero";
+
 function Home() {
   return (
     <Wrapper>
