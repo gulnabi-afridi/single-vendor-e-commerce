@@ -27,6 +27,72 @@ export const Data = {
       },
     ],
   },
+  footer : [
+    {
+      title: "about us",
+      links: [
+        {
+          name: "About us",
+          path: "#",
+        },
+        {
+          name: "contact us",
+          path: "#",
+        },
+      ],
+    },
+    {
+      title: "privacy",
+      links: [
+        {
+          name: "Shipping & Return",
+          path: "#",
+        },
+        {
+          name: "Privacy Policy",
+          path: "#",
+        },
+        {
+          name: "Terms & Conditions",
+          path: "#",
+        },
+      ],
+    },
+    {
+      title: "find us",
+      links: [
+        {
+          name: "support@outlander.com.pk",
+        },
+        {
+          name: "+92 332-4975571",
+        },
+        {
+          name: "Mon-Fri: 10:00 A.M – 6:00 P.M",
+        },
+      ],
+    },
+    {
+      title: "follow us",
+      links: [
+        {
+          name: (
+            <AiFillInstagram className="text-white-main text-[36px] hover:scale-125 duration-300" />
+          ),
+        },
+        {
+          name: (
+            <BsFacebook className="text-white-main text-[36px] hover:scale-125 duration-300" />
+          ),
+        },
+        {
+          name: (
+            <FaTwitter className="text-white-main text-[36px] hover:scale-125 duration-300" />
+          ),
+        },
+      ],
+    },
+  ],
   ProductsSliderData: [
     {
       title: "SLIM FIT PEPPERMINT COTTON TEE",
