@@ -3,6 +3,8 @@ import ImageGallery from "react-image-gallery";
 import Wrapper from "@/components/shared/ComponentWrapper/Wrapper";
 import { HiOutlineShoppingBag } from "react-icons/hi";
 import { AiOutlineHeart, AiFillHeart, AiFillFacebook } from "react-icons/ai";
+import ProductSlider from "@/components/shared/Slider/ProductSLider";
+import { Data } from "../../constants/Data/JSON";
 
 const ProductDetail = () => {
   //Product Description Line Clamp
@@ -20,26 +22,10 @@ const ProductDetail = () => {
   const handleIncreaseProductCount: () => void = () => {
     setProductCount((o) => o + 1);
   };
-
   //Product Description
   const productDescription: string =
     "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam rem impedit sit eaque alias error commodi odio at dolore eius? Unde, est. Ipsum iste adipisci ut aliquid. Pariatur, odio est! Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab quo nostrum voluptatem illum eaque! Quisquam autem eum adipisci culpa quae, debitis dolore sint voluptatibus voluptatum, laboriosam nisi, dolorem officiis cum!";
 
-  //Image Gallery data
-  const images = [
-    {
-      original: "/Assets/home/shirt2.jpg",
-      thumbnail: "/Assets/home/shirt2.jpg",
-    },
-    {
-      original: "/Assets/home/shirt3.webp",
-      thumbnail: "/Assets/home/shirt3.webp",
-    },
-    {
-      original: "/Assets/home/shirt4.jpg",
-      thumbnail: "/Assets/home/shirt4.jpg",
-    },
-  ];
 
   return (
     <Wrapper style="py-16">
@@ -49,7 +35,7 @@ const ProductDetail = () => {
             {/* Coloumn 1 => Product Image gallery */}
             <div className="w-full h-[300px] sm:h-full flex flex-col items-start justify-start relative">
               <ImageGallery
-                items={images}
+                items={Data.ImageGalleryData}
                 showNav={false}
                 thumbnailPosition={"left"}
                 showFullscreenButton={false}
@@ -194,6 +180,7 @@ const ProductDetail = () => {
             </ul>
           </div>
         </div>
+        <ProductSlider title="Related Products" data={Data.RelatedProducts} slidesToShow={5} />
       </div>
     </Wrapper>
   );

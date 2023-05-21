@@ -11,9 +11,15 @@ interface Props {
   data: any;
   title: string;
   slidesToShow?: number;
+  moveLeft?: boolean;
 }
 
-const ProductSlider: React.FC<Props> = ({ data, title, slidesToShow = 4 }) => {
+const ProductSlider: React.FC<Props> = ({
+  data,
+  title,
+  slidesToShow = 4,
+  moveLeft = false,
+}) => {
   return (
     <div className="w-full flex flex-col gap-4 items-center justify-center">
       <H1Heading>{title}</H1Heading>
@@ -31,16 +37,17 @@ const ProductSlider: React.FC<Props> = ({ data, title, slidesToShow = 4 }) => {
             },
             768: {
               slidesPerView: 2,
-              spaceBetween: 40,
+              spaceBetween: 20,
             },
             1024: {
-              slidesPerView: 4,
-              spaceBetween: 50,
+              slidesPerView: slidesToShow,
+              spaceBetween: 20,
             },
           }}
           autoplay={{
             delay: 3000,
             disableOnInteraction: false,
+            reverseDirection:moveLeft
           }}
           modules={[Pagination, Mousewheel, Autoplay]}
           className="mySwiper"
