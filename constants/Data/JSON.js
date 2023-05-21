@@ -1,36 +1,109 @@
+
 import { AiFillInstagram } from "react-icons/ai";
 import { BsFacebook } from "react-icons/bs";
 import { FaTwitter } from "react-icons/fa";
 
+
 export const Data = {
-  SearchHeader: {
+  topSection: {
     SearchCategory: [
       {
-        Title: "Electronics",
-        Value: "Electronics",
+        name: "t-thirts",
+        path: "",
       },
       {
-        Title: "Game",
-        Value: "Game",
+        name: "button-down shirts",
+        path: "",
       },
       {
-        Title: "Mobile",
-        Value: "Mobile",
+        name: "Polo Shirts",
+        path: "",
       },
       {
-        Title: "Lifestyle",
-        Value: "Lifestyle",
+        name: "Button-Down Shirts",
+        path: "",
       },
       {
-        Title: "Men's Fashion",
-        Value: "Men's Fashio",
+        name: "Long-Sleeve Shirts",
+        path: "",
       },
       {
-        Title: "Television",
-        Value: "Television",
+        name: "Short-Sleeve Shirts",
+        path: "",
+      },
+      {
+        name: "Henley Shirts",
+        path: "",
+      },
+    ],
+
+    AllCategories: [
+      {
+        name: "t-thirts",
+        path: "",
+        // Icon: <MdElectricalServices size={16} color="#1D1D1D" />,
+      },
+      {
+        name: "button-down shirts",
+        path: "",
+      },
+      {
+        name: "Polo Shirts",
+        path: "",
+      },
+      {
+        name: "Button-Down Shirts",
+        path: "",
+      },
+      {
+        name: "Long-Sleeve Shirts",
+        path: "",
+      },
+      {
+        name: "Short-Sleeve Shirts",
+        path: "",
+      },
+      {
+        name: "Henley Shirts",
+        path: "",
+      },
+      {
+        name: "Graphic Shirts",
+        path: "",
+      },
+      {
+        name: "Oxford Shirts",
+        path: "",
+      },
+      {
+        name: "Flannel Shirts",
+        path: "",
+      },
+      {
+        name: "Sports Shirts",
+        path: "",
+      },
+      {
+        name: "Work Shirts",
+        path: "",
+      },
+    ],
+    Menu: [
+      {
+        name: "home",
+      },
+      {
+        name: "about us",
+      },
+      {
+        name: "privacy policy",
+      },
+      {
+        name: "faq",
       },
     ],
   },
+
   footer : [
     {
       title: "about us",
@@ -114,12 +187,12 @@ export const Data = {
       soldOut: false,
     },
     {
-      title: "Apple Watch Pro",
+      title: "Dark Cotton Tee",
       price: 450.0,
       new: false,
       sale: "10% Off",
       soldOut: true,
-      picture: "/Assets/home/smartwatch.jpeg",
+      picture: "/Assets/home/shirt7.jpg",
     },
     {
       title: "Nike Addidas Shoes",
@@ -144,12 +217,12 @@ export const Data = {
       soldOut: false,
     },
     {
-      title: "Apple Watch Pro",
+      title: "Dark Cotton Tee",
       price: 450.0,
       new: false,
       sale: "10% Off",
       soldOut: true,
-      picture: "/Assets/home/smartwatch.jpeg",
+      picture: "/Assets/home/shirt7.jpg",
     },
     {
       title: "Nike Addidas Shoes",
@@ -159,4 +232,67 @@ export const Data = {
       picture: "/Assets/home/shoes.webp",
     },
   ],
+  RecentProductsData: [
+    {
+      title: "SLIM FIT PEPPERMINT COTTON TEE",
+      price: 33.0,
+      new: true,
+      soldOut: false,
+      picture: "/Assets/home/shirt3.webp",
+    },
+    {
+      title: "SLIM FIT Black COTTON TEE",
+      price: 28.0,
+      new: false,
+      sale: "20% Off",
+      picture: "/Assets/home/shirt4.jpg",
+      soldOut: false,
+    },
+    {
+      title: "Fancy Cotton Tee",
+      price: 450.0,
+      new: false,
+      sale: "10% Off",
+      soldOut: false,
+      picture: "/Assets/home/shirt5.jpg",
+    },
+    {
+      title: "Nike Addidas Shoes",
+      price: 230.0,
+      new: false,
+      soldOut: false,
+      picture: "/Assets/home/shirt6.jpg",
+    },
+    {
+      title: "SLIM FIT PEPPERMINT COTTON TEE",
+      price: 33.0,
+      new: true,
+      soldOut: false,
+      picture: "/Assets/home/Shirt.jpg",
+    },
+    {
+      title: "SLIM FIT Black COTTON TEE",
+      price: 28.0,
+      new: false,
+      sale: "20% Off",
+      picture: "/Assets/home/shirt2.jpg",
+      soldOut: false,
+    },
+    {
+      title: "Fancy Cotton Tee",
+      price: 450.0,
+      new: false,
+      sale: "10% Off",
+      soldOut: false,
+      picture: "/Assets/home/shirt5.jpg",
+    },
+    {
+      title: "SLIM FIT PEPPERMINT COTTON TEE",
+      price: 33.0,
+      new: true,
+      soldOut: false,
+      picture: "/Assets/home/Shirt.jpg",
+    },
+  ],
+
 };

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
+import Link from "next/link";
 
 interface Props {
   picture: string;
@@ -23,7 +24,7 @@ const ProductCard: React.FC<Props> = ({
 
   return (
     <div className="w-full bg-white-main  overflow-hidden relative productCard cursor-pointer group">
-      <div className="w-full flex flex-col items-center justify-start gap-4 relative">
+      <div className="w-full flex flex-col items-center justify-start gap-2 relative">
         {/* Image  */}
         <div className="w-full h-[350px] overflow-hidden relative">
           <Image className="" src={picture} alt="" fill />
@@ -34,7 +35,7 @@ const ProductCard: React.FC<Props> = ({
             </p>
           )}
           {soldout && (
-            <p className="h-[24px] w-[56px] flex items-center absolute left-0 top-[40px] text-white-main text-[12px] font-inter font-[500] bg-[#E12727] px-1">
+            <p className="h-[24px] w-[60px] flex items-center absolute left-0 top-[40px] text-white-main text-[12px] font-inter font-[500] bg-[#E12727] px-1">
               Sold Out
             </p>
           )}
@@ -54,13 +55,13 @@ const ProductCard: React.FC<Props> = ({
               <AiOutlineHeart size={25} />
             )}
           </button>
-          <button className="w-full h-[46px] font-inter font-semibold z-10 text-[14px] absolute -bottom-[70px] group-hover:bottom-0 group-hover:transition-all group-hover:duration-700 bg-main-secondary before:absolute before:bg-black-main before:top-0 before:left-0 before:h-full before:-z-10 before:w-0 hover:before:w-full before:transition-all before:duration-500 ease-in-out text-white-main">
+          <Link href={'/productdetails'} className="w-full h-[46px] flex items-center justify-center font-inter font-semibold z-10 text-[14px] absolute -bottom-[70px] group-hover:bottom-0 group-hover:transition-all group-hover:duration-700 bg-main-secondary before:absolute before:bg-black-main before:top-0 before:left-0 before:h-full before:-z-10 before:w-0 hover:before:w-full before:transition-all before:duration-500 ease-in-out text-white-main">
             See Details
-          </button>
+          </Link>
         </div>
         {/* Product Details  */}
-        <div className="w-full flex flex-col items-center justify-center gap-2 ">
-          <p className="text-base text-center font-semibold font-inter text-black-main w-full">
+        <div className="w-full flex flex-col items-center justify-center bg-transparent gap-2">
+          <p className="text-[14px] text-center font-[400] font-inter text-black-main w-full">
             {title}
           </p>
           <p className="w-full text-center font-inter font-[600] text-[14px] text-black-main leading-[26px]">
