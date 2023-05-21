@@ -14,7 +14,7 @@ const OurBestSellingProducts = () => {
       <div className="h-[450px] max-w-full">
         <Swiper
           slidesPerView={4}
-          spaceBetween={20}
+          spaceBetween={15}
           pagination={{
             clickable: true,
           }}

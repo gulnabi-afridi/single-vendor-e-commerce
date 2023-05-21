@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import ImageGallery from "react-image-gallery";
 import Wrapper from "@/components/shared/ComponentWrapper/Wrapper";
 import { HiOutlineShoppingBag } from "react-icons/hi";
-import { AiOutlineHeart, AiFillHeart,AiFillFacebook } from "react-icons/ai";
+import { AiOutlineHeart, AiFillHeart, AiFillFacebook } from "react-icons/ai";
 
 const ProductDetail = () => {
   //Product Description Line Clamp
@@ -23,7 +23,7 @@ const ProductDetail = () => {
 
   //Product Description
   const productDescription: string =
-    "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam rem impedit sit eaque alias error commodi odio at dolore eius? Unde, est. Ipsum iste adipisci ut aliquid. Pariatur, odio est! Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab quo nostrum voluptatem illum eaque! Quisquam autem eum adipisci culpa quae, debitis dolore sint voluptatibus voluptatum, laboriosam nisi, dolorem officiis cum!"; 
+    "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam rem impedit sit eaque alias error commodi odio at dolore eius? Unde, est. Ipsum iste adipisci ut aliquid. Pariatur, odio est! Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab quo nostrum voluptatem illum eaque! Quisquam autem eum adipisci culpa quae, debitis dolore sint voluptatibus voluptatum, laboriosam nisi, dolorem officiis cum!";
 
   //Image Gallery data
   const images = [
@@ -44,10 +44,10 @@ const ProductDetail = () => {
   return (
     <Wrapper style="py-16">
       <div className="w-full h-full flex items-center justify-center flex-col">
-        <div className="w-full h-full  flex items-start justify-center">
-          <div className="w-full h-full grid grid-cols-1 lg:grid-cols-2 gap-4">
+        <div className="w-full   flex items-start justify-center">
+          <div className="w-full h-full grid grid-cols-1 lg:grid-cols-2 gap-16">
             {/* Coloumn 1 => Product Image gallery */}
-            <div className="w-full h-[500px] flex flex-col items-start justify-start relative">
+            <div className="w-full h-[300px] sm:h-full flex flex-col items-start justify-start relative">
               <ImageGallery
                 items={images}
                 showNav={false}
@@ -67,7 +67,10 @@ const ProductDetail = () => {
                 <p className="font-inter font-[400] text-black-main sm:text-[26px] text-[20px]">
                   BASIC MAROON SWEATSHIRT
                 </p>
-
+                <p className="font-inter font-medium text-black-main text-[15px]">
+                  Our exclusive printed short sleeves T-shirt designed for
+                  premium softness.
+                </p>
                 {/* Price  */}
                 <h3 className="w-full text-left text-2xl leading-[30px] text-lavaRed font-semibold font-inter">
                   $33.00
@@ -128,7 +131,7 @@ const ProductDetail = () => {
                 <p className="text-left text-black-main text-[14px] font-medium font-inter">
                   Category :{" "}
                   <span className="text-black-off text-[14px] font-normal font-inter">
-                   Men Wears
+                    Men Wears
                   </span>
                 </p>
                 <p className="text-left text-black-main text-[14px] font-medium font-inter">
@@ -140,7 +143,9 @@ const ProductDetail = () => {
               </div>
               {/* Social Links  */}
               <div className="w-full flex items-center justify-start">
-                <button className={`h-[30px] w-[130px] flex items-center justify-center gap-4 font-inter font-[400] text-gray-500 text-[14px] hover:text-black-main duration-300`}>
+                <button
+                  className={`h-[30px] w-[130px] flex items-center justify-center gap-4 font-inter font-[400] text-gray-500 text-[14px] hover:text-black-main duration-300`}
+                >
                   <AiFillFacebook className="text-[24px]" />
                   Facebook
                 </button>
