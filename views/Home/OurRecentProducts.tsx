@@ -5,7 +5,7 @@ import "swiper/css/pagination";
 import { Pagination, Mousewheel, Autoplay } from "swiper";
 import ProductCard from "../../components/shared/ProductCards/ProductCard";
 import { Data } from "../../constants/Data/JSON";
-import H1Heading from "../../components/shared/CustomTypography/H1Heading";
+import H1Heading from "../../components/shared/CustomTypography/H1Heading"
 
 const OurRecentProducts = () => {
   return (

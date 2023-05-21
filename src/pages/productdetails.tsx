@@ -1,4 +1,4 @@
-import ProductDetail from '@/views/ProductDetails/ProductDetail'
+import ProductDetail from "../../views/ProductDetails/ProductDetail"
 import React from 'react'
 
 const productdetails = () => {
