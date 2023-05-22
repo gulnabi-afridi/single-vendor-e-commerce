@@ -12,7 +12,11 @@ const ProductDetail = () => {
   const [favourite, setFavourite] = useState<boolean>(false);
   //Product Quantity
   const [productCount, setProductCount] = useState<number>(1);
-
+  const dummyTags = {
+    sale: true,
+    newArrival: true,
+    soldOut: false,
+  };
   //   Descrease product count handler
   const handleDescreaseProductCount: () => void = () => {
     productCount > 0 ? setProductCount((o) => o - 1) : setProductCount(0);
@@ -26,13 +30,12 @@ const ProductDetail = () => {
   const productDescription: string =
     "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam rem impedit sit eaque alias error commodi odio at dolore eius? Unde, est. Ipsum iste adipisci ut aliquid. Pariatur, odio est! Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab quo nostrum voluptatem illum eaque! Quisquam autem eum adipisci culpa quae, debitis dolore sint voluptatibus voluptatum, laboriosam nisi, dolorem officiis cum!";
 
-
   return (
     <Wrapper style="py-16">
       <div className="w-full h-full flex items-center justify-center flex-col gap-12">
         <div className="w-full flex items-start justify-center">
           <div className="w-full h-full grid grid-cols-1 lg:grid-cols-2 gap-16">
-            {/* Coloumn 1 => Product Image gallery */}
+            {/* Coloumn 1 => Product Image gallery for Bigger Screens */}
             <div className="w-full h-[300px] sm:h-full hidden md:flex flex-col items-start justify-start relative">
               <ImageGallery
                 items={Data.ImageGalleryData}
@@ -41,8 +44,26 @@ const ProductDetail = () => {
                 showFullscreenButton={false}
                 showPlayButton={false}
               />
-              
+              {/* Label => Off on the product  */}
+              {dummyTags.sale && (
+                <p className="h-[24px] w-[56px] flex items-center absolute left-[120px] top-[10px] text-white-main text-[12px] font-inter font-[500] bg-main-secondary px-1">
+                  20% Off
+                </p>
+              )}
+              {dummyTags.soldOut && (
+                <p className="h-[24px] w-[60px] flex items-center absolute left-[120px] top-[40px] text-white-main text-[12px] font-inter font-[500] bg-[#E12727] px-1">
+                  Sold Out
+                </p>
+              )}
+
+              {dummyTags.newArrival && (
+                <p className="h-[24px] w-[56px] flex items-center absolute left-[120px] top-[40px] text-white-main text-[12px] font-inter font-[500] bg-[#FFAA65] px-1">
+                  New
+                </p>
+              )}
             </div>
+
+            {/* Galler For Mobile View */}
             <div className="w-full h-full md:hidden flex flex-col items-start justify-start relative">
               <ImageGallery
                 items={Data.ImageGalleryData}
@@ -52,8 +73,22 @@ const ProductDetail = () => {
                 showPlayButton={false}
               />
               {/* Label => Off on the product  */}
-              
-              
+              {dummyTags.sale && (
+                <p className="h-[24px] w-[56px] flex items-center absolute left-0 top-[10px] text-white-main text-[12px] font-inter font-[500] bg-main-secondary px-1">
+                  20% Off
+                </p>
+              )}
+              {dummyTags.soldOut && (
+                <p className="h-[24px] w-[60px] flex items-center absolute left-0 top-[40px] text-white-main text-[12px] font-inter font-[500] bg-[#E12727] px-1">
+                  Sold Out
+                </p>
+              )}
+
+              {dummyTags.newArrival && (
+                <p className="h-[24px] w-[56px] flex items-center absolute left-0 top-[40px] text-white-main text-[12px] font-inter font-[500] bg-[#FFAA65] px-1">
+                  New
+                </p>
+              )}
             </div>
             {/* Coloumn 2 => Product Details  */}
             <div className="w-full flex flex-col items-start justify-start gap-6">
@@ -189,7 +224,7 @@ const ProductDetail = () => {
             </ul>
           </div>
         </div>
-        <ProductSlider title="Related Products" data={Data.RelatedProducts}/>
+        <ProductSlider title="Related Products" data={Data.RelatedProducts} />
       </div>
     </Wrapper>
   );
