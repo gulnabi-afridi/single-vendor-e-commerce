@@ -2,7 +2,9 @@ import React, { useState, useEffect } from "react";
 import ImageGallery from "react-image-gallery";
 import Wrapper from "@/components/shared/ComponentWrapper/Wrapper";
 import { HiOutlineShoppingBag } from "react-icons/hi";
-import { AiOutlineHeart, AiFillHeart,AiFillFacebook } from "react-icons/ai";
+import { AiOutlineHeart, AiFillHeart, AiFillFacebook } from "react-icons/ai";
+import ProductSlider from "@/components/shared/Slider/ProductSLider";
+import { Data } from "../../constants/Data/JSON";
 
 const ProductDetail = () => {
   //Product Description Line Clamp
@@ -10,7 +12,11 @@ const ProductDetail = () => {
   const [favourite, setFavourite] = useState<boolean>(false);
   //Product Quantity
   const [productCount, setProductCount] = useState<number>(1);
-
+  const dummyTags = {
+    sale: true,
+    newArrival: true,
+    soldOut: false,
+  };
   //   Descrease product count handler
   const handleDescreaseProductCount: () => void = () => {
     productCount > 0 ? setProductCount((o) => o - 1) : setProductCount(0);
@@ -20,45 +26,69 @@ const ProductDetail = () => {
   const handleIncreaseProductCount: () => void = () => {
     setProductCount((o) => o + 1);
   };
-
   //Product Description
   const productDescription: string =
-    "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam rem impedit sit eaque alias error commodi odio at dolore eius? Unde, est. Ipsum iste adipisci ut aliquid. Pariatur, odio est! Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab quo nostrum voluptatem illum eaque! Quisquam autem eum adipisci culpa quae, debitis dolore sint voluptatibus voluptatum, laboriosam nisi, dolorem officiis cum!"; 
-
-  //Image Gallery data
-  const images = [
-    {
-      original: "/Assets/home/shirt2.jpg",
-      thumbnail: "/Assets/home/shirt2.jpg",
-    },
-    {
-      original: "/Assets/home/shirt3.webp",
-      thumbnail: "/Assets/home/shirt3.webp",
-    },
-    {
-      original: "/Assets/home/shirt4.jpg",
-      thumbnail: "/Assets/home/shirt4.jpg",
-    },
-  ];
+    "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam rem impedit sit eaque alias error commodi odio at dolore eius? Unde, est. Ipsum iste adipisci ut aliquid. Pariatur, odio est! Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab quo nostrum voluptatem illum eaque! Quisquam autem eum adipisci culpa quae, debitis dolore sint voluptatibus voluptatum, laboriosam nisi, dolorem officiis cum!";
 
   return (
     <Wrapper style="py-16">
-      <div className="w-full h-full flex items-center justify-center flex-col">
-        <div className="w-full h-full  flex items-start justify-center">
-          <div className="w-full h-full grid grid-cols-1 lg:grid-cols-2 gap-4">
-            {/* Coloumn 1 => Product Image gallery */}
-            <div className="w-full h-[500px] flex flex-col items-start justify-start relative">
+      <div className="w-full h-full flex items-center justify-center flex-col gap-12">
+        <div className="w-full flex items-start justify-center">
+          <div className="w-full h-full grid grid-cols-1 lg:grid-cols-2 gap-16">
+            {/* Coloumn 1 => Product Image gallery for Bigger Screens */}
+            <div className="w-full h-[300px] sm:h-full hidden md:flex flex-col items-start justify-start relative">
               <ImageGallery
-                items={images}
+                items={Data.ImageGalleryData}
                 showNav={false}
                 thumbnailPosition={"left"}
                 showFullscreenButton={false}
                 showPlayButton={false}
               />
               {/* Label => Off on the product  */}
-              <div className="w-[60px] sm:w-[85px] h-[60px] sm:h-[85px] bg-lightningYellow flex items-center justify-center rounded-full text-black text-base sm:text-xl font-medium absolute top-[3%] left-[2%]">
-                -10%
-              </div>
+              {dummyTags.sale && (
+                <p className="h-[24px] w-[56px] flex items-center absolute left-[120px] top-[10px] text-white-main text-[12px] font-inter font-[500] bg-main-secondary px-1">
+                  20% Off
+                </p>
+              )}
+              {dummyTags.soldOut && (
+                <p className="h-[24px] w-[60px] flex items-center absolute left-[120px] top-[40px] text-white-main text-[12px] font-inter font-[500] bg-[#E12727] px-1">
+                  Sold Out
+                </p>
+              )}
+
+              {dummyTags.newArrival && (
+                <p className="h-[24px] w-[56px] flex items-center absolute left-[120px] top-[40px] text-white-main text-[12px] font-inter font-[500] bg-[#FFAA65] px-1">
+                  New
+                </p>
+              )}
+            </div>
+
+            {/* Galler For Mobile View */}
+            <div className="w-full h-full md:hidden flex flex-col items-start justify-start relative">
+              <ImageGallery
+                items={Data.ImageGalleryData}
+                showNav={false}
+                thumbnailPosition={"bottom"}
+                showFullscreenButton={false}
+                showPlayButton={false}
+              />
+              {/* Label => Off on the product  */}
+              {dummyTags.sale && (
+                <p className="h-[24px] w-[56px] flex items-center absolute left-0 top-[10px] text-white-main text-[12px] font-inter font-[500] bg-main-secondary px-1">
+                  20% Off
+                </p>
+              )}
+              {dummyTags.soldOut && (
+                <p className="h-[24px] w-[60px] flex items-center absolute left-0 top-[40px] text-white-main text-[12px] font-inter font-[500] bg-[#E12727] px-1">
+                  Sold Out
+                </p>
+              )}
+
+              {dummyTags.newArrival && (
+                <p className="h-[24px] w-[56px] flex items-center absolute left-0 top-[40px] text-white-main text-[12px] font-inter font-[500] bg-[#FFAA65] px-1">
+                  New
+                </p>
+              )}
             </div>
             {/* Coloumn 2 => Product Details  */}
             <div className="w-full flex flex-col items-start justify-start gap-6">
@@ -67,7 +97,10 @@ const ProductDetail = () => {
                 <p className="font-inter font-[400] text-black-main sm:text-[26px] text-[20px]">
                   BASIC MAROON SWEATSHIRT
                 </p>
-
+                <p className="font-inter font-medium text-black-main text-[15px]">
+                  Our exclusive printed short sleeves T-shirt designed for
+                  premium softness.
+                </p>
                 {/* Price  */}
                 <h3 className="w-full text-left text-2xl leading-[30px] text-lavaRed font-semibold font-inter">
                   $33.00
@@ -128,7 +161,7 @@ const ProductDetail = () => {
                 <p className="text-left text-black-main text-[14px] font-medium font-inter">
                   Category :{" "}
                   <span className="text-black-off text-[14px] font-normal font-inter">
-                   Men Wears
+                    Men Wears
                   </span>
                 </p>
                 <p className="text-left text-black-main text-[14px] font-medium font-inter">
@@ -140,7 +173,9 @@ const ProductDetail = () => {
               </div>
               {/* Social Links  */}
               <div className="w-full flex items-center justify-start">
-                <button className={`h-[30px] w-[130px] flex items-center justify-center gap-4 font-inter font-[400] text-gray-500 text-[14px] hover:text-black-main duration-300`}>
+                <button
+                  className={`h-[30px] w-[130px] flex items-center justify-center gap-4 font-inter font-[400] text-gray-500 text-[14px] hover:text-black-main duration-300`}
+                >
                   <AiFillFacebook className="text-[24px]" />
                   Facebook
                 </button>
@@ -148,6 +183,48 @@ const ProductDetail = () => {
             </div>
           </div>
         </div>
+        <div className="w-full flex flex-col gap-8 items-start justify-center border-t border-b py-9">
+          <p className="font-inter font-semibold text-black-main text-[26px]">
+            Return/Exchange Policy
+          </p>
+          <div className="w-full px-6">
+            <ul className="flex flex-col gap-3">
+              <li className="font-inter text-black-main font-[400] text-[15px] leading-[24px]">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.{" "}
+                <span className="font-bold font-inter">
+                  Qui ducimus ratione suscipit enim saepe aliquam voluptatum
+                  itaque,
+                </span>
+                asperiores eaque, repudiandae inventore deleniti! Consequatur at
+                repellat voluptas a harum id aliquid.
+              </li>
+              <li className="font-inter text-black-main font-[400] text-[15px] leading-[24px]">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. A
+                assumenda consequuntur cupiditate ab placeat, exercitationem
+                deleniti.
+              </li>
+              <li className="font-inter text-black-main font-[400] text-[15px] leading-[24px]">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel,
+                temporibus!{" "}
+                <span className="font-bold font-inter">
+                  Ut obcaecati incidunt, cupiditate illo,
+                </span>{" "}
+                consectetur architecto blanditiis odio
+              </li>
+              <li className="font-inter text-black-main font-[400] text-[15px] leading-[24px]">
+                <span className="font-bold font-inter">Rs.400/-</span> will be
+                charged for Hassle-free exchange at your doorstep. (Only in
+                major cities)
+              </li>
+              <li className="font-inter text-black-main font-[400] text-[15px] leading-[24px]">
+                Returning items will be returned at{" "}
+                <span className="font-bold font-inter">customer’s cost</span> if
+                product sent was as per order.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <ProductSlider title="Related Products" data={Data.RelatedProducts} />
       </div>
     </Wrapper>
   );

@@ -292,4 +292,81 @@ export const Data = {
       picture: "/Assets/home/Shirt.jpg",
     },
   ],
+  RelatedProducts:[
+    {
+      title: "SLIM FIT PEPPERMINT COTTON TEE",
+      price: 33.0,
+      new: true,
+      soldOut: false,
+      picture: "/Assets/home/shirt3.webp",
+    },
+    {
+      title: "SLIM FIT Black COTTON TEE",
+      price: 28.0,
+      new: false,
+      sale: "20% Off",
+      picture: "/Assets/home/shirt4.jpg",
+      soldOut: false,
+    },
+    {
+      title: "Fancy Cotton Tee",
+      price: 450.0,
+      new: false,
+      sale: "10% Off",
+      soldOut: false,
+      picture: "/Assets/home/shirt5.jpg",
+    },
+    {
+      title: "Nike Addidas Shoes",
+      price: 230.0,
+      new: false,
+      soldOut: false,
+      picture: "/Assets/home/shirt6.jpg",
+    },
+    {
+      title: "SLIM FIT PEPPERMINT COTTON TEE",
+      price: 33.0,
+      new: true,
+      soldOut: false,
+      picture: "/Assets/home/Shirt.jpg",
+    },
+    {
+      title: "SLIM FIT Black COTTON TEE",
+      price: 28.0,
+      new: false,
+      sale: "20% Off",
+      picture: "/Assets/home/shirt2.jpg",
+      soldOut: false,
+    },
+    {
+      title: "Fancy Cotton Tee",
+      price: 450.0,
+      new: false,
+      sale: "10% Off",
+      soldOut: false,
+      picture: "/Assets/home/shirt5.jpg",
+    },
+    {
+      title: "SLIM FIT PEPPERMINT COTTON TEE",
+      price: 33.0,
+      new: true,
+      soldOut: false,
+      picture: "/Assets/home/Shirt.jpg",
+    },
+  ],
+  ImageGalleryData: [
+    {
+      original: "/Assets/home/shirt2.jpg",
+      thumbnail: "/Assets/home/shirt2.jpg",
+    },
+    {
+      original: "/Assets/home/shirt3.webp",
+      thumbnail: "/Assets/home/shirt3.webp",
+    },
+    {
+      original: "/Assets/home/shirt4.jpg",
+      thumbnail: "/Assets/home/shirt4.jpg",
+    },
+  ],
+
 };
