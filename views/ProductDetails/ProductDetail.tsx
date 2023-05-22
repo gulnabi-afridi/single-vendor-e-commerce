@@ -45,22 +45,24 @@ const ProductDetail = () => {
                 showPlayButton={false}
               />
               {/* Label => Off on the product  */}
+              <div className="w-full flex flex-col gap-[10px] items-start justify-start absolute left-[120px] top-[10px]">
               {dummyTags.sale && (
-                <p className="h-[24px] w-[56px] flex items-center absolute left-[120px] top-[10px] text-white-main text-[12px] font-inter font-[500] bg-main-secondary px-1">
+                <p className="h-[24px] w-[56px] flex items-center text-white-main text-[12px] font-inter font-[500] bg-main-secondary px-1">
                   20% Off
                 </p>
               )}
               {dummyTags.soldOut && (
-                <p className="h-[24px] w-[60px] flex items-center absolute left-[120px] top-[40px] text-white-main text-[12px] font-inter font-[500] bg-[#E12727] px-1">
+                <p className="h-[24px] w-[60px] flex items-center text-white-main text-[12px] font-inter font-[500] bg-[#E12727] px-1">
                   Sold Out
                 </p>
               )}
 
               {dummyTags.newArrival && (
-                <p className="h-[24px] w-[56px] flex items-center absolute left-[120px] top-[40px] text-white-main text-[12px] font-inter font-[500] bg-[#FFAA65] px-1">
+                <p className="h-[24px] w-[56px] flex items-center text-white-main text-[12px] font-inter font-[500] bg-[#FFAA65] px-1">
                   New
                 </p>
               )}
+              </div>
             </div>
 
             {/* Galler For Mobile View */}
@@ -72,23 +74,26 @@ const ProductDetail = () => {
                 showFullscreenButton={false}
                 showPlayButton={false}
               />
-              {/* Label => Off on the product  */}
+              <div className="w-full flex flex-col gap-[10px] items-start justify-start absolute left-0 top-[10px]">
               {dummyTags.sale && (
-                <p className="h-[24px] w-[56px] flex items-center absolute left-0 top-[10px] text-white-main text-[12px] font-inter font-[500] bg-main-secondary px-1">
+                <p className="h-[24px] w-[56px] flex items-center text-white-main text-[12px] font-inter font-[500] bg-main-secondary px-1">
                   20% Off
                 </p>
               )}
               {dummyTags.soldOut && (
-                <p className="h-[24px] w-[60px] flex items-center absolute left-0 top-[40px] text-white-main text-[12px] font-inter font-[500] bg-[#E12727] px-1">
+                <p className="h-[24px] w-[60px] flex items-center text-white-main text-[12px] font-inter font-[500] bg-[#E12727] px-1">
                   Sold Out
                 </p>
               )}
 
               {dummyTags.newArrival && (
-                <p className="h-[24px] w-[56px] flex items-center absolute left-0 top-[40px] text-white-main text-[12px] font-inter font-[500] bg-[#FFAA65] px-1">
+                <p className="h-[24px] w-[56px] flex items-center text-white-main text-[12px] font-inter font-[500] bg-[#FFAA65] px-1">
                   New
                 </p>
               )}
+              </div>
+              {/* Label => Off on the product  */}
+             
             </div>
             {/* Coloumn 2 => Product Details  */}
             <div className="w-full flex flex-col items-start justify-start gap-6">

@@ -29,22 +29,25 @@ const ProductCard: React.FC<Props> = ({
         <div className="w-full h-[350px] overflow-hidden relative">
           <Image className="" src={picture} alt="" fill />
           {/* tags */}
-          {sale && (
-            <p className="h-[24px] w-[56px] flex items-center absolute left-0 top-[10px] text-white-main text-[12px] font-inter font-[500] bg-main-secondary px-1">
-              {sale}
-            </p>
-          )}
-          {soldout && (
-            <p className="h-[24px] w-[60px] flex items-center absolute left-0 top-[40px] text-white-main text-[12px] font-inter font-[500] bg-[#E12727] px-1">
-              Sold Out
-            </p>
-          )}
+          <div className="w-full flex flex-col items-start justify-start gap-[10px] absolute left-0 top-[10px]">
+            {sale && (
+              <p className="h-[24px] w-[56px] flex items-center text-white-main text-[12px] font-inter font-[500] bg-main-secondary px-1">
+                {sale}
+              </p>
+            )}
+            {soldout && (
+              <p className="h-[24px] w-[60px] flex items-center text-white-main text-[12px] font-inter font-[500] bg-[#E12727] px-1">
+                Sold Out
+              </p>
+            )}
 
-          {newArrival && (
-            <p className="h-[24px] w-[56px] flex items-center absolute left-0 top-[10px] text-white-main text-[12px] font-inter font-[500] bg-[#FFAA65] px-1">
-              New
-            </p>
-          )}
+            {newArrival && (
+              <p className="h-[24px] w-[56px] flex items-center text-white-main text-[12px] font-inter font-[500] bg-[#FFAA65] px-1">
+                New
+              </p>
+            )}
+          </div>
+
           <button
             onClick={() => setFavourite((prevvalue) => !prevvalue)}
             className="absolute top-[15px] right-[15px] opacity-0 group-hover:opacity-100 group-hover:duration-500 group-hover:transition-all"
@@ -55,7 +58,10 @@ const ProductCard: React.FC<Props> = ({
               <AiOutlineHeart size={25} />
             )}
           </button>
-          <Link href={'/productdetails'} className="w-full h-[46px] flex items-center justify-center font-inter font-semibold z-10 text-[14px] absolute -bottom-[70px] group-hover:bottom-0 group-hover:transition-all group-hover:duration-700 bg-main-secondary before:absolute before:bg-black-main before:top-0 before:left-0 before:h-full before:-z-10 before:w-0 hover:before:w-full before:transition-all before:duration-500 ease-in-out text-white-main">
+          <Link
+            href={"/productdetails"}
+            className="w-full h-[46px] flex items-center justify-center font-inter font-semibold z-10 text-[14px] absolute -bottom-[70px] group-hover:bottom-0 group-hover:transition-all group-hover:duration-700 bg-main-secondary before:absolute before:bg-black-main before:top-0 before:left-0 before:h-full before:-z-10 before:w-0 hover:before:w-full before:transition-all before:duration-500 ease-in-out text-white-main"
+          >
             See Details
           </Link>
         </div>
