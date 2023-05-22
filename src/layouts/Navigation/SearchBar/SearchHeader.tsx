@@ -16,6 +16,9 @@ import Drawer from "react-modern-drawer";
 
 //import styles 👇
 import "react-modern-drawer/dist/index.css";
+import DialougeWrapper from "@/components/shared/DialogueWrapper/DialougeWrapper";
+
+
 
 function SearchHeader() {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -24,7 +27,10 @@ function SearchHeader() {
   const toggleDrawer = () => {
     setIsOpen((prevState) => !prevState);
   };
-
+  const [open, setOpen] = React.useState(false);
+  const handleClose = () => {
+    setOpen(false);
+  };
   return (
     <Wrapper style="">
       <div className="w-full h-[100px] flex justify-between items-center">
@@ -56,7 +62,7 @@ function SearchHeader() {
             <Cart />
           </div>
           {/* ======> add account button */}
-          <MdOutlinePersonAddAlt className="text-[28px] sm:text-[30px] cursor-pointer" />
+          <MdOutlinePersonAddAlt onClick={()=> setOpen(true)} className="text-[28px] sm:text-[30px] cursor-pointer" />
         </div>
       </div>
       {/* ===> search bar for small screen */}
@@ -131,6 +137,16 @@ function SearchHeader() {
           )}
         </div>
       </Drawer>
+      <div>
+  
+      <DialougeWrapper open={open} setState={()=> setOpen(false)} title="My Account">
+<div className="w-full md:w-[60%] flex flex-col items-center justify-center gap-4 mx-auto">
+<div className="w-full flex items-center justify-center gap-4">
+<button className="font-inter font-medium text-black-main text-[20px]">Login</button>
+</div>
+</div>
+      </DialougeWrapper>
+    </div>
     </Wrapper>
   );
 }
