@@ -12,13 +12,20 @@
     border-style: solid !important;
     --tw-border-opacity: 1;
     border-color: rgb(239 239 239/var(--tw-border-opacity)) !important;
-
-    width: 110px !important;
-    height: 130px !important;
+    width: 80px !important;
+    height: 100px !important;
     z-index: 1 !important;
     margin-bottom: 12px;
 
 }
+
+.image-gallery-thumbnail .image-gallery-thumbnail-inner{
+    height: 100% !important;
+}
+.image-gallery-thumbnail .image-gallery-thumbnail-inner img{
+    height: 100% !important;
+}
+
 
 .image-gallery-thumbnail:not(.active) {
     position: relative;
@@ -37,23 +44,18 @@
 }
 
 .image-gallery-thumbnail:hover {
-    border-width: 1px !important;
-    border-style: solid !important;
-    border-color: black !important;
-    width: 110px !important;
-    height: 130px !important;
-    margin-right: 4px;
+    border: 1px solid black !important;
+    width: 80px !important;
+    height: 100px !important;
+
 }
 
 .image-gallery-thumbnail.active {
-    border-width: 1px !important;
-    border-style: solid !important;
-    border-color: black !important;
-
-    width: 110px !important;
-    height: 130px !important;
+    border: 1px solid black !important;
+    width: 80px !important;
+    height: 100px !important;
     z-index: 1 !important;
-    margin-right: 4px;
+
 }
 
 
@@ -64,9 +66,6 @@
     --tw-border-opacity: 1;
     border-color: rgb(239 239 239/var(--tw-border-opacity));
 
-    width: 110px !important;
-    height: 130px !important;
-    margin-right: 4px;
 }
 
 /* Stylign thumbnails wrapper  */
@@ -80,9 +79,9 @@
 
 /* Styling image gallery main slide  */
 .image-gallery-slides {
-    padding-left: 150px;
+    margin-left: 120px;
     height: 100% !important;
-    width: 100%!important;
+    width: 100% !important;
 }
 
 .image-gallery-slide img {
@@ -102,4 +101,33 @@
         width: 80px !important;
         height: 80px !important;
     }
+}
+
+@media (max-width:768px) {
+    .image-gallery-slides {
+        margin-bottom: 20px;
+        margin-left: 0;
+        height: 100% !important;
+        width: 100% !important;
+    }
+    .image-gallery-thumbnail {
+        border-width: 1px !important;
+        border-style: solid !important;
+        --tw-border-opacity: 1;
+        border-color: rgb(239 239 239/var(--tw-border-opacity)) !important;
+        width: 80px !important;
+        height: 100px !important;
+        z-index: 1 !important;
+        margin-bottom: 12px;
+        margin-right: 30px;
+    
+    }
+    .image-gallery-thumbnail.active {
+        border: 1px solid black !important;
+        width: 80px !important;
+        height: 100px !important;
+        z-index: 1 !important;
+    
+    }
+
 }

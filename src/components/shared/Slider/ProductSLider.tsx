@@ -4,17 +4,29 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination, Mousewheel, Autoplay } from "swiper";
 import ProductCard from "@/components/shared/ProductCards/ProductCard";
-import { Data } from "../../constants/Data/JSON";
+
 import H1Heading from "@/components/shared/CustomTypography/H1Heading";
 
-const OurBestSellingProducts = () => {
+interface Props {
+  data: any;
+  title: string;
+  slidesToShow?: number;
+  moveLeft?: boolean;
+}
+
+const ProductSlider: React.FC<Props> = ({
+  data,
+  title,
+  slidesToShow = 4,
+  moveLeft = false,
+}) => {
   return (
     <div className="w-full flex flex-col gap-4 items-center justify-center">
-      <H1Heading>Our Best Selling Products</H1Heading>
+      <H1Heading>{title}</H1Heading>
       <div className="h-[450px] max-w-full">
         <Swiper
-          slidesPerView={4}
-          spaceBetween={20}
+          slidesPerView={slidesToShow}
+          spaceBetween={15}
           pagination={{
             clickable: true,
           }}
@@ -25,21 +37,22 @@ const OurBestSellingProducts = () => {
             },
             768: {
               slidesPerView: 2,
-              spaceBetween: 40,
+              spaceBetween: 20,
             },
             1024: {
-              slidesPerView: 4,
-              spaceBetween: 50,
+              slidesPerView: slidesToShow,
+              spaceBetween: 20,
             },
           }}
           autoplay={{
             delay: 3000,
             disableOnInteraction: false,
+            reverseDirection:moveLeft
           }}
           modules={[Pagination, Mousewheel, Autoplay]}
           className="mySwiper"
         >
-          {Data.ProductsSliderData.map((item: any, index: number) => (
+          {data.map((item: any, index: number) => (
             <SwiperSlide key={index}>
               <ProductCard
                 title={item.title}
@@ -57,4 +70,4 @@ const OurBestSellingProducts = () => {
   );
 };
 
-export default OurBestSellingProducts;
+export default ProductSlider;
