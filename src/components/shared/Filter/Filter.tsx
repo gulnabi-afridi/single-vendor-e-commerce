@@ -124,6 +124,7 @@ function Filter() {
                   {sortingType.map((item, index) => {
                     return (
                       <button
+                        key={index}
                         onClick={() => {
                           setSorting(item.name);
                           setBooleanState({
