@@ -16,3 +16,18 @@
   background-color: #23232c !important;
   color: white !important;
 }
+
+/* ===> animated bottom line on hover */
+.bottomLine::after {
+  content: "";
+  position: absolute;
+  width: 0px;
+  height: 2px;
+  left: 0;
+  bottom: 0;
+}
+.bottomLine:hover::after{
+  width: 100%;
+  background-color: black;
+
+}
