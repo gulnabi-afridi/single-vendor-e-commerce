@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import Divider from "../../components/shared/Divider/Divider";
 import Dropdown from "../../components/shared/DropDown/DropDown";
 import { Data } from "../../../constants/Data/JSON";
-import Text from "../../components/shared/CustomTypography/Text";
-
+import Text from "../../components/shared/CustomTypography/Text"
 
 function Search() {
   const [SearchedCategory, setSearchCategory] = useState<string | null>(
@@ -13,7 +12,7 @@ function Search() {
     "all categories"
   );
   return (
-    <div className="w-full md:w-[700px] lg:w-[560px] h-[40px] sm:h-[44px] border-[1px] border-main-brand bg-gray-lightGray grid grid-cols-[38%_1px_calc(100%-38%-95px)_94px]">
+    <div className="w-full md:w-[700px] lg:w-[560px] h-[40px] sm:h-[44px] border-[1px] border-main-brand bg-gray-lightGray grid grid-cols-[38%_1px_calc(100%-38%-94px)_94px]">
       <div className="w-full h-full">
         <input
           onChange={(e) => setSearchInput(e.target.value)}

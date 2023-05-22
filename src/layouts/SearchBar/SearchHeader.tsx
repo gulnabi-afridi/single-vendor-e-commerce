@@ -1,15 +1,15 @@
 import React from "react";
-import Wrapper from "../../../components/shared/ComponentWrapper/Wrapper"
+import Wrapper from "../../components/shared/ComponentWrapper/Wrapper"
 import Image from "next/image";
 import Search from "./Search";
 import Favorite from "./Favorite";
 import Cart from "./Cart";
 import { MdOutlinePersonAddAlt } from "react-icons/md";
 import { BiMenuAltLeft } from "react-icons/bi";
-import { Data } from "../../../../constants/Data/JSON";
+import { Data } from "../../../constants/Data/JSON";
 import Link from "next/link";
 import { RxCross2 } from "react-icons/rx";
-import Divider from '../../../components/shared/Divider/Divider'
+import Divider from '../../components/shared/Divider/Divider'
 
 // import component 👇
 import Drawer from "react-modern-drawer";
