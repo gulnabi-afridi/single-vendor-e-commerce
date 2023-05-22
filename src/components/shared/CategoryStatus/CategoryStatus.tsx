@@ -6,7 +6,7 @@ function CategoryStatus() {
   return (
     <div className="w-full h-[90px] bg-white-off">
       <Wrapper style="h-full">
-        <div className="w-full h-full flex justify-between items-center">
+        <div className="w-full h-full flex sm:flex-row flex-col justify-center gap-2 sm:gap-0 sm:justify-between items-center">
           {/* ==> current category  */}
           <p className="text-[20px] text-black-main font-normal">Anime</p>
           {/* ===>  */}
