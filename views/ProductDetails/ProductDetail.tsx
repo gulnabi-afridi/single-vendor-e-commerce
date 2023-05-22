@@ -33,7 +33,7 @@ const ProductDetail = () => {
         <div className="w-full flex items-start justify-center">
           <div className="w-full h-full grid grid-cols-1 lg:grid-cols-2 gap-16">
             {/* Coloumn 1 => Product Image gallery */}
-            <div className="w-full h-[300px] sm:h-full flex flex-col items-start justify-start relative">
+            <div className="w-full h-[300px] sm:h-full hidden md:flex flex-col items-start justify-start relative">
               <ImageGallery
                 items={Data.ImageGalleryData}
                 showNav={false}
@@ -41,10 +41,19 @@ const ProductDetail = () => {
                 showFullscreenButton={false}
                 showPlayButton={false}
               />
+              
+            </div>
+            <div className="w-full h-full md:hidden flex flex-col items-start justify-start relative">
+              <ImageGallery
+                items={Data.ImageGalleryData}
+                showNav={false}
+                thumbnailPosition={"bottom"}
+                showFullscreenButton={false}
+                showPlayButton={false}
+              />
               {/* Label => Off on the product  */}
-              <div className="w-[60px] sm:w-[85px] h-[60px] sm:h-[85px] bg-lightningYellow flex items-center justify-center rounded-full text-black text-base sm:text-xl font-medium absolute top-[3%] left-[2%]">
-                -10%
-              </div>
+              
+              
             </div>
             {/* Coloumn 2 => Product Details  */}
             <div className="w-full flex flex-col items-start justify-start gap-6">
@@ -180,7 +189,7 @@ const ProductDetail = () => {
             </ul>
           </div>
         </div>
-        <ProductSlider title="Related Products" data={Data.RelatedProducts} slidesToShow={5} />
+        <ProductSlider title="Related Products" data={Data.RelatedProducts}/>
       </div>
     </Wrapper>
   );
