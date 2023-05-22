@@ -7,7 +7,18 @@ import { BiGridSmall } from "react-icons/bi";
 import { GoPrimitiveDot } from "react-icons/go";
 import { BiFilterAlt } from "react-icons/bi";
 
+// import component 👇
+import Drawer from "react-modern-drawer";
+
+//import styles 👇
+import "react-modern-drawer/dist/index.css";
+
 function Filter() {
+  const [isOpen, setIsOpen] = React.useState(false);
+  const toggleDrawer = () => {
+    setIsOpen((prevState) => !prevState);
+  };
+
   // ====> states
   const [booleanState, setBooleanState] = useState({
     allProducts: true,
@@ -22,8 +33,8 @@ function Filter() {
   const [sorting, setSorting] = useState("default sorting");
 
   return (
-    <Wrapper style="h-[100px]">
-      <div className="w-full h-full flex justify-between items-center">
+    <Wrapper style="h-[80px] sm:h-[100px]">
+      <div className="w-full h-full flex justify-between items-center border-b-[2px] border-white-off">
         {/* ===> left portion */}
         <div className="hidden sm:flex justify-center items-center gap-6 md:gap-14">
           <button
@@ -102,7 +113,7 @@ function Filter() {
               {/* ===  */}
               {booleanState.dropDown && (
                 <OutSideClick
-                  style="w-[240px] shadow-2xl flex flex-col absolute top-10 z-10 bg-white-main"
+                  style="w-[240px] shadow-2xl flex flex-col absolute top-10 sm:left-0 left-1 z-10 bg-white-main"
                   Event={() =>
                     setBooleanState({
                       ...booleanState,
@@ -195,14 +206,24 @@ function Filter() {
           {/* ===> divider */}
           <div className="lg:flex hidden w-[2px] h-[22px] border-[1px] bg-white-cool"></div>
           {/* ====> filter */}
-          <button className="lg:flex hidden justify-center items-center gap-2">
-            <BiFilterAlt className="text-white-cool cursor-pointer text-[28px]" />
-            <p className="text-[16px] text-white-cool font-inter font-medium capitalize">
+          <button
+            onClick={toggleDrawer}
+            className="lg:flex hidden text-white-cool hover:text-black-main justify-center items-center gap-2"
+          >
+            <BiFilterAlt className="cursor-pointer text-[28px]" />
+            <p className="text-[16px] font-inter font-medium capitalize">
               filter
             </p>
           </button>
         </div>
       </div>
+      {/* ====> filter drawer */}
+      {/* <Drawer
+        open={isOpen}
+        onClose={toggleDrawer}
+        direction="right"
+        className="filterDrawer"
+      ></Drawer> */}
     </Wrapper>
   );
 }

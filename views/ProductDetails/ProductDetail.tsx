@@ -31,7 +31,7 @@ const ProductDetail = () => {
     "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam rem impedit sit eaque alias error commodi odio at dolore eius? Unde, est. Ipsum iste adipisci ut aliquid. Pariatur, odio est! Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab quo nostrum voluptatem illum eaque! Quisquam autem eum adipisci culpa quae, debitis dolore sint voluptatibus voluptatum, laboriosam nisi, dolorem officiis cum!";
 
   return (
-    <Wrapper style="py-16">
+    <Wrapper style="py-2 sm:py-16">
       <div className="w-full h-full flex items-center justify-center flex-col gap-12">
         <div className="w-full flex items-start justify-center">
           <div className="w-full h-full grid grid-cols-1 lg:grid-cols-2 gap-16">
