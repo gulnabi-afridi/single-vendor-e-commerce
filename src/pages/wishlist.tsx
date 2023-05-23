@@ -1,7 +1,12 @@
 import React from "react";
+import WishList from "../../views/WishList/WishList";
 
 const wishlist = () => {
-  return <div>wishlist</div>;
+  return (
+    <div className="w-full">
+      <WishList />
+    </div>
+  );
 };
 
 export default wishlist;

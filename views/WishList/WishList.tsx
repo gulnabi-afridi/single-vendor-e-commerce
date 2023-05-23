@@ -1,14 +1,14 @@
-import React, { useState } from "react";
 import Wrapper from "@/components/shared/ComponentWrapper/Wrapper";
+import React from "react";
 import { Data } from "../../constants/Data/JSON";
-import AddToCart from "@/components/shared/ProductCards/AddToCart";
+import WishListCard from "@/components/shared/ProductCards/WishListCard";
 
-const Cart = () => {
+const WishList = () => {
   return (
     <Wrapper style="md:py-12 py-8">
       <div className="w-full overflow-auto">
         {/* headers */}
-        <div className="w-full h-[46px] grid grid-cols-[2.5fr,1fr,1.5fr,1fr] min-w-[840px]">
+        <div className="w-full h-[46px] grid grid-cols-[2.5fr,1fr,2fr] min-w-[840px]">
           <p className="font-inter font-medium text-black-main text-[16px]">
             Product
           </p>
@@ -16,20 +16,18 @@ const Cart = () => {
             Price
           </p>
           <p className="font-inter font-medium text-black-main text-[16px]">
-            Quantity
-          </p>
-          <p className="font-inter font-medium text-black-main text-[16px]">
-            Subtotal
+            Stock Status
           </p>
         </div>
         {/* childrens */}
         <div className="w-full">
-          {Data.CartItems.map((item: any, index: number) => (
-            <AddToCart
+          {Data.WishListItems.map((item: any, index: number) => (
+            <WishListCard
               key={index}
-              name={item.name}
               price={item.price}
               picture={item.picture}
+              status={item.status}
+              name={item.name}
             />
           ))}
         </div>
@@ -38,4 +36,4 @@ const Cart = () => {
   );
 };
 
-export default Cart;
+export default WishList;

@@ -396,4 +396,24 @@ export const Data = {
       price: 34,
     },
   ],
+  WishListItems: [
+    {
+      name: "Anime Cotton TEE",
+      picture: "/Assets/home/shirt3.webp",
+      price: 23,
+      status: "In Stock",
+    },
+    {
+      name: "Beautiful Black Cotton TEE",
+      picture: "/Assets/home/shirt2.jpg",
+      price: 34,
+      status: "In Stock",
+    },
+    {
+      name: "Beautiful Mens Cotton TEE",
+      picture: "/Assets/home/shirt4.jpg",
+      price: 24,
+      status: "In Stock",
+    },
+  ],
 };
