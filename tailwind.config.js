@@ -30,6 +30,8 @@ module.exports = {
         },
         white: {
           main: "#FFFFFF",
+          off:"#f1f2f4",
+          cool:"#929299",
         },
         black: {
           main: "#000000",

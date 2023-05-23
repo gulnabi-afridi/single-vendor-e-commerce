@@ -1,15 +1,15 @@
 import React, { useState } from "react";
-import Wrapper from "../../../components/shared/ComponentWrapper/Wrapper";
+import Wrapper from "@/components/shared/ComponentWrapper/Wrapper";
 import Image from "next/image";
 import Search from "./Search";
 import Favorite from "./Favorite";
 import Cart from "./Cart";
 import {BsPerson} from "react-icons/bs"
 import { BiMenuAltLeft } from "react-icons/bi";
-import { Data } from "../../../../constants/Data/JSON";
+import { Data } from "../../../constants/Data/JSON";
 import Link from "next/link";
 import { RxCross2 } from "react-icons/rx";
-import Divider from "../../../components/shared/Divider/Divider";
+import Divider from "@/components/shared/Divider/Divider";
 
 // import component 👇
 import Drawer from "react-modern-drawer";
@@ -104,11 +104,11 @@ function SearchHeader() {
               <RxCross2 className="text-[34px] cursor-pointer text-main-brand" />
             </button>
           </div>
-          <div className={`w-full flex justify-center items-center my-3`}>
+          <div className={`w-full flex justify-center items-center my-6`}>
             <button
               onClick={() => setMainMenu(true)}
               className={`font-inter text-[1rem] leading-[1.5rem] ${
-                IsMainMenu ? "text-black-off" : "text-black-cool"
+                IsMainMenu ? "text-main-brand" : "text-main-brand/40"
               } capitalize font-semibold`}
             >
               Menu
@@ -145,6 +145,7 @@ function SearchHeader() {
               {Data.topSection.Menu.map((item: any, index: number) => {
                 return (
                   <Link
+                    onClick={toggleDrawer}
                     key={index}
                     href="#"
                     className="w-full h-[44px] px-4 capitalize flex justify-start items-center text-[.9rem] leading-[1rem] font-inter font-normal text-black-soft gap-3 border-b-[1px] border-gray"

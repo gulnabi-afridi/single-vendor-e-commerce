@@ -1,8 +1,6 @@
-
 import { AiFillInstagram } from "react-icons/ai";
 import { BsFacebook } from "react-icons/bs";
 import { FaTwitter } from "react-icons/fa";
-
 
 export const Data = {
   topSection: {
@@ -40,52 +38,52 @@ export const Data = {
     AllCategories: [
       {
         name: "t-thirts",
-        path: "",
+        path: "/product-category/t-thirts",
         // Icon: <MdElectricalServices size={16} color="#1D1D1D" />,
       },
       {
-        name: "button-down shirts",
-        path: "",
+        name: "button-down-shirts",
+        path: "/product-category/button-down shirts",
       },
       {
         name: "Polo Shirts",
-        path: "",
+        path: "/product-category/Polo-Shirts",
       },
       {
         name: "Button-Down Shirts",
-        path: "",
+        path: "/product-category/Button-Down-Shirts",
       },
       {
         name: "Long-Sleeve Shirts",
-        path: "",
+        path: "/product-category/Long-Sleeve Shirts",
       },
       {
         name: "Short-Sleeve Shirts",
-        path: "",
+        path: "/product-category/Short-Sleeve Shirts",
       },
       {
         name: "Henley Shirts",
-        path: "",
+        path: "/product-category/Henley Shirts",
       },
       {
         name: "Graphic Shirts",
-        path: "",
+        path: "/product-category/Graphic Shirts",
       },
       {
         name: "Oxford Shirts",
-        path: "",
+        path: "/product-category/Oxford Shirts",
       },
       {
         name: "Flannel Shirts",
-        path: "",
+        path: "/product-category/Flannel Shirts",
       },
       {
         name: "Sports Shirts",
-        path: "",
+        path: "/product-category/Sports Shirts",
       },
       {
         name: "Work Shirts",
-        path: "",
+        path: "/product-category/Work Shirts",
       },
     ],
     Menu: [
@@ -104,7 +102,7 @@ export const Data = {
     ],
   },
 
-  footer : [
+  footer: [
     {
       title: "about us",
       links: [

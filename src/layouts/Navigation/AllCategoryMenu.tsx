@@ -7,6 +7,7 @@ import SmallText from "../../components/shared/CustomTypography/SmallText";
 
 const AllCategoriesMenu: React.FC = () => {
   const [ShowDropdownItem, Set_DropdownItem] = useState<boolean>(false);
+  const [categorySelected, setCategorySelected] = useState("All Categories");
 
   // =========> check when user click out side of menu close the menu
   let useClickOutside = (handler: any) => {
@@ -39,7 +40,7 @@ const AllCategoriesMenu: React.FC = () => {
       >
         <span className="flex justify-center items-center gap-2 capitalize">
           <BiMenuAltLeft className="text-[20px] cursor-pointer fill-main-brand" />
-          All Categories
+          {categorySelected}
         </span>
         <RiArrowDownSLine color="#1D1D1D" />
       </button>
@@ -51,9 +52,12 @@ const AllCategoriesMenu: React.FC = () => {
           {Data.topSection.AllCategories?.map((item: any, index: number) => {
             return (
               <Link
-                onClick={() => Set_DropdownItem(!ShowDropdownItem)}
+                onClick={() => {
+                  Set_DropdownItem(!ShowDropdownItem);
+                  setCategorySelected(item.name);
+                }}
                 key={index}
-                href={item.path}
+                href={item.path.toLowerCase().split(" ").join("-")}
                 className="w-full h-[40px] px-4 flex justify-start items-center gap-3 border-b-[1px] border-gray"
               >
                 <SmallText styles="capitalize">{item.name}</SmallText>
