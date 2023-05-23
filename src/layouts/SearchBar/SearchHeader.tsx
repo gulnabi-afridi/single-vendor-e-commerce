@@ -1,22 +1,23 @@
-import React from "react";
-import Wrapper from "../../components/shared/ComponentWrapper/Wrapper"
+import React, { useState } from "react";
+import Wrapper from "@/components/shared/ComponentWrapper/Wrapper";
 import Image from "next/image";
 import Search from "./Search";
 import Favorite from "./Favorite";
 import Cart from "./Cart";
-import { MdOutlinePersonAddAlt } from "react-icons/md";
+import {BsPerson} from "react-icons/bs"
 import { BiMenuAltLeft } from "react-icons/bi";
 import { Data } from "../../../constants/Data/JSON";
 import Link from "next/link";
 import { RxCross2 } from "react-icons/rx";
-import Divider from '../../components/shared/Divider/Divider'
-
+import Divider from "@/components/shared/Divider/Divider";
 
 // import component 👇
 import Drawer from "react-modern-drawer";
 
 //import styles 👇
 import "react-modern-drawer/dist/index.css";
+import DialougeWrapper from "@/components/shared/DialogueWrapper/DialougeWrapper";
+import TextInput from "@/components/shared/Inputs/TextInput";
 
 function SearchHeader() {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -25,7 +26,26 @@ function SearchHeader() {
   const toggleDrawer = () => {
     setIsOpen((prevState) => !prevState);
   };
+  const [open, setOpen] = React.useState(false);
+  const [isLogin, setIsLogin] = useState<boolean>(true);
 
+  const [loginInputs, setLoginInputs] = useState({
+    userName: "",
+    password: "",
+  });
+  const [registerInputs, setRegisterInputs] = useState({
+    userName: "",
+    email: "",
+    password: "",
+  });
+  const handleLoginInputs = (e: any) => {
+    const { name, value } = e.target;
+    setLoginInputs({ ...loginInputs, [name]: value });
+  };
+  const handleRegisterInputs = (e: any) => {
+    const { name, value } = e.target;
+    setRegisterInputs({ ...registerInputs, [name]: value });
+  };
   return (
     <Wrapper style="">
       <div className="w-full h-[100px] flex justify-between items-center">
@@ -57,7 +77,10 @@ function SearchHeader() {
             <Cart />
           </div>
           {/* ======> add account button */}
-          <MdOutlinePersonAddAlt className="text-[28px] sm:text-[30px] cursor-pointer" />
+          <BsPerson
+            onClick={() => setOpen(true)}
+            className="text-[28px] sm:text-[30px] cursor-pointer"
+          />
         </div>
       </div>
       {/* ===> search bar for small screen */}
@@ -102,19 +125,20 @@ function SearchHeader() {
           </div>
           {!IsMainMenu ? (
             <div>
-              {Data.topSection.AllCategories?.map((item: any, index: number) => {
-                return (
-                  <Link
-                   onClick={toggleDrawer}
-                    key={index}
-                    href="#"
-                    className="w-full h-[44px] px-4 flex justify-start capitalize items-center text-[.9rem] leading-[1rem] font-inter font-normal text-black-main gap-3 border-b-[1px] border-gray"
-                  >
-                    {/* {item.Icon} */}
-                    {item.name}
-                  </Link>
-                );
-              })}
+              {Data.topSection.AllCategories?.map(
+                (item: any, index: number) => {
+                  return (
+                    <Link
+                      key={index}
+                      href="#"
+                      className="w-full h-[44px] px-4 flex justify-start items-center text-[.9rem] leading-[1rem] font-inter font-normal text-black-soft gap-3 border-b-[1px] border-gray"
+                    >
+                      {item.Icon}
+                      {item.Name}
+                    </Link>
+                  );
+                }
+              )}
             </div>
           ) : (
             <div className="flex justify-center items-start flex-col w-full">
@@ -134,6 +158,108 @@ function SearchHeader() {
           )}
         </div>
       </Drawer>
+      <div>
+        <DialougeWrapper
+          open={open}
+          setState={() => setOpen(false)}
+          title="My Account"
+        >
+          <div className="w-full md:w-[40%] flex flex-col items-center justify-center gap-12 mx-auto">
+            <div className="w-full flex items-center justify-center gap-10">
+              <button
+                onClick={() => setIsLogin(true)}
+                className={`h-[40px] w-[80px] font-inter font-medium text-black-main text-[20px] relative after:absolute ${
+                  isLogin ? "after:w-full" : "after:w-0"
+                } after:bottom-0 after:left-0 after:h-[2px] after:bg-main-brand after:z-10 hover:after:w-full after:duration-300 transition-all`}
+              >
+                Login
+              </button>
+              <button
+                onClick={() => setIsLogin(false)}
+                className={`h-[40px] w-[90px] font-inter font-medium text-black-main text-[20px] relative after:absolute ${
+                  !isLogin ? "after:w-full" : "after:w-0"
+                } after:bottom-0 after:left-0 after:h-[2px] after:bg-main-brand after:z-10 hover:after:w-full after:duration-300 transition-all`}
+              >
+                Register
+              </button>
+            </div>
+            {/* login Form */}
+            {isLogin && (
+              <form
+                onSubmit={(e) => e.preventDefault()}
+                className="w-full flex flex-col items-center justify-center gap-10"
+              >
+                <TextInput
+                  state={loginInputs.userName}
+                  IsCompulsory={true}
+                  placeholder="Enter Name Here"
+                  Type="text"
+                  Name="userName"
+                  SetState={handleLoginInputs}
+                  label="User Name"
+                />
+                <TextInput
+                  state={loginInputs.password}
+                  IsCompulsory={true}
+                  placeholder="Enter Password Here"
+                  Type="password"
+                  Name="password"
+                  SetState={handleLoginInputs}
+                  label="Password"
+                />
+                <button
+                  type="submit"
+                  className="h-[50px] w-full relative text-[16px] text-white-main font-semibold font-inter before:absolute before:bg-black-main before:top-0 before:left-0 before:h-full before:-z-10 z-10 before:w-0 hover:before:w-full before:transition-all before:duration-500 ease-in-out bg-main-secondary cursor-pointer capitalize"
+                >
+                  Login
+                </button>
+              </form>
+            )}
+
+            {/* RegisterForm */}
+            {!isLogin && (
+              <form
+                onSubmit={(e) => e.preventDefault()}
+                className="w-full flex flex-col items-center justify-center gap-10"
+              >
+                <TextInput
+                  state={registerInputs.userName}
+                  IsCompulsory={true}
+                  placeholder="Enter Name Here"
+                  Type="text"
+                  Name="userName"
+                  SetState={handleRegisterInputs}
+                  label="User Name"
+                />
+                <TextInput
+                  state={registerInputs.email}
+                  IsCompulsory={true}
+                  placeholder="Enter Email Here"
+                  Type="email"
+                  Name="email"
+                  SetState={handleRegisterInputs}
+                  label="Email"
+                />
+                <TextInput
+                  state={registerInputs.password}
+                  IsCompulsory={true}
+                  placeholder="Enter Password Here"
+                  Type="password"
+                  Name="password"
+                  SetState={handleRegisterInputs}
+                  label="Password"
+                />
+                <button
+                  type="submit"
+                  className="h-[50px] w-full relative text-[16px] text-white-main font-semibold font-inter before:absolute before:bg-black-main before:top-0 before:left-0 before:h-full before:-z-10 z-10 before:w-0 hover:before:w-full before:transition-all before:duration-500 ease-in-out bg-main-secondary cursor-pointer capitalize"
+                >
+                  Register
+                </button>
+              </form>
+            )}
+          </div>
+        </DialougeWrapper>
+      </div>
     </Wrapper>
   );
 }
