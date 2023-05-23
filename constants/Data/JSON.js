@@ -292,7 +292,7 @@ export const Data = {
       picture: "/Assets/home/Shirt.jpg",
     },
   ],
-  RelatedProducts:[
+  RelatedProducts: [
     {
       title: "SLIM FIT PEPPERMINT COTTON TEE",
       price: 33.0,
@@ -368,5 +368,20 @@ export const Data = {
       thumbnail: "/Assets/home/shirt4.jpg",
     },
   ],
-
+  AccountNavbar: [
+    {
+      name: "Shopping Cart",
+      route: "/cart",
+      number: 2,
+    },
+    {
+      name: "WishList",
+      route: "/wishlist",
+      number: 3,
+    },
+    {
+      name: "My Account",
+      route: "/myaccount",
+    },
+  ],
 };
