@@ -3,23 +3,28 @@ import Wrapper from "../ComponentWrapper/Wrapper";
 import { IoMdArrowDropdown } from "react-icons/io";
 import OutSideClick from "@/hooks/OutSideClick";
 import { BsGrid3X3GapFill } from "react-icons/bs";
-import { BiGridSmall } from "react-icons/bi";
+import { BiFontSize, BiGridSmall } from "react-icons/bi";
 import { GoPrimitiveDot } from "react-icons/go";
 import { BiFilterAlt } from "react-icons/bi";
+import { RxCross2 } from "react-icons/rx";
+import { Data } from "../../../../constants/Data/JSON";
+// ====> select imports
 
-// import component 👇
-import Drawer from "react-modern-drawer";
+import InputLabel from "@mui/material/InputLabel";
+import MenuItem from "@mui/material/MenuItem";
+import FormControl from "@mui/material/FormControl";
+import Select, { SelectChangeEvent } from "@mui/material/Select";
 
-//import styles 👇
-import "react-modern-drawer/dist/index.css";
+// ===> slider imports
+import Slider from "@mui/material/Slider";
 
 function Filter() {
-  const [isOpen, setIsOpen] = React.useState(false);
-  const toggleDrawer = () => {
-    setIsOpen((prevState) => !prevState);
-  };
-
   // ====> states
+  const [category, setCategory] = useState("");
+  const [size, setSize] = useState("");
+  const [price, setPrice] = React.useState([20, 2000]);
+  const [sorting, setSorting] = useState("default sorting");
+
   const [booleanState, setBooleanState] = useState({
     allProducts: true,
     newProducts: false,
@@ -28,13 +33,14 @@ function Filter() {
     sixGidLayout: false,
     fiveGridLayout: false,
     fourGridLayout: true,
+    drawer: false,
   });
 
-  const [sorting, setSorting] = useState("default sorting");
+  const formatValueLabel = (value: number) => `$${value}`;
 
   return (
-    <Wrapper style="h-[80px] sm:h-[100px]">
-      <div className="w-full h-full flex justify-between items-center border-b-[2px] border-white-off">
+    <Wrapper style="h-[80px] sm:h-[100px] ">
+      <div className="w-full h-full flex relative justify-between items-center border-b-[2px] border-white-off">
         {/* ===> left portion */}
         <div className="hidden sm:flex justify-center items-center gap-6 md:gap-14">
           <button
@@ -203,28 +209,8 @@ function Filter() {
               } hover:text-black-main text-[30px] cursor-pointer`}
             />
           </div>
-
-          {/* ===> divider */}
-          <div className="lg:flex hidden w-[2px] h-[22px] border-[1px] bg-white-cool"></div>
-          {/* ====> filter */}
-          <button
-            onClick={toggleDrawer}
-            className="lg:flex hidden text-white-cool hover:text-black-main justify-center items-center gap-2"
-          >
-            <BiFilterAlt className="cursor-pointer text-[28px]" />
-            <p className="text-[16px] font-inter font-medium capitalize">
-              filter
-            </p>
-          </button>
         </div>
       </div>
-      {/* ====> filter drawer */}
-      {/* <Drawer
-        open={isOpen}
-        onClose={toggleDrawer}
-        direction="right"
-        className="filterDrawer"
-      ></Drawer> */}
     </Wrapper>
   );
 }
@@ -244,6 +230,18 @@ const sortingType = [
   },
   {
     name: "sort by price: high to low",
+  },
+];
+
+const Size = [
+  {
+    name: "small",
+  },
+  {
+    name: "medium",
+  },
+  {
+    name: "extra large",
   },
 ];
 
