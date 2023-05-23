@@ -22,7 +22,7 @@ const AccountSettings = () => {
     >
       <p className="font-medium text-black-main text-[24px]">Account Details</p>
       <div className="w-full border-[2px] flex flex-col gap-10 md:px-8 md:py-[50px] p-4">
-        <div className="w-full flex items-center justify-center gap-4">
+        <div className="w-full flex flex-col lg:flex-row items-center justify-center lg:gap-4 gap-10">
           <TextInput
             state={inputs.firstName}
             IsCompulsory={true}
@@ -42,7 +42,7 @@ const AccountSettings = () => {
             label="Last Name"
           />
         </div>
-        <div className="w-full flex items-center justify-center gap-4">
+        <div className="w-full flex flex-col lg:flex-row items-center justify-center lg:gap-4 gap-10">
           <TextInput
             state={inputs.displayName}
             IsCompulsory={true}
