@@ -416,4 +416,22 @@ export const Data = {
       status: "In Stock",
     },
   ],
+  BuyerSidebar: [
+    {
+      name: "Dashboard",
+      route: "/myaccount/dashboard",
+    },
+    {
+      name: "Orders",
+      route: "/myaccount/orders",
+    },
+    {
+      name: "Addresses",
+      route: "/myaccount/addresses",
+    },
+    {
+      name: "Account",
+      route: "/myaccount/account",
+    },
+  ],
 };
