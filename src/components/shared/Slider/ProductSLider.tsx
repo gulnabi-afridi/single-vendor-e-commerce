@@ -21,7 +21,7 @@ const ProductSlider: React.FC<Props> = ({
   moveLeft = false,
 }) => {
   return (
-    <div className="w-full flex flex-col gap-4 items-center justify-center">
+    <div className="w-full flex flex-col gap-8 items-center justify-center">
       <H1Heading>{title}</H1Heading>
       <div className="h-[450px] max-w-full">
         <Swiper
