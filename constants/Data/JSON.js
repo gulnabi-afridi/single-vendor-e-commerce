@@ -419,7 +419,7 @@ export const Data = {
   BuyerSidebar: [
     {
       name: "Dashboard",
-      route: "/myaccount/dashboard",
+      route: "/myaccount",
     },
     {
       name: "Orders",

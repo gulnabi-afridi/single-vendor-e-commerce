@@ -1,10 +1,11 @@
 import React from "react";
-import MyAccount from "../../../views/MyAccount/MyAccount";
+
+import Dashboard from "../../../views/MyAccount/Dashboard";
 
 const myaccount = () => {
   return (
     <div className="w-full">
-      <MyAccount />
+      <Dashboard />
     </div>
   );
 };
