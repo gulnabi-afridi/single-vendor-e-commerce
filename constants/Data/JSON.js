@@ -384,4 +384,16 @@ export const Data = {
       route: "/myaccount",
     },
   ],
+  CartItems: [
+    {
+      name: "EVERYTHING IS TEMPORARY SHORT SLEEVE TEE",
+      picture: "/Assets/home/shirt5.jpg",
+      price: 23,
+    },
+    {
+      name: "Beautiful White Cotton TEE",
+      picture: "/Assets/home/shirt6.jpg",
+      price: 34,
+    },
+  ],
 };

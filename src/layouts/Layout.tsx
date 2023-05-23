@@ -17,7 +17,7 @@ function Layout({ children }: props) {
 const Router = useRouter();
 const hideNavigation = Router.pathname.includes("product-category");
 const renderAccountNavbar=()=>{
-  if(Router.pathname=="/cart"||Router.pathname=="/wishlist"||Router.pathname=="/account"){
+  if(Router.pathname=="/cart"||Router.pathname=="/wishlist"||Router.pathname=="/myaccount"){
     return true
   }
   else
