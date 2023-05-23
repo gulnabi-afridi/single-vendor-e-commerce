@@ -292,7 +292,7 @@ export const Data = {
       picture: "/Assets/home/Shirt.jpg",
     },
   ],
-  RelatedProducts:[
+  RelatedProducts: [
     {
       title: "SLIM FIT PEPPERMINT COTTON TEE",
       price: 33.0,
@@ -368,5 +368,70 @@ export const Data = {
       thumbnail: "/Assets/home/shirt4.jpg",
     },
   ],
-
+  AccountNavbar: [
+    {
+      name: "Shopping Cart",
+      route: "/cart",
+      number: 2,
+    },
+    {
+      name: "WishList",
+      route: "/wishlist",
+      number: 3,
+    },
+    {
+      name: "My Account",
+      route: "/myaccount",
+    },
+  ],
+  CartItems: [
+    {
+      name: "EVERYTHING IS TEMPORARY SHORT SLEEVE TEE",
+      picture: "/Assets/home/shirt5.jpg",
+      price: 23,
+    },
+    {
+      name: "Beautiful White Cotton TEE",
+      picture: "/Assets/home/shirt6.jpg",
+      price: 34,
+    },
+  ],
+  WishListItems: [
+    {
+      name: "Anime Cotton TEE",
+      picture: "/Assets/home/shirt3.webp",
+      price: 23,
+      status: "In Stock",
+    },
+    {
+      name: "Beautiful Black Cotton TEE",
+      picture: "/Assets/home/shirt2.jpg",
+      price: 34,
+      status: "In Stock",
+    },
+    {
+      name: "Beautiful Mens Cotton TEE",
+      picture: "/Assets/home/shirt4.jpg",
+      price: 24,
+      status: "In Stock",
+    },
+  ],
+  BuyerSidebar: [
+    {
+      name: "Dashboard",
+      route: "/myaccount",
+    },
+    {
+      name: "Orders",
+      route: "/myaccount/orders",
+    },
+    {
+      name: "Addresses",
+      route: "/myaccount/addresses",
+    },
+    {
+      name: "Account",
+      route: "/myaccount/account",
+    },
+  ],
 };

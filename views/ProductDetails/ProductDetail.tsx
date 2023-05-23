@@ -6,7 +6,7 @@ import { AiOutlineHeart, AiFillHeart, AiFillFacebook } from "react-icons/ai";
 import ProductSlider from "@/components/shared/Slider/ProductSLider";
 import { Data } from "../../constants/Data/JSON";
 
-const ProductDetail = () => {
+const ProductDetail = () => { 
   //Product Description Line Clamp
   const [descriptionClamp, setDescriptionClamp] = useState<boolean>(true);
   const [favourite, setFavourite] = useState<boolean>(false);
