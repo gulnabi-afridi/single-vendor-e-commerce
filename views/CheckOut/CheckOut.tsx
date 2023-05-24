@@ -137,39 +137,30 @@ const CheckOut = () => {
             />
           </div>
 
-          {/* Password setting here */}
-          <p className="font-medium text-black-main text-[24px]">
-            Password Change
-          </p>
+          {/* Total bill here */}
+          <p className="font-medium text-black-main text-[24px]">Your Order</p>
           <div className="w-full border-[2px] flex flex-col gap-10 md:px-8 md:py-[50px] p-4">
-            <TextInput
-              state={inputs.currentPassword}
-              IsCompulsory={true}
-              placeholder="Leave blank to leave unchanged"
-              Type="password"
-              Name="currentPassword"
-              SetState={handleInputs}
-              label="Current Password"
-            />
-
-            <TextInput
-              state={inputs.newPassword}
-              IsCompulsory={true}
-              placeholder="Leave blank to leave unchanged"
-              Type="password"
-              Name="newPassword"
-              SetState={handleInputs}
-              label="New Password"
-            />
-            <TextInput
-              state={inputs.confirmPassword}
-              IsCompulsory={true}
-              placeholder="Confirm New Password"
-              Type="password"
-              Name="confirmPassword"
-              SetState={handleInputs}
-              label="Confirm Password"
-            />
+            <div className="w-full flex items-center justify-between text-black-main py-4 border-b-[1.5px]">
+              <p className="text-[15px] font-semibold">
+                EVERYTHING IS TEMPORARY SHORT SLEEVE TEE{" "}
+              </p>
+              <p className="font-[500] text-[14px]">Qty:1</p>
+              <p className="font-[500] text-[14px]">$32</p>
+            </div>
+            <div className="w-full flex items-center justify-between text-black-main py-4 border-b-[1.5px]">
+              <p className="text-[15px] font-semibold">Subtotal </p>
+              <p className="font-[500] text-[14px]">$32</p>
+            </div>
+            <div className="w-full flex items-center justify-between text-black-main py-4 border-b-[1.5px]">
+              <p className="text-[15px] font-semibold">Shipping </p>
+              
+              <p className="font-[500] text-[14px]">Delivery Charges:$12</p>
+            </div>
+            <div className="w-full flex items-center justify-between text-black-main py-4 border-b-[1.5px]">
+              <p className="text-[15px] font-semibold">Total </p>
+              
+              <p className="font-[500] text-[14px]">$122</p>
+            </div>
           </div>
           <div className="w-full h-[50px] flex items-center justify-center">
             {" "}
@@ -177,7 +168,7 @@ const CheckOut = () => {
               type="submit"
               className="h-full sm:w-[350px] w-full relative text-[16px] text-white-main font-semibold font-inter before:absolute before:bg-black-main before:top-0 before:left-0 before:h-full before:-z-10 z-10 before:w-0 hover:before:w-full before:transition-all before:duration-500 ease-in-out bg-main-secondary cursor-pointer capitalize"
             >
-              Save Changes
+              Place Order
             </button>
           </div>
         </form>

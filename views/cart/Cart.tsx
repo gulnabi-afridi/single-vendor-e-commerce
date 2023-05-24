@@ -60,7 +60,7 @@ const Cart = () => {
                 Shipping
               </p>
               <p className="uppercase font-medium text-black-main text-[14px]">
-                $10
+                Delivery Charges: $10
               </p>
             </div>
             {/* total */}
