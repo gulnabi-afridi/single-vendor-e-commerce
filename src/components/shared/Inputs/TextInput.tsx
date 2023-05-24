@@ -2,8 +2,8 @@ import React from "react";
 import TextField from "@mui/material/TextField";
 
 interface Props {
-  label: string;
-  placeholder: string;
+  label?: string;
+  placeholder?: string;
   Name?: string;
   state: string;
   SetState: any;
