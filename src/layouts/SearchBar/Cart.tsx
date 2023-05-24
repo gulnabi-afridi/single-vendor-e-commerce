@@ -14,7 +14,7 @@ interface Props {
 const Cart: React.FC<Props> = ({ open, setOpen, onClose }) => {
   return (
     <div className="fon-inter">
-      <Badge badgeContent={4} color="primary">
+      <Badge badgeContent={2} color="primary">
         <HiOutlineShoppingBag
           onClick={setOpen}
           className="text-[30px] cursor-pointer"

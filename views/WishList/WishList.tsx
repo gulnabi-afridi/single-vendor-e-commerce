@@ -6,7 +6,7 @@ import WishListCard from "@/components/shared/ProductCards/WishListCard";
 const WishList = () => {
   return (
     <Wrapper style="md:py-12 py-8">
-      <div className="w-full overflow-auto">
+      <div className="w-full overflow-auto ThinScrollbar">
         {/* headers */}
         <div className="w-full h-[46px] grid grid-cols-[2.5fr,1fr,2fr] min-w-[840px]">
           <p className="font-inter font-medium text-black-main text-[16px]">

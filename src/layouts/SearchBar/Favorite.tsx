@@ -14,7 +14,7 @@ interface Props {
 const Favorite: React.FC<Props> = ({ open, setOpen, onClose }: Props) => {
   return (
     <div>
-      <Badge badgeContent={4}>
+      <Badge badgeContent={3}>
         <MdFavoriteBorder
           onClick={setOpen}
           className="text-[26px] sm:text-[30px] cursor-pointer"

@@ -8,7 +8,7 @@ const Cart = () => {
   return (
     <Wrapper style="md:py-12 py-8 font-inter">
       <div className="w-full flex flex-col items-start justify-center gap-8">
-        <div className="w-full overflow-auto">
+        <div className="w-full overflow-auto ThinScrollbar">
           {/* headers */}
           <div className="w-full h-[46px] grid grid-cols-[2.5fr,1fr,1.5fr,1fr] min-w-[840px]">
             <p className="font-inter font-medium text-black-main text-[16px]">
