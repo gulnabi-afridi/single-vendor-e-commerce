@@ -69,7 +69,7 @@ const AccountSettings = () => {
       <div className="w-full border-[2px] flex flex-col gap-10 md:px-8 md:py-[50px] p-4">
         <TextInput
           state={inputs.currentPassword}
-          IsCompulsory={true}
+          IsCompulsory={false}
           placeholder="Leave blank to leave unchanged"
           Type="password"
           Name="currentPassword"
@@ -79,7 +79,7 @@ const AccountSettings = () => {
 
         <TextInput
           state={inputs.newPassword}
-          IsCompulsory={true}
+          IsCompulsory={false}
           placeholder="Leave blank to leave unchanged"
           Type="password"
           Name="newPassword"
@@ -88,7 +88,7 @@ const AccountSettings = () => {
         />
         <TextInput
           state={inputs.confirmPassword}
-          IsCompulsory={true}
+          IsCompulsory={false}
           placeholder="Confirm New Password"
           Type="password"
           Name="confirmPassword"

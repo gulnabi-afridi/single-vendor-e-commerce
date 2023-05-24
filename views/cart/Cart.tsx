@@ -73,7 +73,7 @@ const Cart = () => {
               </p>
             </div>
             <Link
-              href={"/"}
+              href={"/checkout"}
               className="h-[50px] w-full flex items-center justify-center relative text-[16px] text-white-main font-semibold font-inter before:absolute before:bg-black-main before:top-0 before:left-0 before:h-full before:-z-10 z-10 before:w-0 hover:before:w-full before:transition-all before:duration-500 ease-in-out bg-main-secondary cursor-pointer capitalize"
             >
               Proceed to checkout
