@@ -386,7 +386,7 @@ export const Data = {
   ],
   CartItems: [
     {
-      name: "EVERYTHING IS TEMPORARY SHORT SLEEVE TEE",
+      name: "Short Sleeve TEE",
       picture: "/Assets/home/shirt5.jpg",
       price: 23,
     },

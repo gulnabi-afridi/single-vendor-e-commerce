@@ -3,7 +3,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import Header from "./Header";
 import TextInput from "@/components/shared/Inputs/TextInput";
-import MuiDropdown from "@/components/shared/DropDown/MuiDropDown";
+import MuiDropdown from "@/components/shared/DropDown/MuiDropdown";
 
 const CheckOut = () => {
   const [inputs, setInputs] = useState({
