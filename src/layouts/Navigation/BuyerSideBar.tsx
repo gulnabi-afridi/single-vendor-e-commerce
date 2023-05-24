@@ -2,8 +2,12 @@ import React from "react";
 import Link from "next/link";
 import { Data } from "../../../constants/Data/JSON";
 import { useRouter } from "next/router";
+
+
 const BuyerSideBar = () => {
   const Router = useRouter();
+
+  
   return (
     <div className="w-full overflow-auto HideScroll md:border-b-0 border-b-[2px]">
       <div className="w-full flex md:flex-col justify-start items-start gap-8 md:border-r-[2px] md:pb-0 pb-2">

@@ -14,7 +14,6 @@ const Cart = () => {
             No Items In Your Cart Currently
           </p>
           <NavigationButton text="Return To Shop" route="/" />
-          
         </div>
       )}
       {Data.CartItems.length > 0 && (
@@ -83,8 +82,11 @@ const Cart = () => {
                   $130
                 </p>
               </div>
-              <NavigationButton text="Proceed to checkout" route="/checkout" style="h-[50px] w-full "/>
-         
+              <NavigationButton
+                text="Proceed to checkout"
+                route="/checkout"
+                style="h-[50px] w-full "
+              />
             </div>
           </div>
         </div>

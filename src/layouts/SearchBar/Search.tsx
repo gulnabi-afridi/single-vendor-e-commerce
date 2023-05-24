@@ -2,12 +2,13 @@ import React, { useState } from "react";
 import Divider from "../../components/shared/Divider/Divider";
 import Dropdown from "../../components/shared/DropDown/DropDown";
 import { Data } from "../../../constants/Data/JSON";
-import Text from "../../components/shared/CustomTypography/Text"
+import Text from "../../components/shared/CustomTypography/Text";
 
 function Search() {
   const [SearchedCategory, setSearchCategory] = useState<string | null>(
     "all categories"
   );
+  console.log(SearchedCategory);
   const [SearchInput, setSearchInput] = useState<string | null>(
     "all categories"
   );
@@ -28,7 +29,7 @@ function Search() {
         <Dropdown
           Title="all categories"
           item={Data.topSection.SearchCategory}
-          Event={setSearchCategory}
+          setCategory={setSearchCategory}
         />
       </div>
       <div className="w-full h-full">

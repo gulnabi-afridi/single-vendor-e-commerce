@@ -5,10 +5,10 @@ import SmallText from "../CustomTypography/SmallText";
 interface props {
   item: Array<object>;
   Title: string;
-  Event: (e: string) => void;
+  setCategory: any;
 }
 
-const Dropdown: React.FC<props> = ({ item, Title, Event }: props) => {
+const Dropdown: React.FC<props> = ({ item, Title, setCategory }: props) => {
   const [DropdownTitle, setDropdownTitle] = useState<string | null>(null);
 
   useEffect(() => {
@@ -31,7 +31,7 @@ const Dropdown: React.FC<props> = ({ item, Title, Event }: props) => {
           return (
             <button
               onClick={() => {
-                Event(item.Value);
+                setCategory(item.name);
                 setDropdownTitle(item.name);
               }}
               key={index}

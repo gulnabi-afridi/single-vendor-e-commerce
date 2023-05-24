@@ -32,8 +32,13 @@ const Cart: React.FC<Props> = ({ open, setOpen, onClose }) => {
             />
           ))}
           <div className="w-full flex flex-col gap-4 items-center justify-center">
-            <NavigationButton route="/checkout" event={onClose} style="h-[50px] md:w-[350px] w-full" text="Proceed to cehckout" />
-           
+            <NavigationButton
+              route="/checkout"
+              event={onClose}
+              style="h-[50px] md:w-[350px] w-full"
+              text="Proceed to cehckout"
+            />
+
             <Link
               href="/cart"
               onClick={onClose}
