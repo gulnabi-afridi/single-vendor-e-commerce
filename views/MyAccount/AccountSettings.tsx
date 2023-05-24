@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import TextInput from "@/components/shared/Inputs/TextInput";
+import Button from "@/components/shared/Button/Button";
 
 const AccountSettings = () => {
   const [inputs, setInputs] = useState({
@@ -98,12 +99,8 @@ const AccountSettings = () => {
       </div>
       <div className="w-full h-[50px] flex items-center justify-center">
         {" "}
-        <button
-          type="submit"
-          className="h-full sm:w-[350px] w-full relative text-[16px] text-white-main font-semibold font-inter before:absolute before:bg-black-main before:top-0 before:left-0 before:h-full before:-z-10 z-10 before:w-0 hover:before:w-full before:transition-all before:duration-500 ease-in-out bg-main-secondary cursor-pointer capitalize"
-        >
-          Save Changes
-        </button>
+        <Button typeOf="submit" event={()=>{}} text="Save Changes" />
+        
       </div>
     </form>
   );

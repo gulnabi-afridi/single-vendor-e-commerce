@@ -18,6 +18,7 @@ import Drawer from "react-modern-drawer";
 import "react-modern-drawer/dist/index.css";
 import DialougeWrapper from "@/components/shared/DialogueWrapper/DialougeWrapper";
 import TextInput from "@/components/shared/Inputs/TextInput";
+import Button from "@/components/shared/Button/Button";
 
 function SearchHeader() {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -229,12 +230,8 @@ function SearchHeader() {
                   SetState={handleLoginInputs}
                   label="Password"
                 />
-                <button
-                  type="submit"
-                  className="h-[50px] w-full relative text-[16px] text-white-main font-semibold font-inter before:absolute before:bg-black-main before:top-0 before:left-0 before:h-full before:-z-10 z-10 before:w-0 hover:before:w-full before:transition-all before:duration-500 ease-in-out bg-main-secondary cursor-pointer capitalize"
-                >
-                  Login
-                </button>
+                  <Button typeOf="submit" event={()=>{}} text="Login" style="h-[50px] w-full" />
+              
               </form>
             )}
 
@@ -271,12 +268,8 @@ function SearchHeader() {
                   SetState={handleRegisterInputs}
                   label="Password"
                 />
-                <button
-                  type="submit"
-                  className="h-[50px] w-full relative text-[16px] text-white-main font-semibold font-inter before:absolute before:bg-black-main before:top-0 before:left-0 before:h-full before:-z-10 z-10 before:w-0 hover:before:w-full before:transition-all before:duration-500 ease-in-out bg-main-secondary cursor-pointer capitalize"
-                >
-                  Register
-                </button>
+                <Button typeOf="submit" event={()=>{}} text="Register" style="h-[50px] w-full" />
+                
               </form>
             )}
           </div>
