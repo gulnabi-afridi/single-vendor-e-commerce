@@ -5,6 +5,7 @@ import { HiOutlineShoppingBag } from "react-icons/hi";
 import DialougeWrapper from "@/components/shared/DialogueWrapper/DialougeWrapper";
 import AddToCart from "@/components/shared/ProductCards/AddToCart";
 import { Data } from "../../../constants/Data/JSON";
+import NavigationButton from "@/components/shared/Button/NavigationButton";
 interface Props {
   open: boolean;
   setOpen: any;
@@ -31,13 +32,8 @@ const Cart: React.FC<Props> = ({ open, setOpen, onClose }) => {
             />
           ))}
           <div className="w-full flex flex-col gap-4 items-center justify-center">
-            <Link
-              href={"/checkout"}
-              onClick={onClose}
-              className="h-[50px] md:w-[350px] w-full flex items-center justify-center relative text-[16px] text-white-main font-semibold font-inter before:absolute before:bg-black-main before:top-0 before:left-0 before:h-full before:-z-10 z-10 before:w-0 hover:before:w-full before:transition-all before:duration-500 ease-in-out bg-main-secondary cursor-pointer capitalize"
-            >
-              Proceed to checkout
-            </Link>
+            <NavigationButton route="/checkout" event={onClose} style="h-[50px] md:w-[350px] w-full" text="Proceed to cehckout" />
+           
             <Link
               href="/cart"
               onClick={onClose}

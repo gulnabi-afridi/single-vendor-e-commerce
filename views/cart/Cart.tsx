@@ -3,6 +3,7 @@ import Wrapper from "@/components/shared/ComponentWrapper/Wrapper";
 import { Data } from "../../constants/Data/JSON";
 import AddToCart from "@/components/shared/ProductCards/AddToCart";
 import Link from "next/link";
+import NavigationButton from "@/components/shared/Button/NavigationButton";
 
 const Cart = () => {
   return (
@@ -12,12 +13,8 @@ const Cart = () => {
           <p className="font-inter font-[400] text-black-main text-[14px]">
             No Items In Your Cart Currently
           </p>
-          <Link
-            href="/"
-            className="h-[50px] sm:w-[350px] w-full flex items-center justify-center relative text-[16px] text-white-main font-semibold font-inter before:absolute before:bg-black-main before:top-0 before:left-0 before:h-full before:-z-10 z-10 before:w-0 hover:before:w-full before:transition-all before:duration-500 ease-in-out bg-main-secondary cursor-pointer capitalize"
-          >
-            Return To Shop
-          </Link>
+          <NavigationButton text="Return To Shop" route="/" />
+          
         </div>
       )}
       {Data.CartItems.length > 0 && (
@@ -86,12 +83,8 @@ const Cart = () => {
                   $130
                 </p>
               </div>
-              <Link
-                href={"/checkout"}
-                className="h-[50px] w-full flex items-center justify-center relative text-[16px] text-white-main font-semibold font-inter before:absolute before:bg-black-main before:top-0 before:left-0 before:h-full before:-z-10 z-10 before:w-0 hover:before:w-full before:transition-all before:duration-500 ease-in-out bg-main-secondary cursor-pointer capitalize"
-              >
-                Proceed to checkout
-              </Link>
+              <NavigationButton text="Proceed to checkout" route="/checkout" style="h-[50px] w-full "/>
+         
             </div>
           </div>
         </div>
