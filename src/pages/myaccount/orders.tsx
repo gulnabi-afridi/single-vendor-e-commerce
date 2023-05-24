@@ -1,8 +1,9 @@
 import React from 'react'
+import Orders from '../../../views/MyAccount/Orders'
 
 const orders = () => {
   return (
-    <div>orders</div>
+    <div className='w-full'><Orders/></div>
   )
 }
 
