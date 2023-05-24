@@ -88,16 +88,16 @@ export const Data = {
     ],
     Menu: [
       {
-        name: "home",
+        name: "home",route:"/"
       },
       {
-        name: "about us",
+        name: "about us",route:"/"
       },
       {
-        name: "privacy policy",
+        name: "privacy policy",route:"/"
       },
       {
-        name: "faq",
+        name: "faq",route:"/"
       },
     ],
   },
