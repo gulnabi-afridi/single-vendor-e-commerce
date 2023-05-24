@@ -88,16 +88,16 @@ export const Data = {
     ],
     Menu: [
       {
-        name: "home",
+        name: "home",route:"/"
       },
       {
-        name: "about us",
+        name: "about us",route:"/"
       },
       {
-        name: "privacy policy",
+        name: "privacy policy",route:"/"
       },
       {
-        name: "faq",
+        name: "faq",route:"/"
       },
     ],
   },
@@ -386,7 +386,7 @@ export const Data = {
   ],
   CartItems: [
     {
-      name: "EVERYTHING IS TEMPORARY SHORT SLEEVE TEE",
+      name: "Short Sleeve TEE",
       picture: "/Assets/home/shirt5.jpg",
       price: 23,
     },

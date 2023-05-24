@@ -16,7 +16,7 @@ function Navigation() {
               <AllCategoriesMenu />
               {Data.topSection.Menu.map((item: any, index: number) => {
                 return (
-                  <Link key={index} href="#">
+                  <Link key={index} href={item.route}>
                     <Text styles="capitalize text-white-main relative after:absolute after:w-0 after:bottom-0 after:left-0 after:h-[2px] after:bg-white-main hover:after:w-full after:duration-200">
                       {item.name}
                     </Text>

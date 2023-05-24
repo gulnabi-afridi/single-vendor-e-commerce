@@ -4,7 +4,7 @@ import Image from "next/image";
 import Search from "./Search";
 import Favorite from "./Favorite";
 import Cart from "./Cart";
-import {BsPerson} from "react-icons/bs"
+import { BsPerson } from "react-icons/bs";
 import { BiMenuAltLeft } from "react-icons/bi";
 import { Data } from "../../../constants/Data/JSON";
 import Link from "next/link";
@@ -26,7 +26,12 @@ function SearchHeader() {
   const toggleDrawer = () => {
     setIsOpen((prevState) => !prevState);
   };
-  const [open, setOpen] = React.useState(false);
+  // state for opening all the dailogues
+  const [open, setOpen] = React.useState({
+    account: false,
+    wishlist: false,
+    cart: false,
+  });
   const [isLogin, setIsLogin] = useState<boolean>(true);
 
   const [loginInputs, setLoginInputs] = useState({
@@ -70,15 +75,23 @@ function SearchHeader() {
         <div className="flex justify-center items-center gap-4 sm:gap-6">
           {/* =====> product added to favorite */}
           <div className="lg:block hidden">
-            <Favorite />
+            <Favorite
+              open={open.wishlist}
+              setOpen={() => setOpen({ ...open, wishlist: true })}
+              onClose={() => setOpen({ ...open, wishlist: false })}
+            />
           </div>
           {/* ======> product added to cart */}
           <div className="lg:block hidden">
-            <Cart />
+            <Cart
+              open={open.cart}
+              setOpen={() => setOpen({ ...open, cart: true })}
+              onClose={() => setOpen({ ...open, cart: false })}
+            />
           </div>
           {/* ======> add account button */}
           <BsPerson
-            onClick={() => setOpen(true)}
+            onClick={() => setOpen({ ...open, account: true })}
             className="text-[28px] sm:text-[30px] cursor-pointer"
           />
         </div>
@@ -97,8 +110,16 @@ function SearchHeader() {
         <div className="w-full h-full p-4">
           <div className="w-full flex justify-between items-center">
             <div className="flex justify-center items-center gap-4">
-              <Favorite />
-              <Cart />
+              <Favorite
+                open={open.wishlist}
+                setOpen={() => setOpen({ ...open, wishlist: true })}
+                onClose={() => setOpen({ ...open, wishlist: false })}
+              />
+              <Cart
+                open={open.cart}
+                setOpen={() => setOpen({ ...open, cart: true })}
+                onClose={() => setOpen({ ...open, cart: false })}
+              />
             </div>
             <button onClick={toggleDrawer}>
               <RxCross2 className="text-[34px] cursor-pointer text-main-brand" />
@@ -159,9 +180,10 @@ function SearchHeader() {
         </div>
       </Drawer>
       <div>
+        {/* Account login and resgistration dialogue */}
         <DialougeWrapper
-          open={open}
-          setState={() => setOpen(false)}
+          open={open.account}
+          setState={() => setOpen({ ...open, account: false })}
           title="My Account"
         >
           <div className="w-full md:w-[40%] flex flex-col items-center justify-center gap-12 mx-auto">
