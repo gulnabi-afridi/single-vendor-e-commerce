@@ -9,7 +9,7 @@ interface props {
   InputChange: (e: any) => void;
   DropdownItem: Array<object>;
   Size?: "small" | "medium";
-  placeholder: string;
+  placeholder?: string;
   defaultValue?: string;
 }
 
