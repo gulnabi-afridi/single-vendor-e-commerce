@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Header from "./Header";
 import TextInput from "@/components/shared/Inputs/TextInput";
 import MuiDropdown from "@/components/shared/DropDown/MuiDropdown";
+import { BsCheck } from "react-icons/bs";
 
 const CheckOut = () => {
   const [inputs, setInputs] = useState({
@@ -19,6 +20,8 @@ const CheckOut = () => {
     currentPassword: "",
     newPassword: "",
     confirmPassword: "",
+    bankTransfer: false,
+    cashOnDelivery: true,
   });
   const handleInputs = (e: any) => {
     const { name, value } = e.target;
@@ -153,13 +156,85 @@ const CheckOut = () => {
             </div>
             <div className="w-full flex items-center justify-between text-black-main py-4 border-b-[1.5px]">
               <p className="text-[15px] font-semibold">Shipping </p>
-              
+
               <p className="font-[500] text-[14px]">Delivery Charges:$12</p>
             </div>
             <div className="w-full flex items-center justify-between text-black-main py-4 border-b-[1.5px]">
               <p className="text-[15px] font-semibold">Total </p>
-              
+
               <p className="font-[500] text-[14px]">$122</p>
+            </div>
+            {/* =====> payments option */}
+            {/* 1) direct bank transfer */}
+            <div className="flex flex-col gap-3 py-4 border-b-[1.5px]">
+              <div
+                onClick={() =>
+                  setInputs({
+                    ...inputs,
+                    cashOnDelivery: false,
+                    bankTransfer: !inputs.bankTransfer,
+                  })
+                }
+                className="flex justify-start cursor-pointer items-center gap-3"
+              >
+                {/* ===> checkbox */}
+                <div
+                  className={`w-[25px] h-[25px] ${
+                    inputs.bankTransfer
+                      ? "bg-white-main border-[1px] border-black-main"
+                      : "bg-gray-cool"
+                  }  flex justify-center items-center`}
+                >
+                  {inputs.bankTransfer && (
+                    <BsCheck className="text-black-main text-[30px]" />
+                  )}
+                </div>
+                <p className="text-[15px] select-none text-black-main uppercase">
+                  direct bank transfer
+                </p>
+              </div>
+              {inputs.bankTransfer && (
+                <p className="text-[14px] text-white-cool">
+                  Make your payment directly into our bank account. Please use
+                  your Order ID as the payment reference and WhatsApp the
+                  screenshot of payment slip at x0332-xxxxxxx. Your order will
+                  not be shipped until the funds have cleared in our account.
+                </p>
+              )}
+            </div>
+            {/* 1) cash on dilvery */}
+            <div className="flex flex-col py-4 border-b-[1.5px] gap-3">
+              <div
+                onClick={() =>
+                  setInputs({
+                    ...inputs,
+                    bankTransfer: false,
+                    cashOnDelivery: !inputs.cashOnDelivery,
+                  })
+                }
+                className="flex justify-start cursor-pointer items-center gap-3"
+              >
+                {/* ===> checkbox */}
+                <div
+                  className={`w-[25px] h-[25px] ${
+                    inputs.cashOnDelivery
+                      ? "bg-white-main border-[1px] border-black-main"
+                      : "bg-gray-cool"
+                  }  flex justify-center items-center`}
+                >
+                  {inputs.cashOnDelivery && (
+                    <BsCheck className="text-black-main text-[30px]" />
+                  )}
+                </div>
+                <p className="text-[15px] select-none text-black-main uppercase">
+                  cash on delivery
+                </p>
+              </div>
+              {inputs.cashOnDelivery && (
+                <p className="text-[14px] text-white-cool">
+                  Pay with cash upon delivery.
+                </p>
+              )}
             </div>
           </div>
           <div className="w-full h-[50px] flex items-center justify-center">
