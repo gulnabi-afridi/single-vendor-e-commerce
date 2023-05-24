@@ -2,7 +2,6 @@ import Wrapper from "@/components/shared/ComponentWrapper/Wrapper";
 import React from "react";
 import { Data } from "../../constants/Data/JSON";
 import WishListCard from "@/components/shared/ProductCards/WishListCard";
-import Link from "next/link";
 import NavigationButton from "@/components/shared/Button/NavigationButton";
 
 const WishList = () => {

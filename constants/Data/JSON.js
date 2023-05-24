@@ -88,16 +88,20 @@ export const Data = {
     ],
     Menu: [
       {
-        name: "home",route:"/"
+        name: "home",
+        route: "/",
       },
       {
-        name: "about us",route:"/"
+        name: "about us",
+        route: "/",
       },
       {
-        name: "privacy policy",route:"/"
+        name: "privacy policy",
+        route: "/",
       },
       {
-        name: "faq",route:"/"
+        name: "faq",
+        route: "/",
       },
     ],
   },
@@ -432,6 +436,20 @@ export const Data = {
     {
       name: "Account",
       route: "/myaccount/account",
+    },
+  ],
+  RecentOrders: [
+    {
+      order: 2131,
+      date: "22-3-23",
+      total: "$32 for 2 Items",
+      status: "Processing",
+    },
+    {
+      order: 1231,
+      date: "5-3-23",
+      total: "$52 for 3 Items",
+      status: "Deliverd",
     },
   ],
 };
