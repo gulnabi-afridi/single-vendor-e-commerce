@@ -1,10 +1,10 @@
 import Wrapper from "@/components/shared/ComponentWrapper/Wrapper";
 import Link from "next/link";
 import React, { useState } from "react";
-import Header from "./Header";
 import TextInput from "@/components/shared/Inputs/TextInput";
 import MuiDropdown from "@/components/shared/DropDown/MuiDropdown";
 import { BsCheck } from "react-icons/bs";
+import CheckoutHeader from "@/components/shared/CheckoutHeader/CheckoutHeader";
 
 const CheckOut = () => {
   const [inputs, setInputs] = useState({
@@ -48,7 +48,7 @@ const CheckOut = () => {
   ];
   return (
     <div className="w-full font-inter">
-      <Header />
+      <CheckoutHeader />
       <Wrapper style="md:py-9 py-4">
         <form
           onSubmit={(e) => e.preventDefault()}

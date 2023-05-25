@@ -22,7 +22,7 @@ const ProductSlider: React.FC<Props> = ({
 }) => {
   return (
     <div className="w-full flex flex-col gap-8 items-center justify-center">
-      <H1Heading>{title}</H1Heading>
+      <p className="text-main-brand leading-10 font-poppins font-semibold text-[30px] text-center sm:text-[36px]">{title}</p>
       <div className="h-[450px] max-w-full">
         <Swiper
           slidesPerView={slidesToShow}

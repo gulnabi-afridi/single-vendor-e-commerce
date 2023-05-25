@@ -1,14 +1,12 @@
-import React from 'react'
-import Recipt from '../../../views/Recipt/Recipt'
-import Header from '../../../views/CheckOut/Header'
+import React from "react";
+import Recipt from "../../../views/Recipt/Recipt";
 
 const recipt = () => {
   return (
     <React.Fragment>
-        <Header/>
-        <Recipt/>
+      <Recipt />
     </React.Fragment>
-  )
-}
+  );
+};
 
-export default recipt
+export default recipt;

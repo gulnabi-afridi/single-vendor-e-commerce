@@ -18,7 +18,7 @@ const Orders = () => {
           <div className="w-full overflow-auto">
             <div className="w-full grid grid-cols-[.5fr,1fr,1fr,1.5fr,.5fr] min-w-[700px]">
               <div className="w-full flex items-center justify-start">
-                <p className="font-medium text-black-main text-[16px]">Order</p>
+                <p className="font-medium text-black-main text-[16px]">Orders #</p>
               </div>
               <div className="w-full flex items-center justify-start">
                 <p className="font-medium text-black-main text-[16px]">Date</p>

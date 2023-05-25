@@ -39,13 +39,13 @@ const Cart: React.FC<Props> = ({ open, setOpen, onClose }) => {
               text="Proceed to cehckout"
             />
 
-            <Link
+            {/* <Link
               href="/cart"
               onClick={onClose}
               className="capitalize text-black-main text-[16px] font-[500] relative after:absolute after:w-0 after:bottom-0 after:left-0 after:h-[2px] after:bg-black-main hover:after:w-full after:duration-200"
             >
               View Cart
-            </Link>
+            </Link> */}
           </div>
         </div>
       </DialougeWrapper>

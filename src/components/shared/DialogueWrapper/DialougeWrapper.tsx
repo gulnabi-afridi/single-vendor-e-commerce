@@ -5,12 +5,11 @@ import Slide from "@mui/material/Slide";
 import { TransitionProps } from "@mui/material/transitions";
 import { RxCross2 } from "react-icons/rx";
 
-
 interface Props {
   open: boolean;
-  setState: (e:any)=> void;
+  setState: (e: any) => void;
   children: React.ReactNode;
-  title:string;
+  title: string;
 }
 
 const Transition = React.forwardRef(function Transition(
@@ -21,7 +20,13 @@ const Transition = React.forwardRef(function Transition(
 ) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
-const DialougeWrapper: React.FC<Props> = ({ open, setState, children,title }) => {
+
+const DialougeWrapper: React.FC<Props> = ({
+  open,
+  setState,
+  children,
+  title,
+}) => {
   return (
     <Dialog
       fullScreen
@@ -31,7 +36,9 @@ const DialougeWrapper: React.FC<Props> = ({ open, setState, children,title }) =>
     >
       <div className="w-full flex flex-col gap-12 p-4 sm:p-8">
         <div className="w-full flex justify-between items-center">
-            <p className="font-inter font-[400] text-black-main text-[28px]">{title}</p>
+          <p className="font-inter font-[400] text-black-main text-[28px]">
+            {title}
+          </p>
           <IconButton
             edge="start"
             color="inherit"

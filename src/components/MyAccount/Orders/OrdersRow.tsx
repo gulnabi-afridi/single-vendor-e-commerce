@@ -32,7 +32,7 @@ const OrdersRow: React.FC<Props> = ({
       <div className="w-full flex items-center justify-start">
         <button
           onClick={viewDetail}
-          className="font-medium text-black-main text-[14px]"
+          className="font-medium text-black-main text-[14px] relative after:absolute after:w-0 after:h-[2px] after:bg-black-main hover:after:w-full after:bottom-0 after:left-0 after:duration-300"
         >
           View
         </button>
