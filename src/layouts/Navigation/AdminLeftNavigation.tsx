@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import Image from "next/image";
-import BadgeAvatars from "../Buyer/BadgeAvatars";
+import BadgeAvatars from "@/components/shared/Avatar/BadgeAvatars";
 import { useRouter } from "next/router";
 // import component 👇
 import Drawer from "react-modern-drawer";
