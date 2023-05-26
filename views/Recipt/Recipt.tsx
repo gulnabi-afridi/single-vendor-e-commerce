@@ -88,17 +88,17 @@ const Recipt = () => {
               <p className="font-[500] text-black-main text-[14px]">
                 SubTotal:
               </p>
-              <p className="font-[500] text-black-main text-[14px]">$54</p>
+              <p className=" text-black-main font-black text-[14px]">$54</p>
             </div>
             <div className="w-full flex items-center justify-between py-4 border-t">
               <p className="font-[500] text-black-main text-[14px]">
                 Shipping:
               </p>
-              <p className="font-[500] text-black-main text-[14px]">$14</p>
+              <p className="text-black-main font-black text-[14px]">$14</p>
             </div>
             <div className="w-full flex items-center justify-between py-4 border-t">
               <p className="font-[500] text-black-main text-[14px]">Total:</p>
-              <p className="font-[500] text-black-main text-[14px]">$64</p>
+              <p className="text-black-main font-black text-[14px]">$64</p>
             </div>
             <div className="w-full flex items-center justify-between py-4 border-t">
               <p className="font-[500] text-black-main text-[14px]">Note:</p>

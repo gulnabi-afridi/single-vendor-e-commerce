@@ -16,7 +16,7 @@ const OrdersRow: React.FC<Props> = ({
   viewDetail,
 }) => {
   return (
-    <div className="w-full grid grid-cols-[.5fr,1fr,1fr,1.5fr,.5fr] border-t py-4">
+    <div className="min-w-[800px] grid grid-cols-[.9fr,1fr,1fr,1.5fr,.5fr] border-t py-4">
       <div className="w-full flex items-center justify-start">
         <p className="font-medium text-black-main text-[14px]">#{order}</p>
       </div>
