@@ -21,7 +21,7 @@ const Favorite: React.FC<Props> = ({ open, setOpen, onClose }: Props) => {
         />
       </Badge>
       <DialougeWrapper open={open} setState={onClose} title="My Wishlist">
-        <div className="w-full lg:w-[80%] flex flex-col items-center justify-center gap-4 mx-auto overflow-auto">
+        <div className="w-full lg:w-[80%] flex flex-col items-start justify-center ThinScrollbar gap-4 mx-auto overflow-auto">
           {Data.WishListItems.map((item: any, index: number) => (
             <WishListCard
               key={index}

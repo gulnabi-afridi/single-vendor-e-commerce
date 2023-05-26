@@ -7,14 +7,14 @@ import CheckoutHeader from "@/components/shared/CheckoutHeader/CheckoutHeader";
 const Recipt = () => {
   return (
     <div className="w-full">
-        <CheckoutHeader/>
+      <CheckoutHeader />
       <Wrapper style="">
         <div className="w-full flex flex-col py-14 px-0 md:px-24 gap-6">
           <p className="text-black-main font-inter text-[16px]">
             Thank you. Your order has been received.
           </p>
           {/*  */}
-          <div className="w-ful overflow-auto flex justify-center items-center py-4">
+          <div className="w-full overflow-auto flex justify-start items-center py-4">
             <div className="min-w-[820px] grid gap-5 grid-cols-[1fr,1fr,1.8fr,0.8fr,1.6fr]">
               {/* 1) order number */}
               <div className="flex flex-col gap-1 border-r border-dotted">
