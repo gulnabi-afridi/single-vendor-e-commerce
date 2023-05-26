@@ -23,7 +23,7 @@ const Address = () => {
   };
 
   return (
-    <div className="w-full h-full px-4 md:px-10 md:py-0 py-4">
+    <div className="w-full h-full px-0 sm:px-4 md:px-10 md:py-0 py-4">
       {edit ? (
         <div className="w-full h-full flex justify-start items-start border-[2px] p-10 gap-10 sm:gap-24">
           <p className="text-[14px] text-black-main font-inter capitalize">
@@ -45,7 +45,9 @@ const Address = () => {
               text="Edit"
               typeOf="button"
               style="max-w-[200px] h-[50px] w-full mt-6"
-              event={() => {setEdit(false)}}
+              event={() => {
+                setEdit(false);
+              }}
             />
           </div>
         </div>
@@ -55,10 +57,10 @@ const Address = () => {
             billing address
           </p>
           {/* form */}
-          <form className="grid grid-cols-1 sm:grid-cols-[0.7fr,3fr] gap-6 sm:gap-8 p-4 sm:p-8 py-10 sm:py-12 border-[2px]">
+          <form className="grid grid-cols-1 sm:grid-cols-[0.7fr,3fr] gap-4 sm:gap-8 p-4 sm:p-8 py-10 sm:py-12 border-[2px]">
             {/* => name */}
             <p className="text-black-main capitalize text-[16px]">name</p>
-            <div className="flex md:flex-row flex-col justify-center items-center gap-6">
+            <div className="flex md:flex-row flex-col justify-center items-center gap-4 sm:gap-6">
               <TextInput
                 state={inputs.firstName}
                 SetState={handleInputs}
@@ -143,7 +145,6 @@ const Address = () => {
     </div>
   );
 };
-
 
 const provance = [
   {
