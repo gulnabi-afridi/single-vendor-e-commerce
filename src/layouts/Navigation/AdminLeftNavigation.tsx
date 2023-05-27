@@ -75,10 +75,10 @@ function AdminLeftNavigation() {
                 <Link
                   key={index}
                   href={item.Route}
-                  className={`relative font-inter text-[13px] leading-[20px] font-normal after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-main-brand after:transition-all after:duration-300 hover:after:w-full ${
+                  className={` font-inter text-[13px] leading-[20px] font-normal ${
                     item.Route === Router.pathname
-                      ? "text-main-brand"
-                      : "text-black-soft"
+                      ? "text-main-brand border-b-[2px] border-black-main"
+                      : "text-black-soft relative after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-main-brand after:transition-all after:duration-300 hover:after:w-full "
                   }`}
                 >
                   {item.Name}
