@@ -1,5 +1,6 @@
 import React from "react";
 import StatsSnippet from "../../src/components/Admin/Snippets/Stats";
+import SalesSnippet from "../../src/components/Admin/Snippets/Sales"
 import { Data } from "../../constants/Data/JSON";
 const Dashboard = () => {
   const { ordersData } = Data.AdminData;
@@ -25,6 +26,7 @@ const Dashboard = () => {
           Figure={130}
         />
       </div>
+      <SalesSnippet />
     </div>
   );
 };
