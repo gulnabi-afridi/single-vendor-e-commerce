@@ -22,7 +22,7 @@ const SalesChart: React.FC<Props> = ({
   return (
     <ResponsiveContainer width="99%" height="99%">
       <AreaChart data={data}>
-        <CartesianGrid strokeDasharray="3 3" />
+    
         <XAxis
           tick={{ fontFamily: "Inter", fontSize: "12px" }}
           dataKey={xaxisDatakey}

@@ -1,7 +1,8 @@
 import React from "react";
 import StatsSnippet from "../../src/components/Admin/Snippets/Stats";
-import SalesSnippet from "../../src/components/Admin/Snippets/Sales"
+import SalesSnippet from "../../src/components/Admin/Snippets/Sales";
 import { Data } from "../../constants/Data/JSON";
+import RecentOrders from "@/components/Admin/Snippets/RecentOrders";
 const Dashboard = () => {
   const { ordersData } = Data.AdminData;
   return (
@@ -27,6 +28,7 @@ const Dashboard = () => {
         />
       </div>
       <SalesSnippet />
+      <RecentOrders />
     </div>
   );
 };
