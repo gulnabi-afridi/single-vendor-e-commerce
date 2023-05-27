@@ -1,10 +1,10 @@
 import Wrapper from "@/components/shared/ComponentWrapper/Wrapper";
 import Link from "next/link";
 import React, { useState } from "react";
-import Header from "./Header";
 import TextInput from "@/components/shared/Inputs/TextInput";
 import MuiDropdown from "@/components/shared/DropDown/MuiDropdown";
 import { BsCheck } from "react-icons/bs";
+import CheckoutHeader from "@/components/shared/CheckoutHeader/CheckoutHeader";
 
 const CheckOut = () => {
   const [inputs, setInputs] = useState({
@@ -48,17 +48,17 @@ const CheckOut = () => {
   ];
   return (
     <div className="w-full font-inter">
-      <Header />
+      <CheckoutHeader />
       <Wrapper style="md:py-9 py-4">
         <form
           onSubmit={(e) => e.preventDefault()}
-          className="w-full h-full flex flex-col gap-6 items-start justify-start font-inter p-4 md:py-6 md:px-10"
+          className="w-full h-full flex flex-col gap-6 items-start justify-start font-inter p-0 sm:p-4 md:py-6 md:px-10"
         >
           <p className="font-medium text-black-main text-[24px]">
             Billing & Shipping
           </p>
-          <div className="w-full border-[2px] flex flex-col gap-10 md:px-8 md:py-[50px] p-4">
-            <div className="w-full flex flex-col lg:flex-row items-center justify-center lg:gap-4 gap-10">
+          <div className="w-full border-[2px] flex flex-col gap-4 md:gap-10 md:px-8 md:py-[50px] p-4">
+            <div className="w-full flex flex-col lg:flex-row items-center justify-center lg:gap-4 gap-4 md:gap-10">
               <TextInput
                 state={inputs.firstName}
                 IsCompulsory={true}
@@ -78,7 +78,7 @@ const CheckOut = () => {
                 label="Last Name"
               />
             </div>
-            <div className="w-full flex flex-col lg:flex-row items-center justify-center lg:gap-4 gap-10">
+            <div className="w-full flex flex-col lg:flex-row items-center justify-center lg:gap-4 gap-4  md:gap-10">
               <TextInput
                 state={inputs.streetAddress}
                 IsCompulsory={true}
@@ -107,7 +107,7 @@ const CheckOut = () => {
                 setInputs({ ...inputs, state: e.target.value })
               }
             />
-            <div className="w-full flex flex-col lg:flex-row items-center justify-center lg:gap-4 gap-10">
+            <div className="w-full flex flex-col lg:flex-row items-center justify-center lg:gap-4 gap-4 md:gap-10">
               <TextInput
                 state={inputs.email}
                 IsCompulsory={true}

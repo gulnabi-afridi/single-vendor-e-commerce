@@ -66,7 +66,7 @@ function Layout({ children }: props) {
       {renderBuyerSideBar() && (
         <main className="w-full h-full">
           <Wrapper style="md:py-12 py-8">
-            <div className="w-full grid md:grid-cols-[250px,calc(100%-250px)]">
+            <div className="w-full grid grid-cols-1 md:grid-cols-[250px,calc(100%-250px)]">
               <BuyerSideBar />
               {children}
             </div>

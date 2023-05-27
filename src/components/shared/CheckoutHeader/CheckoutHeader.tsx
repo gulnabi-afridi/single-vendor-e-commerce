@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Wrapper from "@/components/shared/ComponentWrapper/Wrapper";
-const Header = () => {
+const CheckoutHeader = () => {
   return (
     <div className="w-full h-[80px] flex items-center justify-center bg-[#F1F2F4]">
       <Wrapper>
@@ -23,4 +23,5 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default CheckoutHeader;
+

@@ -15,7 +15,7 @@ interface Props {
 
 const WishListCard: React.FC<Props> = ({ name, price, picture, status,seeDetails }) => {
   return (
-    <div className="w-full grid grid-cols-[2.5fr,1fr,2fr,] min-w-[840px] border-t py-5">
+    <div className="w-full grid grid-cols-[2.5fr,1fr,2fr] min-w-[840px] border-t py-5">
       {/* product name and image here */}
       <div className="w-full flex items-center justify-start gap-4">
        
