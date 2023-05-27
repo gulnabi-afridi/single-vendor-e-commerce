@@ -452,4 +452,56 @@ export const Data = {
       status: "Deliverd",
     },
   ],
+  AdminData:{
+    ordersData: [
+      {
+        name: "Jan",
+        orders: 1,
+      },
+      {
+        name: "Feb",
+        orders: 2,
+      },
+      {
+        name: "Mar",
+        orders: 3,
+      },
+      {
+        name: "Apr",
+        orders: 3,
+      },
+      {
+        name: "May",
+        orders: 6,
+      },
+      {
+        name: "Jun",
+        orders: 5,
+      },
+      {
+        name: "Jul",
+        orders: 6,
+      },
+      {
+        name: "Aug",
+        orders: 7,
+      },
+      {
+        name: "Sep",
+        orders: 6,
+      },
+      {
+        name: "Oct",
+        orders: 5,
+      },
+      {
+        name: "Sep",
+        orders: 6,
+      },
+      {
+        name: "Dec",
+        orders: 7,
+      },
+    ],
+  }
 };
