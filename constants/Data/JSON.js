@@ -503,5 +503,95 @@ export const Data = {
         orders: 7,
       },
     ],
+    monthlySales: [
+      {
+        month: "Jan",
+        sellers: 11,
+      },
+      {
+        month: "Feb",
+        sellers: 12,
+      },
+      {
+        month: "Mar",
+        sellers: 13,
+      },
+      {
+        month: "Apr",
+        sellers: 13,
+      },
+      {
+        month: "May",
+        sellers: 16,
+      },
+      {
+        month: "Jun",
+        sellers: 15,
+      },
+      {
+        month: "Jul",
+        sellers: 16,
+      },
+      {
+        month: "Aug",
+        sellers: 17,
+      },
+      {
+        month: "Sep",
+        sellers: 16,
+      },
+      {
+        month: "Oct",
+        sellers: 15,
+      },
+      {
+        month: "Sep",
+        sellers: 16,
+      },
+      {
+        month: "Dec",
+        sellers: 17,
+      },
+    ],
+    weeklySales: [
+      {
+        week: "Week1",
+        sellers: 3,
+      },
+      {
+        week: "Week2",
+        sellers: 4,
+      },
+      {
+        week: "Week3",
+        sellers: 5,
+      },
+      {
+        week: "Week4",
+        sellers: 2,
+      },
+    ],
+    yearlySales: [
+      {
+        year: "2019",
+        sellers: 1400,
+      },
+      {
+        year: "2020",
+        sellers: 1100,
+      },
+      {
+        year: "2021",
+        sellers: 1300,
+      },
+      {
+        year: "2022",
+        sellers: 1100,
+      },
+      {
+        year: "2023",
+        sellers: 1600,
+      },
+    ],
   }
 };
