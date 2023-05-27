@@ -10,6 +10,7 @@ import Drawer from "react-modern-drawer";
 import "react-modern-drawer/dist/index.css";
 import { Data } from "../../../constants/Data/JSON";
 
+
 const BuyerNavigationItems = [
   {
     Name: "Dashboard",
@@ -62,7 +63,7 @@ function AdminLeftNavigation() {
             <p className="font-inter font-medium text-black-off text-[.875rem] leading-[1.25rem] mb-4">
               Welcome back
             </p>
-            <BadgeAvatars alt="Sahal Imran" />
+            <BadgeAvatars alt="seo text will come here" />
             <h2 className="font-inter font-medium text-black-off text-[1.125rem] leading-[1.75rem] mt-1">
               UserName121
             </h2>

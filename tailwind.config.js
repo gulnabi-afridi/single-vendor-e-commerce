@@ -41,6 +41,9 @@ module.exports = {
           cool:"#e4e6eb",
           lightGray: "#f8f8f8",
         },
+        red:{
+          main:"#FF0000",
+        },
         input: "#8E8E8E",
       },
     },

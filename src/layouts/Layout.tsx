@@ -79,7 +79,7 @@ function Layout({ children }: props) {
         `}
         >
           <AdminLeftNavigation />
-          <main className="w-full">{children}</main>
+          <main className="w-full p-4 bg-white-main">{children}</main>
         </div>
       )}
     </React.Fragment>
