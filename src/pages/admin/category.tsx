@@ -1,9 +1,12 @@
 import React from 'react'
+import Category from '../../../views/Admin/Category'
 
-const category = () => {
+const categoryPage = () => {
   return (
-    <div>category</div>
+    <React.Fragment>
+        <Category/>
+    </React.Fragment>
   )
 }
 
-export default category
+export default categoryPage
