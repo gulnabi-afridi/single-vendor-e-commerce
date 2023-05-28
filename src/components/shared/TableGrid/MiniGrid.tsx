@@ -38,7 +38,7 @@ const MiniGrid: React.FC<Props> = ({
           {TableHeaders.map((item: string, index: any) => (
             <div
               key={index}
-              className="w-full  flex items-center justify-start font-medium text-black-main text-[13px] font-inter"
+              className="w-full  flex capitalize items-center justify-start font-medium text-black-main text-[13px] font-inter"
             >
               <p>{item}</p>
             </div>
