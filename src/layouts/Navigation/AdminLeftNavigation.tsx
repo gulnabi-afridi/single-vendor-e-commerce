@@ -14,7 +14,7 @@ import { Data } from "../../../constants/Data/JSON";
 const BuyerNavigationItems = [
   {
     Name: "Dashboard",
-    Route: "/admin/dashboard",
+    Route: "/admin",
   },
   {
     Name: "Buyers",

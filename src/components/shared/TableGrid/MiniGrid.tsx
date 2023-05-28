@@ -26,7 +26,7 @@ const MiniGrid: React.FC<Props> = ({
 
         <Link
           href={ViewMoreLink}
-          className="h-[36px] w-[100px] flex  text-[13px] items-center justify-center bg-black-soft text-white-main font-medium font-inter"
+          className="h-[36px] w-[100px] flex  text-[13px] items-center justify-center bg-black-main text-white-main font-medium font-inter"
         >
           View More
         </Link>

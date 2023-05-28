@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import Dashboard from "../../../views/Admin/Dashboard";
 
 const index = () => {
   return (
-    <div>Admin</div>
-  )
-}
+    <div className="w-full">
+      <Dashboard />
+    </div>
+  );
+};
 
-export default index
+export default index;
