@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import MiniGrid from "@/components/shared/Grids/MiniGrid";
+import MiniGrid from "@/components/shared/TableGrid/MiniGrid";
 
 import { Data } from "../../../../constants/Data/JSON";
-import RecentOrdersRow from "../TableRows/RecentOrdersRow";
+import RecentOrdersRow from "../Rows/RecentOrdersRow";
 import Image from "next/image";
 
 const { sellers } = Data.AdminData;
