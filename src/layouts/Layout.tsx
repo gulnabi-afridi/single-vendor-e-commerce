@@ -79,7 +79,7 @@ function Layout({ children }: props) {
         `}
         >
           <AdminLeftNavigation />
-          <main className="w-full">{children}</main>
+          <main className="w-full h-screen overflow-auto">{children}</main>
         </div>
       )}
     </React.Fragment>
