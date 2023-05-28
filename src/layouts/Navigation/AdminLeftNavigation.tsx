@@ -10,6 +10,7 @@ import Drawer from "react-modern-drawer";
 import "react-modern-drawer/dist/index.css";
 import { Data } from "../../../constants/Data/JSON";
 
+
 const BuyerNavigationItems = [
   {
     Name: "Dashboard",
@@ -62,7 +63,7 @@ function AdminLeftNavigation() {
             <p className="font-inter font-medium text-black-off text-[.875rem] leading-[1.25rem] mb-4">
               Welcome back
             </p>
-            <BadgeAvatars alt="Sahal Imran" />
+            <BadgeAvatars alt="seo text will come here" />
             <h2 className="font-inter font-medium text-black-off text-[1.125rem] leading-[1.75rem] mt-1">
               UserName121
             </h2>
@@ -74,10 +75,10 @@ function AdminLeftNavigation() {
                 <Link
                   key={index}
                   href={item.Route}
-                  className={`relative font-inter text-[13px] leading-[20px] font-normal after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-main-brand after:transition-all after:duration-300 hover:after:w-full ${
+                  className={` font-inter text-[13px] leading-[20px] font-normal ${
                     item.Route === Router.pathname
-                      ? "text-main-secondary"
-                      : "text-main-brand"
+                      ? "text-main-brand border-b-[2px] border-black-main"
+                      : "text-black-soft relative after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-main-brand after:transition-all after:duration-300 hover:after:w-full "
                   }`}
                 >
                   {item.Name}
