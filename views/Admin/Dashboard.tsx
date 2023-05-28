@@ -3,9 +3,10 @@ import StatsSnippet from "../../src/components/Admin/Snippets/Stats";
 import SalesSnippet from "../../src/components/Admin/Snippets/Sales";
 import { Data } from "../../constants/Data/JSON";
 import RecentOrders from "@/components/Admin/Snippets/RecentOrders";
+import RecentBuyer from "@/components/Admin/Snippets/RecentBuyer";
 
 const Dashboard = () => {
-  
+
   const { ordersData } = Data.AdminData;
 
   return (
@@ -32,6 +33,8 @@ const Dashboard = () => {
       </div>
       <SalesSnippet />
       <RecentOrders />
+      {/* ===> recent buyer here */}
+      <RecentBuyer/>
     </div>
   );
 };
