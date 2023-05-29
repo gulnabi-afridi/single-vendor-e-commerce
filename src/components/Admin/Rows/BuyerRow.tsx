@@ -15,7 +15,7 @@ const BuyerRow: React.FC<Props> = ({
   address,
   purchasedProducts,
   amountSpent,
-  event,
+  event = ()=>{},
 }: Props) => {
   return (
     <div className="w-full grid grid-cols-[1fr,1.5fr,1fr,1fr,.5fr] min-w-[600px] border-b-[2px] border-gray px-4 py-[8px]">

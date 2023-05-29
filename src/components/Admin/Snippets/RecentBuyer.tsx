@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import MiniGrid from "@/components/shared/TableGrid/MiniGrid";
 
 import { Data } from "../../../../constants/Data/JSON";
-import RecentBuyerRow from "../Rows/BuyerRow";
+import BuyerRow from "../Rows/BuyerRow";
 
 const { buyerData } = Data.AdminData;
 
@@ -25,8 +25,9 @@ const RecentBuyer = () => {
         {buyerData.map(
           (item: any, index: number) =>
             index < 5 && (
-              <RecentBuyerRow
+              <BuyerRow
                 key={index}
+                event={()=>{}}
                 name={item.name}
                 address={item.address}
                 purchasedProducts={item.purchasedProducts}
