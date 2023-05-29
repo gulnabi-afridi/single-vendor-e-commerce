@@ -7,13 +7,15 @@ interface Props {
   address: string;
   purchasedProducts: number;
   amountSpent: string;
+  event:()=>void;
 }
 
-const RecentBuyerRow: React.FC<Props> = ({
+const BuyerRow: React.FC<Props> = ({
   name,
   address,
   purchasedProducts,
   amountSpent,
+  event,
 }: Props) => {
   return (
     <div className="w-full grid grid-cols-[1fr,1.5fr,1fr,1fr,.5fr] min-w-[600px] border-b-[2px] border-gray px-4 py-[8px]">
@@ -41,7 +43,7 @@ const RecentBuyerRow: React.FC<Props> = ({
         </p>
       </div>
       <div className="w-full flex items-center justify-start">
-        <IconButton>
+        <IconButton onClick={event}>
           <BsThreeDots size={15} className="text-black-main" />
         </IconButton>
       </div>
@@ -49,4 +51,4 @@ const RecentBuyerRow: React.FC<Props> = ({
   );
 };
 
-export default RecentBuyerRow;
+export default BuyerRow;

@@ -730,6 +730,48 @@ export const Data = {
         purchasedProducts: "2",
         amountSpent: "54",
       },
+      {
+        name: "ahmad",
+        address: "st Paul Street Los Vegas",
+        purchasedProducts: "2",
+        amountSpent: "54",
+      },
+      {
+        name: "ahmad",
+        address: "st Paul Street Los Vegas",
+        purchasedProducts: "2",
+        amountSpent: "54",
+      },
+      {
+        name: "ahmad",
+        address: "st Paul Street Los Vegas",
+        purchasedProducts: "2",
+        amountSpent: "54",
+      },
+      {
+        name: "ahmad",
+        address: "st Paul Street Los Vegas",
+        purchasedProducts: "2",
+        amountSpent: "54",
+      },
+      {
+        name: "ahmad",
+        address: "st Paul Street Los Vegas",
+        purchasedProducts: "2",
+        amountSpent: "54",
+      },
+      {
+        name: "ahmad",
+        address: "st Paul Street Los Vegas",
+        purchasedProducts: "2",
+        amountSpent: "54",
+      },
+      {
+        name: "ahmad",
+        address: "st Paul Street Los Vegas",
+        purchasedProducts: "2",
+        amountSpent: "54",
+      },
     ],
   },
 };

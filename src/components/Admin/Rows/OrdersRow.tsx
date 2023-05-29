@@ -12,7 +12,7 @@ interface Props {
   purchasedData: string;
 }
 
-const RecentOrdersRow: React.FC<Props> = ({
+const OrdersRow: React.FC<Props> = ({
   picture,
   name,
   orderId,
@@ -64,4 +64,4 @@ const RecentOrdersRow: React.FC<Props> = ({
   );
 };
 
-export default RecentOrdersRow;
+export default OrdersRow;
