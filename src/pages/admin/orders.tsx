@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import Orders from "../../../views/Admin/Orders";
 
-const orders = () => {
+const ordersPage = () => {
   return (
-    <div>orders</div>
-  )
-}
+    <React.Fragment>
+      <Orders />
+    </React.Fragment>
+  );
+};
 
-export default orders
+export default ordersPage;

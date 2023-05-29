@@ -27,7 +27,7 @@ const TableGrid: React.FC<Props> = ({
   SetState,
   Pages,
   CurrentPage,
-  OnPageChange
+  OnPageChange,
 }: Props) => {
   return (
     <div className="w-full bg-[#F7F7F7] border-[1px] border-[#D1D9E2] rounded-[8px] Shadow">
@@ -70,7 +70,11 @@ const TableGrid: React.FC<Props> = ({
       <div>
         {/* pagination here */}
         <div className="w-full flex justify-center items-center p-4 ">
-          <MUIPagination Pages={Pages} CurrentPage={CurrentPage} OnPageChange={OnPageChange} />
+          <MUIPagination
+            Pages={Pages}
+            CurrentPage={CurrentPage}
+            OnPageChange={OnPageChange}
+          />
         </div>
       </div>
     </div>

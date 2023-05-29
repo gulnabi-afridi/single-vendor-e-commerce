@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import MiniGrid from "@/components/shared/TableGrid/MiniGrid";
 
 import { Data } from "../../../../constants/Data/JSON";
-import RecentOrdersRow from "../Rows/RecentOrdersRow";
+import RecentOrdersRow from "../Rows/OrdersRow";
 
 const { ordersData } = Data.AdminData;
 
