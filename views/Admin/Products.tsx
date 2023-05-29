@@ -1,27 +1,47 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import MuiDropdown from "@/components/shared/DropDown/MuiDropdown";
 import TableGrid from "@/components/shared/TableGrid/TableGrid";
 import ProductRow from "@/components/Admin/Rows/ProductRow";
+import DashboardDialougeWrapper from "@/components/shared/DialogueWrapper/DashboardDialougeWrapper";
+import { FormControl, MenuItem, InputLabel, Select } from "@mui/material";
+import TextInput from "@/components/shared/Inputs/TextInput";
+import Image from "next/image";
+import { AiOutlineDelete } from "react-icons/ai";
+import SampleButton from "@/components/shared/Button/SampleButton";
 
 
 const Products = () => {
   const [search, setSearch] = useState("");
+  const [editProductDialogue, setEditProductDialogue] = useState(false);
+  const [addProductDialogue, setAddProductDialogue] = useState(false);
+  const [productImages, setProductImages] = useState<File[]>([]);
+
+  const newProductRef: any = useRef(null);
+  const handleNewProductFileChange = (event: any) => {
+    const files = event.target.files;
+    if (files) {
+      const selectedImagesArray: File[] = [...productImages];
+      for (let i = 0; i < files.length; i++) {
+        const file = files[i];
+        if (file.type.startsWith("image/")) {
+          selectedImagesArray.push(file);
+        }
+      }
+      setProductImages(selectedImagesArray);
+    }
+  };
+
+  const handleAddProduct = () => {};
+
+  const deleteProductImage = (img: any) => {
+    const updatedImages = productImages.filter((item) => {
+      return item.name !== img.name;
+    });
+    setProductImages(updatedImages);
+  };
 
   // state to pagination
-  const [page, setPage] = useState<{
-    unshippedPage: number;
-    shippedPage: number;
-  }>({
-    unshippedPage: 1,
-    shippedPage: 1,
-  });
-  //  handle pagination
-  const handlePageChange = (
-    event: React.ChangeEvent<unknown>,
-    value: number
-  ) => {
-    setPage({ ...page, unshippedPage: value });
-  };
+  const [page, setPage] = useState(1);
 
   //  ======> add-new-products input values
   const [Inputs, setInputs] = useState({
@@ -40,14 +60,16 @@ const Products = () => {
     });
   };
 
-  //   console.log(Inputs.choseCategory);
 
   return (
     <React.Fragment>
       <div className="w-full flex flex-col items-start justify-center gap-[20px] bg-[#F7F7F7] p-4 rounded-[5px] Shadow">
         {/* ======> add product + select category button */}
         <div className="w-full flex flex-col md:flex-row justify-between items-center gap-8 md:gap-0">
-          <button className="w-[150px] h-[44px] hover:opacity-80 bg-black-main text-white-main rounded-[5px]  font-medium">
+          <button
+            onClick={() => setAddProductDialogue(true)}
+            className="w-[150px] h-[44px] hover:opacity-80 bg-black-main text-white-main rounded-[5px]  font-medium"
+          >
             Add a Product
           </button>
           <div className="w-[200px]">
@@ -82,8 +104,8 @@ const Products = () => {
             State={search}
             SetState={(e: any) => setSearch(e.target.value)}
             Pages={8}
-            CurrentPage={1}
-            OnPageChange={handlePageChange}
+            CurrentPage={page}
+            OnPageChange={(e: any) => setPage(e.target.value)}
           >
             <div className="w-full min-w-[500px] h-[calc(100vh-320px)] overflow-auto HideScroll">
               {mobileDevices.map((item, index) => {
@@ -105,22 +127,152 @@ const Products = () => {
           </TableGrid>
         </div>
       </div>
+      {/* ===> dialogue for add product */}
+      <DashboardDialougeWrapper
+        Open={addProductDialogue}
+        CloseEvent={() => setAddProductDialogue(false)}
+        Title="Add a new Product"
+        style=" xs:w-full"
+      >
+        <form onSubmit={handleAddProduct}>
+          <FormControl
+            sx={{
+              "& label.Mui-focused": {
+                color: "#000000",
+              },
+            }}
+            className="w-full flex flex-col justify-center items-center gap-4"
+          >
+            {/* =====> select a category */}
+            <InputLabel id="demo-simple-select-label">
+              Select A Category
+            </InputLabel>
+            <Select
+              sx={{
+                width: "100%",
+                "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+                  borderColor: "#000000",
+                },
+              }}
+              labelId="demo-simple-select-label"
+              id="demo-simple-select"
+              value={Inputs.category}
+              label="Select a category"
+              required
+              onChange={(e: any) =>
+                setInputs({
+                  ...Inputs,
+                  category: e.target.value,
+                })
+              }
+            >
+              {ProductCategory.map((item, index) => {
+                return (
+                  <MenuItem key={index} value={item.value}>
+                    {item.name}
+                  </MenuItem>
+                );
+              })}
+            </Select>
+            <SampleButton
+              typeOf="button"
+              title="Upload Product Images"
+              event={() => newProductRef.current.click()}
+              styles="w-[200px] bg-black-main sm:mt-4 mt-0"
+            />
+
+            <input
+              className="hidden"
+              ref={newProductRef}
+              type="file"
+              multiple
+              accept="image/*"
+              onChange={handleNewProductFileChange}
+            />
+            {productImages.length > 0 && (
+              <div className="w-full flex flex-col gap-4">
+                <p className="text-[18px] font-semibold font-inter">
+                  Product Images
+                </p>
+                <div className="w-full grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-3">
+                  {productImages.map((img, index) => {
+                    return (
+                      <div key={index} className="w-full h-[100px] relative ">
+                        <Image
+                          src={URL.createObjectURL(img)}
+                          className="cover"
+                          fill
+                          alt=""
+                        ></Image>
+                        <div className="w-full h-full opacity-0 hover:opacity-100 cursor-pointer flex justify-center items-center hover:bg-black-main/50 absolute left-0 top-0">
+                          <AiOutlineDelete
+                            onClick={() => deleteProductImage(img)}
+                            className=" text-white-main text-[26px]"
+                          />
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
+
+            <TextInput
+              label="Product name"
+              placeholder="product name"
+              IsCompulsory={true}
+              Name="ProductName"
+              Type="text"
+              state={Inputs.ProductName}
+              SetState={InputChange}
+            />
+            <TextInput
+              label="Stock"
+              placeholder="Stock"
+              Type="number"
+              Name="Stock"
+              IsCompulsory={true}
+              state={Inputs.Stock}
+              SetState={InputChange}
+            />
+            <TextInput
+              label="Price"
+              placeholder="Price"
+              Type="number"
+              Name="Price"
+              IsCompulsory={true}
+              state={Inputs.Price}
+              SetState={InputChange}
+            />
+            <div className="w-full flex sm:flex-row flex-col-reverse justify-end items-center gap-4 mt-6">
+              <SampleButton
+                typeOf="button"
+                title="Cancel"
+                event={() => setAddProductDialogue(false)}
+                styles="bg-red-main w-[120px]"
+              />
+
+              <SampleButton title="Add Product" typeOf="submit" />
+            </div>
+          </FormControl>
+        </form>
+      </DashboardDialougeWrapper>
     </React.Fragment>
   );
 };
 
 const ProductCategory = [
   {
-    name: "MobileDevices",
-    value: "mobileDevices",
+    name: "t-shirts",
+    value: "t shirts",
   },
   {
-    name: "Wearables",
-    value: "wearables",
+    name: "polo-t-shirts",
+    value: "polo t shirts",
   },
   {
-    name: "Computers",
-    value: "computer",
+    name: "switters",
+    value: "switters",
   },
 ];
 

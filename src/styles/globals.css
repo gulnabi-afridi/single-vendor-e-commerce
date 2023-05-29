@@ -25,6 +25,22 @@
   color: white !important;
 }
 
+/* ===> html radio stye */
+input[type="radio"] {
+  -webkit-appearance: none; /* Remove default styling */
+  -moz-appearance: none;
+  appearance: none;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  outline: 2px solid black;
+  outline-offset: 2px;
+}
+
+input[type="radio"]:checked {
+  background-color: black;
+}
+
 /* ===> animated bottom line on hover */
 .bottomLine::after {
   content: "";

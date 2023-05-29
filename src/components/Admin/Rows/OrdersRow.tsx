@@ -10,6 +10,7 @@ interface Props {
   qty: number;
   status: string;
   purchasedData: string;
+  event:()=>void
 }
 
 const OrdersRow: React.FC<Props> = ({
@@ -19,6 +20,7 @@ const OrdersRow: React.FC<Props> = ({
   qty,
   status,
   purchasedData,
+  event
 }: Props) => {
   return (
     <div className="w-full grid grid-cols-[1.5fr,1fr,1fr,1fr,1fr,.5fr] min-w-[600px] border-b-[2px] border-gray px-4 py-1">
@@ -56,7 +58,7 @@ const OrdersRow: React.FC<Props> = ({
         </p>
       </div>
       <div className="w-full flex items-center justify-start">
-        <IconButton>
+        <IconButton onClick={event}>
           <BsThreeDots size={15} className="text-black-main" />
         </IconButton>
       </div>
