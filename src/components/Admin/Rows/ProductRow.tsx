@@ -14,6 +14,7 @@ interface Props {
   qtySold: number;
   sale: number;
   date: string;
+  event:()=>void;
 }
 
 const ProductRow = ({
@@ -25,6 +26,7 @@ const ProductRow = ({
   qtySold,
   sale,
   date,
+  event,
 }: Props) => {
   return (
     <div className="w-full grid grid-cols-[1.5fr,1fr,1fr,1fr,1fr,1fr,1fr,1fr] min-w-[600px] border-b-[2px] border-gray px-4 py-1">
@@ -74,7 +76,7 @@ const ProductRow = ({
       </div>
       {/* ==> edit icons */}
       <div className="w-full flex items-center justify-start">
-      <IconButton onClick={() => {}}>
+      <IconButton onClick={event}>
         <EditIcon className="text-main-brand" />
       </IconButton>
 

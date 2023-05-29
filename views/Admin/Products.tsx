@@ -9,14 +9,16 @@ import Image from "next/image";
 import { AiOutlineDelete } from "react-icons/ai";
 import SampleButton from "@/components/shared/Button/SampleButton";
 
-
 const Products = () => {
   const [search, setSearch] = useState("");
   const [editProductDialogue, setEditProductDialogue] = useState(false);
   const [addProductDialogue, setAddProductDialogue] = useState(false);
   const [productImages, setProductImages] = useState<File[]>([]);
+  const [updateProductImages, setUpdateProductImages] = useState<File[]>([]);
 
   const newProductRef: any = useRef(null);
+  const productEditRef: any = useRef(null);
+
   const handleNewProductFileChange = (event: any) => {
     const files = event.target.files;
     if (files) {
@@ -31,7 +33,22 @@ const Products = () => {
     }
   };
 
+  const handleEditFileChange = (event: any) => {
+    const files = event.target.files;
+    if (files) {
+      const selectedImagesArray: File[] = [...productImages];
+      for (let i = 0; i < files.length; i++) {
+        const file = files[i];
+        if (file.type.startsWith("image/")) {
+          selectedImagesArray.push(file);
+        }
+      }
+      setUpdateProductImages(selectedImagesArray);
+    }
+  };
+
   const handleAddProduct = () => {};
+  const handelEditProduct = () => {};
 
   const deleteProductImage = (img: any) => {
     const updatedImages = productImages.filter((item) => {
@@ -59,7 +76,6 @@ const Products = () => {
       [evt.target.name]: value,
     });
   };
-
 
   return (
     <React.Fragment>
@@ -112,6 +128,7 @@ const Products = () => {
                 return (
                   <ProductRow
                     key={index}
+                    event={() => setEditProductDialogue(true)}
                     name={item.item}
                     pic={item.image}
                     stock={item.stock}
@@ -256,6 +273,110 @@ const Products = () => {
             </div>
           </FormControl>
         </form>
+      </DashboardDialougeWrapper>
+      {/* =====> dialogue for edit product */}
+
+      <DashboardDialougeWrapper
+        Open={editProductDialogue}
+        CloseEvent={() => setEditProductDialogue(false)}
+        Title="Edit your product"
+        style=" xs:w-full"
+      >
+        <div className="w-full flex flex-col gap-4 justify-center items-center">
+          <div className="w-full flex justify-center items-center flex-col">
+            <div className="w-full grid grid-cols-4 justify-center items-center">
+              {updateProductImages?.map((img, index) => {
+                return (
+                  <div key={index} className="w-full h-[100px] relative ">
+                    <Image
+                      src={URL.createObjectURL(img)}
+                      className="object-contain"
+                      fill
+                      alt=""
+                    />
+                    <div className="w-full h-full opacity-0 hover:opacity-100 cursor-pointer flex justify-center items-center hover:bg-black-main/50 absolute left-0 top-0">
+                      <AiOutlineDelete
+                        onClick={() => {
+                          const images = [...updateProductImages];
+                          images.pop();
+                          setUpdateProductImages(images);
+                        }}
+                        className=" text-white-main text-[26px]"
+                      />
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+            {/* ======> Add more product images button */}
+            <SampleButton
+              title="Upload Image"
+              typeOf="button"
+              event={() => productEditRef.current.click()}
+              styles={`bg-black-main w-[200px] ${
+                updateProductImages.length !== 0 && "mt-8"
+              }`}
+            />
+            <input
+              className="hidden"
+              ref={productEditRef}
+              type="file"
+              multiple
+              accept="image/*"
+              onChange={handleEditFileChange}
+            />
+          </div>
+          <form
+            onSubmit={handelEditProduct}
+            action=""
+            className="w-full flex flex-col gap-4 mt-4"
+          >
+            {/* =====> product name input */}
+            <TextInput
+              label="Product name"
+              placeholder="Product name"
+              Type="text"
+              Name="ProductName"
+              state={Inputs.ProductName}
+              SetState={InputChange}
+            />
+            {/* ======> stock number */}
+            <TextInput
+              state={Inputs.Stock}
+              Name="Stock"
+              SetState={InputChange}
+              label="Stock"
+              placeholder="Stock"
+              Type="number"
+            />
+            {/* ======> price */}
+            <TextInput
+              label="Price"
+              placeholder="Price"
+              Name="Price"
+              Type="number"
+              state={Inputs.Price}
+              SetState={InputChange}
+            />
+            {/* ======> edit + cancel button */}
+            <div className="flex sm:flex-row flex-col-reverse justify-end items-center gap-4 mt-6">
+              <SampleButton
+                title="Cancel"
+                typeOf="button"
+                event={() => {
+                  setEditProductDialogue(false);
+                }}
+                styles="w-[120px] bg-red-main"
+              />
+              <SampleButton
+                title="Save"
+                typeOf="submit"
+                event={handelEditProduct}
+                styles="w-[120px] bg-black-main"
+              />
+            </div>
+          </form>
+        </div>
       </DashboardDialougeWrapper>
     </React.Fragment>
   );
