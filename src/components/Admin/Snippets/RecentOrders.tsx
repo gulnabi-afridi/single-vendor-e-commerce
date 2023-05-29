@@ -12,7 +12,14 @@ const RecentOrders = () => {
       Title="Recent Orders"
       ViewMoreLink="/admin/orders"
       GridCols="grid-cols-[1.5fr,1fr,1fr,1fr,1fr,.5fr]"
-      TableHeaders={["product", "order id", "qty", "status", ""]}
+      TableHeaders={[
+        "product",
+        "order id",
+        "Purchased Date",
+        "qty",
+        "status",
+        "",
+      ]}
     >
       {/* rows here */}
       <div className="w-full min-w-[600px] overflow-auto HideScroll">
@@ -26,6 +33,7 @@ const RecentOrders = () => {
                 orderId={item.orderId}
                 qty={item.qty}
                 status={item.status}
+                purchasedData={item.purchasedDate}
               />
             )
         )}

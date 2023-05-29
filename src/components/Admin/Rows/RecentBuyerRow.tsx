@@ -16,7 +16,7 @@ const RecentBuyerRow: React.FC<Props> = ({
   amountSpent,
 }: Props) => {
   return (
-    <div className="w-full grid grid-cols-[1fr,1.5fr,1fr,1fr,.5fr] min-w-[600px] border-b-[2px] border-gray px-4 py-3">
+    <div className="w-full grid grid-cols-[1fr,1.5fr,1fr,1fr,.5fr] min-w-[600px] border-b-[2px] border-gray px-4 py-[8px]">
       <div className="w-full flex items-center justify-start">
         <p className="font-inter font-semibold text-black-main text-[11px] capitalize">
           {name}
@@ -42,12 +42,7 @@ const RecentBuyerRow: React.FC<Props> = ({
       </div>
       <div className="w-full flex items-center justify-start">
         <IconButton>
-          <button
-            onClick={() => {}}
-            className="h-[24px] w-[24px] flex items-center justify-center text-black-main rounded-[5px] bg-gray"
-          >
-            <BsThreeDots size={15} />
-          </button>
+          <BsThreeDots size={15} className="text-black-main" />
         </IconButton>
       </div>
     </div>

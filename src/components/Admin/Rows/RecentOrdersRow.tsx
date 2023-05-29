@@ -9,6 +9,7 @@ interface Props {
   orderId: string;
   qty: number;
   status: string;
+  purchasedData: string;
 }
 
 const RecentOrdersRow: React.FC<Props> = ({
@@ -17,6 +18,7 @@ const RecentOrdersRow: React.FC<Props> = ({
   orderId,
   qty,
   status,
+  purchasedData,
 }: Props) => {
   return (
     <div className="w-full grid grid-cols-[1.5fr,1fr,1fr,1fr,1fr,.5fr] min-w-[600px] border-b-[2px] border-gray px-4 py-1">
@@ -34,6 +36,13 @@ const RecentOrdersRow: React.FC<Props> = ({
           {orderId}
         </p>
       </div>
+      {/* => purchase date here */}
+      <div className="w-full flex items-center justify-start">
+        <p className="font-inter font-medium text-black-main text-[11px]">
+          {purchasedData}
+        </p>
+      </div>
+
       {/*quantiti here */}
       <div className="w-full flex items-center justify-start">
         <p className="font-inter font-medium text-black-main text-[11px]">
@@ -48,12 +57,7 @@ const RecentOrdersRow: React.FC<Props> = ({
       </div>
       <div className="w-full flex items-center justify-start">
         <IconButton>
-          <button
-            onClick={() => {}}
-            className="h-[24px] w-[24px] flex items-center justify-center text-black-main rounded-[5px] bg-gray"
-          >
-            <BsThreeDots size={15} />
-          </button>
+          <BsThreeDots size={15} className="text-black-main" />
         </IconButton>
       </div>
     </div>

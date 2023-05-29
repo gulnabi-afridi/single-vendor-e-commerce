@@ -460,6 +460,7 @@ export const Data = {
         orderId: "2657",
         qty: "3",
         status: "process",
+        purchasedDate:"28.04.2021",
       },
       {
         productName: "t-shirt",
@@ -467,6 +468,7 @@ export const Data = {
         orderId: "2657",
         qty: "3",
         status: "deliverd",
+        purchasedDate:"28.04.2021",
       },
       {
         productName: "t-shirt",
@@ -474,6 +476,7 @@ export const Data = {
         orderId: "2657",
         qty: "3",
         status: "process",
+        purchasedDate:"28.04.2021",
       },
       {
         productName: "t-shirt",
@@ -481,6 +484,7 @@ export const Data = {
         orderId: "2657",
         qty: "1",
         status: "deliverd",
+        purchasedDate:"28.04.2021",
       },
       {
         productName: "t-shirt",
@@ -488,6 +492,7 @@ export const Data = {
         orderId: "2657",
         qty: "3",
         status: "delived",
+        purchasedDate:"28.04.2021",
       },
       {
         productName: "t-shirt",
@@ -495,6 +500,7 @@ export const Data = {
         orderId: "2657",
         qty: "3",
         status: "process",
+        purchasedDate:"28.04.2021",
       },
       {
         productName: "t-shirt",
@@ -502,6 +508,7 @@ export const Data = {
         orderId: "2657",
         qty: "3",
         status: "process",
+        purchasedDate:"28.04.2021",
       },
       {
         productName: "t-shirt",
@@ -509,6 +516,7 @@ export const Data = {
         orderId: "2657",
         qty: "3",
         status: "process",
+        purchasedDate:"28.04.2021",
       },
       {
         productName: "t-shirt",
@@ -516,6 +524,7 @@ export const Data = {
         orderId: "2657",
         qty: "3",
         status: "process",
+        purchasedDate:"28.04.2021",
       },
       {
         productName: "t-shirt",
@@ -523,6 +532,7 @@ export const Data = {
         orderId: "2657",
         qty: "3",
         status: "process",
+        purchasedDate:"28.04.2021",
       },
       {
         productName: "t-shirt",
@@ -530,6 +540,7 @@ export const Data = {
         orderId: "2657",
         qty: "3",
         status: "process",
+        purchasedDate:"28.04.2021",
       },
       {
         productName: "t-shirt",
@@ -537,6 +548,7 @@ export const Data = {
         orderId: "2657",
         qty: "3",
         status: "process",
+        purchasedDate:"28.04.2021",
       },
     ],
     monthlySales: [
