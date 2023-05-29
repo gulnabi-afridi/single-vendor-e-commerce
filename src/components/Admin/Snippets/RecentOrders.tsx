@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import MiniGrid from "@/components/shared/TableGrid/MiniGrid";
 
 import { Data } from "../../../../constants/Data/JSON";
-import RecentOrdersRow from "../Rows/OrdersRow";
+import OrdersRow from "../Rows/OrdersRow";
 
 const { ordersData } = Data.AdminData;
 
@@ -26,9 +26,10 @@ const RecentOrders = () => {
         {ordersData.map(
           (item: any, index: number) =>
             index < 5 && (
-              <RecentOrdersRow
+              <OrdersRow
                 key={index}
                 picture={item.pic}
+                event={()=>{}}
                 name={item.productName}
                 orderId={item.orderId}
                 qty={item.qty}

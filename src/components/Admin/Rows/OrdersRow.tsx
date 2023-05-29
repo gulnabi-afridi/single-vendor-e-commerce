@@ -10,7 +10,7 @@ interface Props {
   qty: number;
   status: string;
   purchasedData: string;
-  event:()=>void
+  event?: () => void;
 }
 
 const OrdersRow: React.FC<Props> = ({
@@ -20,7 +20,7 @@ const OrdersRow: React.FC<Props> = ({
   qty,
   status,
   purchasedData,
-  event
+  event = () => {},
 }: Props) => {
   return (
     <div className="w-full grid grid-cols-[1.5fr,1fr,1fr,1fr,1fr,.5fr] min-w-[600px] border-b-[2px] border-gray px-4 py-1">
