@@ -90,7 +90,7 @@ function AdminLeftNavigation() {
               );
             })}
             <button
-            onClick={toggleLogoutDialouge}
+              onClick={toggleLogoutDialouge}
               className={`relative font-inter text-[13px] leading-[20px] font-normal after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-main-brand after:transition-all after:duration-300 hover:after:w-full`}
             >
               Sign out
@@ -114,10 +114,10 @@ function AdminLeftNavigation() {
         >
           <div className="w-full h-full bg-white-off p-4 flex justify-center items-center flex-col gap-4">
             <button onClick={toggleLogoutDialouge} className={`self-end`}>
-              <RxCross1 size={20}/>
+              <RxCross1 size={20} />
             </button>
             <h3 className="font-inter font-semibold text-[24px] leading-[28px] text-black-off">
-             Confirm Logout
+              Confirm Logout
             </h3>
             <div className="w-full h-[40px] grid grid-cols-2 mt-4 gap-4">
               <Link
@@ -125,13 +125,13 @@ function AdminLeftNavigation() {
                 href={"/"}
                 className="w-full h-full flex justify-center items-center text-white-main bg-black-main font-inter font-medium text-[1rem] leading-[1.25rem] rounded-[5px]"
               >
-               Logout
+                Logout
               </Link>
               <button
                 onClick={toggleLogoutDialouge}
                 className="w-full h-full flex justify-center items-center text-white-main bg-red-main font-inter font-medium text-[1rem] leading-[1.25rem] rounded-[5px]"
               >
-               Cancel
+                Cancel
               </button>
             </div>
           </div>
@@ -204,7 +204,7 @@ function AdminLeftNavigation() {
                   );
                 })}
                 <button
-                onClick={toggleLogoutDialouge}
+                  onClick={toggleLogoutDialouge}
                   className={`relative font-inter text-[13px] leading-[20px] font-normal after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-main-brand after:transition-all after:duration-300 hover:after:w-full`}
                 >
                   Sign out

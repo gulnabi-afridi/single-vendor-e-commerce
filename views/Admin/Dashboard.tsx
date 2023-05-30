@@ -7,26 +7,26 @@ import RecentBuyer from "@/components/Admin/Snippets/RecentBuyer";
 
 const Dashboard = () => {
 
-  const { ordersData } = Data.AdminData;
+  const { snippetsData } = Data.AdminData;
 
   return (
     <div className="w-full flex flex-col gap-6 sm:p-4 p-2">
       <div className="w-full grid lg:grid-cols-3 gap-4">
         <StatsSnippet
           dataKey="orders"
-          Data={ordersData}
+          Data={snippetsData}
           Title="Orders"
           Figure={40}
         />
         <StatsSnippet
           dataKey="orders"
-          Data={ordersData}
+          Data={snippetsData}
           Title="Sales"
           Figure={1400}
         />
         <StatsSnippet
           dataKey="orders"
-          Data={ordersData}
+          Data={snippetsData}
           Title="New Buyers"
           Figure={130}
         />

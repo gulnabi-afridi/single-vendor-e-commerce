@@ -23,14 +23,13 @@ const Category = () => {
           </p>
         </div>
         {/* ===> categories row */}
-        <div className="w-full h-full HideScroll flex flex-col px-4">
-          <div className="w-full h-[calc(100%-100px)] overflow-auto HideScroll">
-            {productCategory.map((item, index) => {
-              return (
-                <CategoryRow key={index} name={item.name} date={item.date} />
-              );
-            })}
-          </div>
+
+        <div className="w-full h-[calc(100%-100px)] overflow-auto HideScroll px-4">
+          {productCategory.map((item, index) => {
+            return (
+              <CategoryRow key={index} name={item.name} date={item.date} />
+            );
+          })}
         </div>
       </div>
     </div>
