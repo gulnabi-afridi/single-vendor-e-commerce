@@ -6,9 +6,10 @@ function Products() {
   return (
     <Wrapper style="py-10">
       <div className="w-full grid gap-6 gap-y-6 sm:gap-y-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4">
-        {ProductsData.map((item, index) => {
+        {ProductsData.map((item: any, index: number) => {
           return (
             <ProductCard
+              key={index}
               picture={item.picture}
               price={item.price}
               title={item.title}
