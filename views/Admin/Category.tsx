@@ -4,10 +4,18 @@ import DashboardDialougeWrapper from "@/components/shared/DialogueWrapper/Dashbo
 import SampleButton from "@/components/shared/Button/SampleButton";
 import InputField from "../../src/components/shared/Inputs/TextInput";
 
-
 const Category = () => {
   const [addCategoryDialouge, setAddCategoryDialogue] = useState(false);
+  const [showDetails, setShowDetails] = useState(false);
   const [newCategory, setNewCategory] = useState("");
+  const [dummyDetails, setDummyDetails] = useState({
+    name: "Switters",
+    products: 21,
+  });
+  const handleInputs = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setDummyDetails({ ...dummyDetails, [name]: value });
+  };
   return (
     <div className="w-full h-full font-inter">
       <div className="w-full h-full border-[1px] bg-[#F7F7F7] rounded-[5px] Shadow">
@@ -42,7 +50,12 @@ const Category = () => {
         <div className="w-full h-[calc(100%-120px)] overflow-auto HideScroll px-4">
           {productCategory.map((item, index) => {
             return (
-              <CategoryRow key={index} name={item.name} date={item.date} />
+              <CategoryRow
+                key={index}
+                name={item.name}
+                date={item.date}
+                showDetail={() => setShowDetails(true)}
+              />
             );
           })}
         </div>
@@ -55,15 +68,17 @@ const Category = () => {
         style=" xs:w-full"
       >
         <form
-          onSubmit={(e: any) => {
+          onSubmit={(e: React.FormEvent<HTMLFormElement>) => {
             e.preventDefault();
-            setAddCategoryDialogue(false)
+            setAddCategoryDialogue(false);
           }}
         >
           <InputField
             Name="Category Name"
             state={newCategory}
-            SetState={(e: any) => setNewCategory(e.target.value)}
+            SetState={(e: React.ChangeEvent<HTMLInputElement>) =>
+              setNewCategory(e.target.value)
+            }
             Type="text"
             label="Category Name"
             placeholder="Enter New Category here"
@@ -80,6 +95,56 @@ const Category = () => {
             />
 
             <SampleButton title="Add Category" typeOf="submit" />
+          </div>
+        </form>
+      </DashboardDialougeWrapper>
+
+      {/* Edit existing Category Dialouge */}
+      <DashboardDialougeWrapper
+        Open={showDetails}
+        CloseEvent={() => setShowDetails(false)}
+        Title="Edit Category"
+        style=" xs:w-full"
+      >
+        <form
+          onSubmit={(e: React.FormEvent<HTMLFormElement>) => {
+            e.preventDefault();
+            setShowDetails(false);
+          }}
+        >
+          <div className="w-full flex flex-col items-center justify-center gap-8">
+            <InputField
+              Name="name"
+              state={dummyDetails.name}
+              SetState={handleInputs}
+              Type="text"
+              label="Category Name"
+              placeholder="Enter Category Name here"
+              Multiline={false}
+              IsCompulsory={true}
+            />
+            <InputField
+              Name="products"
+              state={dummyDetails.products}
+              SetState={handleInputs}
+              Type="number"
+              label="Total Available Products"
+              placeholder="Enter Available Products Here"
+              Multiline={false}
+              IsCompulsory={true}
+            />
+          </div>
+
+          {/* footer */}
+          <div className="w-full flex sm:flex-row flex-col-reverse justify-end items-center gap-4 mt-6">
+            <SampleButton
+              typeOf="button"
+              title="Cancel"
+              event={() => setShowDetails(false)}
+              styles="bg-red-main w-[120px]"
+            />
+
+            <SampleButton title="Save" typeOf="submit" />
           </div>
         </form>
       </DashboardDialougeWrapper>
