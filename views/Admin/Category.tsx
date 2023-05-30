@@ -3,8 +3,8 @@ import CategoryRow from "@/components/Admin/Rows/CategoryRow";
 
 const Category = () => {
   return (
-    <div className="w-full h-[calc(100vh-50px)] flex flex-col items-center justify-center gap-[20px]">
-      <div className="w-full border-[1px] max-w-[700px] bg-[#F7F7F7] rounded-[5px] Shadow">
+    <div className="w-full h-full">
+      <div className="w-full h-full border-[1px] bg-[#F7F7F7] rounded-[5px] Shadow">
         <p className="w-full h-[44px] text-center flex justify-center items-center text-[22px] text-black-main capitalize border-b-[1px] font-medium">
           All category
         </p>
@@ -23,8 +23,8 @@ const Category = () => {
           </p>
         </div>
         {/* ===> categories row */}
-        <div className="w-full overflow-auto HideScroll flex flex-col px-4">
-          <div className="w-full h-[400px]">
+        <div className="w-full h-full HideScroll flex flex-col px-4">
+          <div className="w-full h-[calc(100%-100px)] overflow-auto HideScroll">
             {productCategory.map((item, index) => {
               return (
                 <CategoryRow key={index} name={item.name} date={item.date} />

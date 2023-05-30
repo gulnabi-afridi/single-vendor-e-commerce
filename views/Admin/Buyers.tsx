@@ -22,39 +22,38 @@ const Buyers = () => {
 
   return (
     <React.Fragment>
-      <div className="w-full flex flex-col items-start justify-center gap-[20px] bg-[#F7F7F7] p-4 rounded-[5px] Shadow">
-        <div className="w-full flex flex-col gap-4 justify-center items-center">
-          <TableGrid
-            Title="Orders"
-            TableHeaders={[
-              "buyer",
-              "address",
-              "purchased products",
-              "amount spent",
-              "",
-            ]}
-            GridCols="grid-cols-[1fr,1.5fr,1fr,1fr,.5fr]"
-            State={search}
-            SetState={(e: any) => setSearch(e.target.value)}
-            Pages={10}
-            CurrentPage={page}
-            OnPageChange={handlePageChange}
-          >
-            <div className="w-full h-[calc(100vh-260px)] min-w-[500px] overflow-auto HideScroll">
-              {buyerData.map((item: any, index: number) => (
-                <BuyerRow
-                  key={index}
-                  event={() => setOpenDialogue(true)}
-                  name={item.name}
-                  address={item.address}
-                  purchasedProducts={item.purchasedProducts}
-                  amountSpent={item.amountSpent}
-                />
-              ))}
-            </div>
-          </TableGrid>
-        </div>
+      <div className="w-full flex flex-col gap-4 justify-center items-center">
+        <TableGrid
+          Title="Buyers"
+          TableHeaders={[
+            "buyer",
+            "address",
+            "purchased products",
+            "amount spent",
+            "",
+          ]}
+          GridCols="grid-cols-[1fr,1.5fr,1fr,1fr,.5fr]"
+          State={search}
+          SetState={(e: any) => setSearch(e.target.value)}
+          Pages={10}
+          CurrentPage={page}
+          OnPageChange={handlePageChange}
+        >
+          <div className="w-full h-[calc(100vh-260px)] min-w-[500px] overflow-auto HideScroll">
+            {buyerData.map((item: any, index: number) => (
+              <BuyerRow
+                key={index}
+                event={() => setOpenDialogue(true)}
+                name={item.name}
+                address={item.address}
+                purchasedProducts={item.purchasedProducts}
+                amountSpent={item.amountSpent}
+              />
+            ))}
+          </div>
+        </TableGrid>
       </div>
+
       {/* ====> dialogue */}
       <DashboardDialougeWrapper
         Open={openDialogue}

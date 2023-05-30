@@ -192,6 +192,7 @@ function AdminLeftNavigation() {
                     <Link
                       key={index}
                       href={item.Route}
+                      onClick={toggleDrawer}
                       className={`relative font-inter text-[13px] leading-[20px] font-normal after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-main-brand after:transition-all after:duration-300 hover:after:w-full ${
                         item.Route === Router.pathname
                           ? "text-main-brand"
@@ -203,6 +204,7 @@ function AdminLeftNavigation() {
                   );
                 })}
                 <button
+                onClick={toggleLogoutDialouge}
                   className={`relative font-inter text-[13px] leading-[20px] font-normal after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-main-brand after:transition-all after:duration-300 hover:after:w-full`}
                 >
                   Sign out
