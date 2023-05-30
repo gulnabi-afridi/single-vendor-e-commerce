@@ -44,7 +44,7 @@ const Account = () => {
         <div className="w-full h-[300px] Shadow relative rounded-[8px]">
           <Image
             className="object-cover rounded-[8px]"
-            src={"/Assets/Seller/ShopCover.jpg"}
+            src={"/Assets/Admin/ShopCover.jpg"}
             alt=""
             fill
           />
@@ -155,8 +155,8 @@ const Account = () => {
               {/* edit Cover here */}
               <div className="w-full h-[150px] rounded-[8px] relative">
                 <Image
-                  className="rounded-[8px]"
-                  src={"/Assets/BecomeASeller/Cover.webp"}
+                  className="rounded-[8px] object-cover"
+                  src={"/Assets/Admin/ShopCover.jpg"}
                   alt=""
                   fill
                 />
@@ -181,7 +181,7 @@ const Account = () => {
               {/* edit logo here */}
               <div className="-mt-10 ">
                 <Logo
-                  src="/Assets/BecomeASeller/Logo.webp"
+                  src="/Assets/Admin/Logo.webp"
                   GetImageSource={EditShopLogo}
                 />
               </div>
@@ -215,7 +215,7 @@ const Account = () => {
               Name="Phone"
               state={Inputs.Phone}
               SetState={handleInputs}
-              Type="phone"
+              Type="number"
               label="Phone No"
               placeholder="Enter Your Phone No"
               IsCompulsory={true}
@@ -250,13 +250,13 @@ const Account = () => {
               <button
                 type="button"
                 onClick={() => setEditProfile(false)}
-                className="w-[140px] h-[40px] text-center text-[14px] text-white-main font-inter font-medium rounded-md bg-red"
+                className="w-[140px] h-[40px] text-center text-[14px] text-white-main font-inter font-medium rounded-md bg-red-main"
               >
                 Cancel
               </button>
               <button
                 type="submit"
-                className="text-center text-[14px] font-inter font-medium rounded-md border-[1px] border-black-off text-black-off w-[140px] h-[40px] hover:bg-main-brand/20"
+                className="text-center text-[14px] font-inter font-medium rounded-md border-[1px] border-black-off text-black-off w-[140px] h-[40px] hover:bg-black-main hover:text-white-main"
               >
                 Save
               </button>
