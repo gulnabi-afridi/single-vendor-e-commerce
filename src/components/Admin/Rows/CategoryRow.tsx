@@ -4,10 +4,11 @@ import {BsThreeDots} from "react-icons/bs";
 
 interface Props {
     name:string,
-    date:string
+    date:string,
+    showDetail:()=> void;
 }
 
-const CategoryRow = ({name,date}:Props) => {
+const CategoryRow = ({name,date,showDetail}:Props) => {
   return (
     <div className="w-full grid grid-cols-[1fr,1fr,.3fr] border-b-[1px] h-[44px]">
       {/* 1) category name */}
@@ -21,7 +22,7 @@ const CategoryRow = ({name,date}:Props) => {
       {/* 3) editable icon */}
       <div className="w-full flex justify-start items-center">
         <div className="w-[20px]">
-          <IconButton>
+          <IconButton onClick={showDetail}>
             <BsThreeDots size={15} className="text-black-main" />
           </IconButton>
         </div>

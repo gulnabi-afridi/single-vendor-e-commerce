@@ -17,7 +17,7 @@ const SampleButton = ({
   return (
     <button
       onClick={event}
-      className={`  h-[44px] text-white-main hover:opacity-90 rounded-[10px] ${styles}`}
+      className={`h-[44px] text-white-main font-inter font-medium text-[14px] hover:opacity-90 rounded-[5px] ${styles}`}
       type={typeOf}
     >
       {title}

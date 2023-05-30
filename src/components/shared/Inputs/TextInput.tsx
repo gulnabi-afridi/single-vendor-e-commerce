@@ -5,7 +5,7 @@ interface Props {
   label?: string;
   placeholder?: string;
   Name?: string;
-  state: string;
+  state: string|number;
   SetState: any;
   IsCompulsory?: boolean;
   Type: string;

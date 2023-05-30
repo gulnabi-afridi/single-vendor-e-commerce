@@ -3,7 +3,7 @@ import React from "react";
 import { Data } from "../../constants/Data/JSON";
 import WishListCard from "@/components/shared/ProductCards/WishListCard";
 import NavigationButton from "@/components/shared/Button/NavigationButton";
-
+ 
 const WishList = () => {
   return (
     <Wrapper style="md:py-12 py-8">
