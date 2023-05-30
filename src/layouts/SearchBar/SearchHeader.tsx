@@ -169,7 +169,7 @@ function SearchHeader() {
                   <Link
                     onClick={toggleDrawer}
                     key={index}
-                    href="#"
+                    href={item.route}
                     className="w-full h-[44px] px-4 capitalize flex justify-start items-center text-[.9rem] leading-[1rem] font-inter font-normal text-black-soft gap-3 border-b-[1px] border-gray"
                   >
                     {item.name}

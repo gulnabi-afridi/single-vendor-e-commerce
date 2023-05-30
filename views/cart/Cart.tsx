@@ -6,7 +6,7 @@ import Link from "next/link";
 import NavigationButton from "@/components/shared/Button/NavigationButton";
 
 const Cart = () => {
-  return (
+  return ( 
     <Wrapper style="md:py-12 py-8 font-inter">
       {Data.CartItems.length == 0 && (
         <div className="w-full h-full flex flex-col items-center justify-center gap-6">
