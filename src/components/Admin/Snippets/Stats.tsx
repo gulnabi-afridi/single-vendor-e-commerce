@@ -3,7 +3,7 @@ import MiniChart from "@/components/shared/Charts/MiniChart";
 interface Props {
   Title: string;
   Data: Array<object>;
-  dataKey: string;
+  dataKey: string; 
   Figure: number;
 }
 const Stats: React.FC<Props> = ({ Title, dataKey, Data, Figure }) => {

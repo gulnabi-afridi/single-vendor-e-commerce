@@ -8,8 +8,8 @@ import { useRouter } from "next/router";
 import Drawer from "react-modern-drawer";
 //import styles 👇
 import "react-modern-drawer/dist/index.css";
-import { Data } from "../../../constants/Data/JSON";
-
+import { Dialog } from "@mui/material";
+import { RxCross1 } from "react-icons/rx";
 
 const BuyerNavigationItems = [
   {
@@ -24,7 +24,7 @@ const BuyerNavigationItems = [
     Name: "Orders",
     Route: "/admin/orders",
   },
- 
+
   {
     Name: "Products",
     Route: "/admin/products",
@@ -39,12 +39,15 @@ const BuyerNavigationItems = [
   },
 ];
 
-
 function AdminLeftNavigation() {
   const Router = useRouter();
   const [isOpen, setIsOpen] = React.useState(false);
+  const [isLogoutOpen, setIsLogoutOpen] = React.useState(false);
   const toggleDrawer = () => {
     setIsOpen((prevState) => !prevState);
+  };
+  const toggleLogoutDialouge = () => {
+    setIsLogoutOpen((prevState) => !prevState);
   };
   return (
     <div className="bg-gray-200/30">
@@ -87,13 +90,52 @@ function AdminLeftNavigation() {
               );
             })}
             <button
+              onClick={toggleLogoutDialouge}
               className={`relative font-inter text-[13px] leading-[20px] font-normal after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-main-brand after:transition-all after:duration-300 hover:after:w-full`}
             >
               Sign out
             </button>
           </div>
         </div>
-      
+        <Dialog
+          open={isLogoutOpen}
+          // onClose={handleClick}
+          sx={{
+            "& .MuiPaper-root": {
+              backgroundColor: "white",
+              borderRadius: "0px",
+              width: {
+                md: "400px",
+                xs: "100%",
+              },
+            },
+            overflow: "hidden",
+          }}
+        >
+          <div className="w-full h-full bg-white-off p-4 flex justify-center items-center flex-col gap-4">
+            <button onClick={toggleLogoutDialouge} className={`self-end`}>
+              <RxCross1 size={20} />
+            </button>
+            <h3 className="font-inter font-semibold text-[24px] leading-[28px] text-black-off">
+              Confirm Logout
+            </h3>
+            <div className="w-full h-[40px] grid grid-cols-2 mt-4 gap-4">
+              <Link
+                onClick={toggleLogoutDialouge}
+                href={"/"}
+                className="w-full h-full flex justify-center items-center text-white-main bg-black-main font-inter font-medium text-[1rem] leading-[1.25rem] rounded-[5px]"
+              >
+                Logout
+              </Link>
+              <button
+                onClick={toggleLogoutDialouge}
+                className="w-full h-full flex justify-center items-center text-white-main bg-red-main font-inter font-medium text-[1rem] leading-[1.25rem] rounded-[5px]"
+              >
+                Cancel
+              </button>
+            </div>
+          </div>
+        </Dialog>
 
         {/* For Phone */}
         {/* Logo */}
@@ -150,6 +192,7 @@ function AdminLeftNavigation() {
                     <Link
                       key={index}
                       href={item.Route}
+                      onClick={toggleDrawer}
                       className={`relative font-inter text-[13px] leading-[20px] font-normal after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-main-brand after:transition-all after:duration-300 hover:after:w-full ${
                         item.Route === Router.pathname
                           ? "text-main-brand"
@@ -161,6 +204,7 @@ function AdminLeftNavigation() {
                   );
                 })}
                 <button
+                  onClick={toggleLogoutDialouge}
                   className={`relative font-inter text-[13px] leading-[20px] font-normal after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-main-brand after:transition-all after:duration-300 hover:after:w-full`}
                 >
                   Sign out

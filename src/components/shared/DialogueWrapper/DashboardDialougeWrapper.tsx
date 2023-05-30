@@ -45,7 +45,7 @@ function DashboardDialougeWrapper({
             <RxCross1 size={18}/>
           </button>
         </div>
-        <div className="p-4 sm:p-6">{children}</div>
+        <div className="p-4 sm:p-6 max-h-[530px] overflow-auto">{children}</div>
       </div>
     </Dialog>
   );
